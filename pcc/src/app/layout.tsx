@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
+import Cabecalho from "@/components/Cabecalho/Cabecalho";
+import Rodape from "@/components/Rodape/Rodape";
 
 
 export const metadata: Metadata = {
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Cabecalho/>
         {children}
+        <Rodape/>
       </body>
     </html>
   );
