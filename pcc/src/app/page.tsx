@@ -16,7 +16,7 @@ export default function Home() {
                 BwE"><strong>Saiba mais</strong></a>
             </div>
             <div className="inicio">
-                <img src={PortoCarCare} alt="logo da PortoCarCare" />
+                <img src="PortoCarCare" alt="logo da PortoCarCare" />
                 <h1 className="texto-inicio">Clareza no<br />diagnóstico,<br />solução eficiente.</h1>
             </div>
 
@@ -28,13 +28,13 @@ export default function Home() {
 
             <div className="cards">
                 <div className="assistente-virtual">
-                    <img src={Calculadora} alt="calculadora" />
+                    <img src="Calculadora" alt="calculadora" />
                     <p>Saiba mais sobre os nossos <br /> serviços</p>
                     <Link href="/saiba">Clique aqui</Link>
                 </div>
 
                 <div className="medidas-preventivas">
-                    <img src={MulherMotor} alt="mulher mexendo no motor" />
+                    <img src="MulherMotor" alt="mulher mexendo no motor" />
                     <p>Medidas preventivas</p>
                     <Link href="/medidas">Clique aqui</Link>
                 </div>
