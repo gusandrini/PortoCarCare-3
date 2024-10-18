@@ -9,7 +9,7 @@ function Cabecalho() {
         <header>
             <div className="menu">
                 <nav>
-                    <a href="#"><Image src={Porto} alt="logo da Porto Seguro" className='logo-porto' /></a>
+                    <a href="#"><Image src={Porto} width={500} height={300} alt="logo da Porto Seguro" className='logo-porto' /></a>
                     <ul>
                         <li><Link href="">SOBRE NÓS</Link></li>
                         <li><Link href="/ajuda">AJUDA</Link></li>

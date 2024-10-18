@@ -1,11 +1,12 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import Calculadora from '../components/Images/calculadora.png';
 import MulherMotor from '../components/Images/mulher-motor.png';
 import PortoCarCare from '../components/Images/portocare.png';
 
 export default function Home() {
-  return (
-    <div>
+    return (
+        <div>
             <div className="cabecalho">
                 <h1>
                     Conte com um seguro de carro, conheça a <br /> Seguro  Auto da Porto Seguro!
@@ -16,25 +17,25 @@ export default function Home() {
                 BwE"><strong>Saiba mais</strong></a>
             </div>
             <div className="inicio">
-                <img src="PortoCarCare" alt="logo da PortoCarCare" />
+                <Image src={PortoCarCare} width={500} height={300} alt="logo da PortoCarCare" />
                 <h1 className="texto-inicio">Clareza no<br />diagnóstico,<br />solução eficiente.</h1>
             </div>
 
-            <div className="imagens-inicio">
-                <img src="" alt="" />
-                <img src="" alt="" />
-                <img src="" alt="" />
-            </div>
+            {/* <div className="imagens-inicio">
+                <Image src="" width={500} height={300} alt="" />
+                <Image src="" width={500} height={300} alt="" />
+                <Image src="" width={500} height={300} alt="" />
+            </div> */}
 
             <div className="cards">
                 <div className="assistente-virtual">
-                    <img src="Calculadora" alt="calculadora" />
+                    <Image src={Calculadora} width={500} height={300} alt="calculadora" />
                     <p>Saiba mais sobre os nossos <br /> serviços</p>
                     <Link href="/saiba">Clique aqui</Link>
                 </div>
 
                 <div className="medidas-preventivas">
-                    <img src="MulherMotor" alt="mulher mexendo no motor" />
+                    <Image src={MulherMotor} width={500} height={300} alt="mulher mexendo no motor" />
                     <p>Medidas preventivas</p>
                     <Link href="/medidas">Clique aqui</Link>
                 </div>
@@ -43,6 +44,6 @@ export default function Home() {
             <div className="participantes">
                 <button><Link href="/participantes">Participantes</Link></button>
             </div>
-    </div>
-  )
+        </div>
+    )
 }
