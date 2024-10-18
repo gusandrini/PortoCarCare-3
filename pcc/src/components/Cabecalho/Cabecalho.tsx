@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import Porto from "../Images/porto-topo.png";
+import Porto from "../../Images/porto-topo.png";
 
 
 function Cabecalho() {

@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Calculadora from '../components/Images/calculadora.png';
-import MulherMotor from '../components/Images/mulher-motor.png';
-import PortoCarCare from '../components/Images/portocare.png';
+import Calculadora from '../Images/calculadora.png';
+import MulherMotor from '../Images/mulher-motor.png';
+import PortoCarCare from '../Images/portocare.png';
 
 export default function Home() {
     return (
