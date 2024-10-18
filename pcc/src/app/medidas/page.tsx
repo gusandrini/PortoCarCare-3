@@ -5,8 +5,7 @@ import Link from "next/link";
 const Medidas = () => {
     return (
         <div>
-            <Cabecalho />
-
+           
             <div className="paginas">
                 <Link href="/"> Home / Medidas preventivas</Link>
             </div>

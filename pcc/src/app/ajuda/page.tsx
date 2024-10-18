@@ -6,8 +6,7 @@ import Link from 'next/link';
 const Ajuda = () => {
     return (
         <div>
-            <Cabecalho/>
-
+            
             <div className="paginas">
                 <Link href="/"> Home / Ajuda</Link>
             </div>

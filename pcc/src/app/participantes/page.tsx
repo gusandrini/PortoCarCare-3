@@ -9,8 +9,7 @@ import Vi from '../../components/Images/foto-vitor.jpg';
 const Participantes = () => {
     return (
         <div>
-            <Cabecalho />
-
+            
             <div className="paginas">
                 <Link href="/"> Home / Participantes</Link>
             </div>
