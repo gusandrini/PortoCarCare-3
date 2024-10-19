@@ -38,7 +38,7 @@
   }
 
   .saiba-mais {
-    @apply px-5 py-2 min-w-[200px] min-h-[50px] text-[30px] bg-white border border-[#00a1fc] rounded-lg text-[#030a3e];
+    @apply px-5 py-2 min-w-[200px] min-h-[50px] text-[30px] bg-white border border-[#00a1fc] rounded-[20px] text-[#030a3e];
   }
 }
 
@@ -96,11 +96,12 @@
     }
   
     .cabecalho {
-      @apply flex items-baseline justify-start text-white bg-[#00a1fc] p-[20px] text-[15px] flex-col;
+      @apply flex items-baseline justify-start text-white bg-[#00a1fc] p-[20px] text-[35px] flex-col ;
   
       h1 {
         @apply p-[10px];
       }
+
     }
   
     .cards {
