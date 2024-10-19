@@ -23,8 +23,6 @@ const Saiba = () => {
                 </ul>
             </div>
 
-
-            <Rodape />
         </div>
     );
 };

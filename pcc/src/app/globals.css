@@ -81,5 +81,276 @@
 
 /* ESTILIZAÇÃO DO CONTEUDO DO HOME */
 
+@layer components {
+  /* Início */
+  .inicio {
+    @apply m-5;
+  }
+
+  .inicio img {
+    @apply w-[300px];
+  }
+
+  .inicio h1 {
+    @apply text-[#00a1fc] text-[70px];
+  }
+
+  /* Cabeçalho */
+  .cabecalho {
+    @apply flex items-baseline justify-start text-white bg-[#00a1fc] p-5 text-[15px] flex-col;
+  }
+
+  .cabecalho h1 {
+    @apply p-2;
+  }
+
+  /* Cards */
+  .cards {
+    @apply flex flex-row justify-evenly p-[100px];
+  }
+
+  .medidas-preventivas,
+  .assistente-virtual {
+    @apply shadow-lg rounded-[40px] flex flex-col;
+  }
+
+  .medidas-preventivas p,
+  .assistente-virtual p {
+    @apply py-8 px-2 font-semibold text-[22px];
+  }
+
+  .medidas-preventivas a,
+  .assistente-virtual a {
+    @apply p-1 px-3 mt-5 border-2 border-[#00a1fc] rounded-lg text-[#00a1fc] w-fit;
+  }
+
+  /* Participantes */
+  .participantes {
+    @apply flex justify-end m-5;
+  }
+}
+
+@layer utilities {
+  /* Responsivo */
+
+  /* Smartphones */
+  @media (max-width: 900px) {
+    .inicio h1 {
+      @apply text-[50px];
+    }
+
+    .inicio img {
+      @apply w-[250px];
+    }
+
+    .cards {
+      @apply flex flex-col p-8;
+    }
+
+    .assistente-virtual,
+    .medidas-preventivas {
+      @apply rounded-[80px];
+    }
+
+    .assistente-virtual p,
+    .medidas-preventivas p {
+      @apply m-2 text-[30px];
+    }
+
+    .assistente-virtual a,
+    .medidas-preventivas a {
+      @apply rounded-[30px] text-[40px];
+    }
+  }
+
+  /* Tablets */
+  @media (min-width: 650px) and (max-width: 1024px) {
+    .inicio h1 {
+      @apply text-[75px];
+    }
+
+    .inicio img {
+      @apply w-[350px];
+    }
+
+    .cards {
+      @apply flex flex-col p-8;
+    }
+  }
+
+  /* Desktops e outros */
+  @media (min-width: 1025px) {
+    .cards {
+      @apply p-12;
+    }
+  }
+}
+
+/* ESTILIZAÇÃO DO CONTEUDO DO RODAPÉ*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Rodapé */
+
+  /* Redes sociais */
+  .redes {
+    @apply p-0 m-0 flex flex-col;
+  }
+
+  .redes > h2 {
+    @apply text-[30px] text-white;
+  }
+
+  .redes a {
+    @apply text-white;
+  }
+
+  .redes img {
+    @apply h-[40px] mt-[30px] ml-[10px];
+  }
+
+  /* Baixe app */
+  .baixe-app {
+    @apply flex flex-col text-[30px] text-white;
+  }
+
+  /* Parceiros */
+  .parceiros {
+    @apply m-[50px] flex flex-col justify-between;
+  }
+
+  .parceiros h2 {
+    @apply text-[30px] text-white;
+  }
+
+  .parceiros img {
+    @apply h-[100px] m-[20px];
+  }
+
+  footer {
+    @apply bg-black flex justify-around items-baseline p-0;
+
+    ::marker {
+      @apply text-black;
+    }
+  }
+
+  .parceiros ul {
+    @apply flex;
+  }
+
+  .parceiros h2 {
+    @apply text-white;
+  }
+
+  .appporto img {
+    @apply h-[50px];
+  }
+}
+
+@layer utilities {
+  /* Responsivo */
+
+  /* Smartphones */
+  @media (max-width: 900px) {
+    .redes {
+      @apply ml-[10px];
+
+      h2 {
+        @apply text-[15px];
+      }
+
+      img {
+        @apply w-[30px];
+      }
+
+      a {
+        @apply text-[20px];
+      }
+    }
+
+    .parceiros {
+      h2 {
+        @apply text-[15px];
+      }
+
+      ul {
+        @apply flex flex-col;
+      }
+
+      img {
+        @apply w-[100px] m-[5px];
+      }
+
+      a {
+        @apply text-[15px];
+      }
+    }
+
+    .logo-porto-preta img {
+      @apply w-[220px];
+    }
+  }
+
+  /* Tablets */
+  @media (min-width: 650px) and (max-width: 1024px) {
+    .redes {
+      @apply ml-[10px];
+
+      h2 {
+        @apply text-[30px];
+      }
+
+      img {
+        @apply h-[70px] w-[60px];
+      }
+
+      a {
+        @apply text-[20px];
+      }
+    }
+
+    .parceiros {
+      h2 {
+        @apply text-[30px];
+      }
+
+      ul {
+        @apply flex flex-col;
+      }
+
+      img {
+        @apply w-[100px] h-[100px] m-[5px];
+      }
+
+      a {
+        @apply text-[15px];
+      }
+    }
+
+    .logo-porto-preta img {
+      @apply w-[220px];
+    }
+  }
+
+  /* Desktops */
+  @media (min-width: 1025px) {
+    footer {
+      @apply flex justify-evenly;
+    }
+
+    .parceiros img {
+      @apply w-[90px] m-[5px];
+    }
+
+    .logo-porto-preta img {
+      @apply w-[220px];
+    }
+  }
+}
+
+
 
 

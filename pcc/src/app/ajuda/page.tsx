@@ -38,8 +38,6 @@ const Ajuda = () => {
                     </form>
                 </section>
             </div>
-
-            <Rodape/>
         </div>
     );
 };

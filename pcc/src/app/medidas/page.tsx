@@ -25,8 +25,6 @@ const Medidas = () => {
                     <p>10° Condução defensiva</p>
                 </ul>
             </div>
-
-            <Rodape />
         </div>
     );
 };

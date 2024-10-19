@@ -31,8 +31,6 @@ const Sobre = () => {
                     e com isso, ajudar a prolongar a vida útil dos veículos e evitar acidentes ou problemas futuros.<br /><br />
                 </p>
             </div>
-
-            <Rodape />
         </div>
     );
 };

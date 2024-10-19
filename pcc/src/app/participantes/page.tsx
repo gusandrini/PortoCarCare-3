@@ -30,8 +30,6 @@ const Participantes = () => {
                     <p>Vitor Vinicios Araújo<br />RM:556241</p>
                 </div>
             </div>
-
-            <Rodape />
         </div>
     );
 };
