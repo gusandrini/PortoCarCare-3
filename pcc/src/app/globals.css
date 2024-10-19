@@ -3,9 +3,83 @@
 @tailwind utilities;
 
 
-@layer components{
-    
-    
+/* ESTILIZAÇÃO DO CABELALHO */
+@layer base {
+  * {
+    @apply m-0 p-0 box-border no-underline font-sans;
+  }
 }
+
+@layer components {
+  /* Menu */
+  .menu {
+    @apply m-auto bg-white flex flex-col;
+  }
+
+  nav {
+    @apply flex items-center justify-evenly;
+  }
+
+  nav .menu {
+    @apply text-[70px] font-bold italic text-[#00a1fc];
+  }
+
+  nav ul {
+    @apply list-none;
+  }
+
+  nav ul li {
+    @apply inline-block;
+  }
+
+  nav ul li a {
+    @apply px-5 py-2 text-[19px] text-gray-500 rounded-full transition duration-500;
+
+  }
+
+  .saiba-mais {
+    @apply px-5 py-2 min-w-[200px] min-h-[50px] text-[30px] bg-white border border-[#00a1fc] rounded-lg text-[#030a3e];
+  }
+}
+
+@layer utilities {
+  /* Responsivo */
+
+  /* Smartphones */
+  @media (max-width: 900px) {
+    .menu img {
+      @apply w-[33px];
+    }
+
+    nav ul li a {
+      @apply text-[6px];
+    }
+  }
+
+  /* Tablets */
+  @media (min-width: 650px) and (max-width: 1024px) {
+    .menu img {
+      @apply w-[90px];
+    }
+
+    nav ul li a {
+      @apply text-[15px];
+    }
+  }
+
+  /* Desktops e outros */
+  @media (min-width: 1025px) {
+    .menu img {
+      @apply w-[100px];
+    }
+
+    nav ul li a {
+      @apply text-[15px];
+    }
+  }
+}
+
+/* ESTILIZAÇÃO DO CONTEUDO DO HOME */
+
 
 
