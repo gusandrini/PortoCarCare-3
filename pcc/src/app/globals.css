@@ -108,7 +108,7 @@
     }
   
     .medidas-preventivas {
-      @apply shadow-[0_2px_9px_2px_#7f7f7e] rounded-[40px] flex flex-col;
+      @apply shadow-[0_2px_9px_2px_#7f7f7e] rounded-[60px] flex flex-col;
   
       p {
         @apply p-[35px_0_40px_10px] font-semibold text-[22px];
@@ -120,7 +120,7 @@
     }
   
     .assistente-virtual {
-      @apply shadow-[0_2px_9px_2px_#7f7f7e] rounded-[40px] flex flex-col;
+      @apply shadow-[0_2px_9px_2px_#7f7f7e] rounded-[60px] flex flex-col;
   
       p {
         @apply p-[5px_0_40px_10px] font-semibold text-[22px];
