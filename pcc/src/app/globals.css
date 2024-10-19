@@ -82,109 +82,108 @@
 /* ESTILIZAÇÃO DO CONTEUDO DO HOME */
 
 @layer components {
-  /* Início */
-  .inicio {
-    @apply m-5;
-  }
 
-  .inicio img {
-    @apply w-[300px];
-  }
-
-  .inicio h1 {
-    @apply text-[#00a1fc] text-[70px];
-  }
-
-  /* Cabeçalho */
-  .cabecalho {
-    @apply flex items-baseline justify-start text-white bg-[#00a1fc] p-5 text-[15px] flex-col;
-  }
-
-  .cabecalho h1 {
-    @apply p-2;
-  }
-
-  /* Cards */
-  .cards {
-    @apply flex flex-row justify-evenly p-[100px];
-  }
-
-  .medidas-preventivas,
-  .assistente-virtual {
-    @apply shadow-lg rounded-[40px] flex flex-col;
-  }
-
-  .medidas-preventivas p,
-  .assistente-virtual p {
-    @apply py-8 px-2 font-semibold text-[22px];
-  }
-
-  .medidas-preventivas a,
-  .assistente-virtual a {
-    @apply p-1 px-3 mt-5 border-2 border-[#00a1fc] rounded-lg text-[#00a1fc] w-fit;
-  }
-
-  /* Participantes */
-  .participantes {
-    @apply flex justify-end m-5;
-  }
-}
-
-@layer utilities {
-  /* Responsivo */
-
-  /* Smartphones */
-  @media (max-width: 900px) {
-    .inicio h1 {
-      @apply text-[50px];
+    .inicio {
+      @apply m-[20px];
+      
+      img {
+        @apply w-[300px];
+      }
+  
+      h1 {
+        @apply text-[#00a1fc] text-[70px];
+      }
     }
-
-    .inicio img {
-      @apply w-[250px];
+  
+    .cabecalho {
+      @apply flex items-baseline justify-start text-white bg-[#00a1fc] p-[20px] text-[15px] flex-col;
+  
+      h1 {
+        @apply p-[10px];
+      }
     }
-
+  
     .cards {
-      @apply flex flex-col p-8;
+      @apply flex flex-row justify-evenly p-[100px];
     }
-
-    .assistente-virtual,
+  
     .medidas-preventivas {
-      @apply rounded-[80px];
+      @apply shadow-[0_2px_9px_2px_#7f7f7e] rounded-[40px] flex flex-col;
+  
+      p {
+        @apply p-[35px_0_40px_10px] font-semibold text-[22px];
+      }
+  
+      a {
+        @apply p-[3px_10px] m-[0_0_20px_20px] border border-[#00a1fc] border-solid rounded-[10px] w-fit text-[#00a1fc];
+      }
     }
-
-    .assistente-virtual p,
-    .medidas-preventivas p {
-      @apply m-2 text-[30px];
+  
+    .assistente-virtual {
+      @apply shadow-[0_2px_9px_2px_#7f7f7e] rounded-[40px] flex flex-col;
+  
+      p {
+        @apply p-[5px_0_40px_10px] font-semibold text-[22px];
+      }
+  
+      a {
+        @apply p-[3px_10px] m-[0_0_20px_20px] border border-[#00a1fc] border-solid rounded-[10px] w-fit text-[#00a1fc];
+      }
     }
-
-    .assistente-virtual a,
-    .medidas-preventivas a {
-      @apply rounded-[30px] text-[40px];
+  
+    .participantes {
+      @apply flex justify-end m-[20px];
+    }
+  
+    /* Responsivo para Smartphones */
+    @media (max-width: 900px) {
+      .inicio h1 {
+        @apply text-[50px];
+      }
+  
+      .inicio img {
+        @apply w-[250px];
+      }
+  
+      .cards {
+        @apply flex flex-col p-[30px];
+      }
+  
+      .assistente-virtual, .medidas-preventivas {
+        @apply rounded-[80px];
+  
+        p {
+          @apply m-[10px] text-[30px];
+        }
+  
+        a {
+          @apply rounded-[30px] text-[40px];
+        }
+      }
+    }
+  
+    /* Responsivo para Tablets */
+    @media (min-width: 650px) and (max-width: 1024px) {
+      .inicio h1 {
+        @apply text-[75px];
+      }
+  
+      .inicio img {
+        @apply w-[350px];
+      }
+  
+      .cards {
+        @apply flex flex-col p-[30px];
+      }
+    }
+  
+    /* Responsivo para Desktops */
+    @media (min-width: 1025px) {
+      .cards {
+        @apply p-[50px];
+      }
     }
   }
-
-  /* Tablets */
-  @media (min-width: 650px) and (max-width: 1024px) {
-    .inicio h1 {
-      @apply text-[75px];
-    }
-
-    .inicio img {
-      @apply w-[350px];
-    }
-
-    .cards {
-      @apply flex flex-col p-8;
-    }
-  }
-
-  /* Desktops e outros */
-  @media (min-width: 1025px) {
-    .cards {
-      @apply p-12;
-    }
-  }
-}
 
 /* ESTILIZAÇÃO DO CONTEUDO DO RODAPÉ*/
 @tailwind base;
