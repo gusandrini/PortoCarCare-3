@@ -711,4 +711,73 @@
   }
 }
 
-/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE LOGIN*/
+/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE SAIBA MAIS*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Estilos para páginas */
+  .paginas {
+    @apply flex justify-start ml-[60px] text-[30px];
+  }
+
+  .paginas a {
+    @apply text-gray-500;
+  }
+
+  .lista {
+    @apply flex flex-col ml-[50px] pt-0 pb-[100px] text-[25px];
+  }
+
+  .lista h1 {
+    @apply text-black text-[50px] font-bold pl-[20px];
+  }
+}
+
+/* Responsivo */
+
+/* Smartphones */
+@media (max-width: 900px) {
+  .lista-s {
+    @apply m-[10px];
+
+    h1 {
+      @apply text-[25px];
+    }
+
+    p {
+      @apply m-[5px] text-[15px];
+    }
+  }
+}
+
+/* Tablets */
+@media (min-width: 650px) and (max-width: 1024px) {
+  .lista-s {
+    @apply m-[10px];
+
+    h1 {
+      @apply m-[15px] text-[40px];
+    }
+
+    p {
+      @apply m-[15px] text-[30px];
+    }
+  }
+}
+
+/* Desktops e outros */
+@media (min-width: 1025px) {
+  .lista-s {
+    @apply m-[20px];
+
+    h1 {
+      @apply m-[15px] text-[40px];
+    }
+
+    p {
+      @apply m-[15px] text-[30px];
+    }
+  }
+}
