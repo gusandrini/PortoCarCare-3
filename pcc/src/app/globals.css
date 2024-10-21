@@ -620,3 +620,95 @@
     }
   }
 }
+
+/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE PARTICIPANTES*/
+
+
+@layer components {
+  /* Estilos para páginas */
+  .paginas {
+    @apply flex justify-start ml-[60px] text-[30px];
+  }
+
+  .paginas a {
+    @apply text-gray-500;
+  }
+
+  /* Estilos para os cards */
+  .cards-i {
+    @apply flex flex-row justify-evenly p-[115px];
+
+    img {
+      @apply w-[400px] h-[480px] rounded-[40px];
+    }
+  }
+
+  .duda {
+    @apply shadow-[0_2px_9px_2px_rgba(127,127,126,1)] rounded-[40px] flex flex-col;
+
+    p {
+      @apply py-[12px] pl-[10px] font-semibold text-[22px];
+    }
+  }
+
+  .gu {
+    @apply shadow-[0_2px_9px_2px_rgba(127,127,126,1)] rounded-[40px] flex flex-col;
+
+    p {
+      @apply py-[12px] pl-[10px] font-semibold text-[22px];
+    }
+
+    a {
+      @apply p-[3px] px-[10px] mb-[20px] ml-[20px] border-2 border-[#00a1fc] rounded-[10px] w-fit text-[#00a1fc];
+    }
+  }
+
+  .vi {
+    @apply shadow-[0_2px_9px_2px_rgba(127,127,126,1)] rounded-[40px] flex flex-col;
+
+    p {
+      @apply py-[12px] pl-[10px] font-semibold text-[22px];
+    }
+
+    a {
+      @apply p-[3px] px-[10px] mb-[20px] ml-[20px] border-2 border-[#00a1fc] rounded-[10px] w-fit text-[#00a1fc];
+    }
+  }
+}
+
+/* Responsivo */
+
+/* Smartphones */
+@media (max-width: 900px) {
+  .cards-i {
+    @apply flex flex-col p-[10px];
+
+    img {
+      @apply w-[370px];
+    }
+  }
+}
+
+/* Tablets */
+@media (min-width: 650px) and (max-width: 1024px) {
+  .cards-i {
+    @apply flex flex-col p-[150px];
+
+    img {
+      @apply w-[470px];
+    }
+  }
+}
+
+/* Desktops e outros */
+@media (min-width: 1025px) {
+  .cards-i {
+    @apply flex flex-row justify-between p-[50px];
+
+    img {
+      @apply w-[380px];
+    }
+  }
+}
+
+/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE LOGIN*/
