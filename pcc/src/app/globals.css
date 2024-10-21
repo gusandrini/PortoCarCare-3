@@ -521,3 +521,102 @@
   /* Adicione estilos responsivos aqui, se necessário */
 }
 
+/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE MEDIDAS*/
+@layer components {
+
+  /* Estilos para páginas */
+  .paginas {
+    @apply flex justify-start ml-[60px] text-[30px];
+  }
+
+  .paginas a {
+    @apply text-gray-500;
+  }
+
+  .lista {
+    @apply flex flex-col ml-[50px] pb-[100px] text-[25px];
+  }
+
+  .lista h1 {
+    @apply text-black text-[50px] font-bold pl-[20px];
+  }
+
+  /* Adiciona margin de 20px para todos os parágrafos */
+  .lista p {
+    @apply m-[20px];
+  }
+}
+
+/* Responsivo */
+
+/* Smartphones */
+@media (max-width: 900px) {
+  .paginas {
+    @apply m-[20px];
+
+    a {
+      @apply text-[20px];
+    }
+  }
+
+  .lista {
+    @apply m-[10px];
+
+    h1 {
+      @apply text-[30px];
+    }
+
+    p {
+      @apply m-[20px]; /* Adicionando 20px de margin para parágrafos em smartphones */
+      @apply text-[15px];
+    }
+  }
+}
+
+/* Tablets */
+@media (min-width: 650px) and (max-width: 1024px) {
+  .paginas {
+    @apply m-[20px];
+
+    a {
+      @apply text-[30px];
+    }
+  }
+
+  .lista {
+    @apply m-[30px];
+
+    h1 {
+      @apply text-[50px];
+    }
+
+    p {
+      @apply m-[20px]; /* Adicionando 20px de margin para parágrafos em tablets */
+      @apply text-[30px];
+    }
+  }
+}
+
+/* Desktops e outros */
+@media (min-width: 1025px) {
+  .paginas {
+    @apply m-[20px];
+
+    a {
+      @apply text-[30px];
+    }
+  }
+
+  .lista {
+    @apply m-[30px];
+
+    h1 {
+      @apply text-[50px];
+    }
+
+    p {
+      @apply m-[20px]; /* Adicionando 20px de margin para parágrafos em desktops */
+      @apply text-[30px];
+    }
+  }
+}
