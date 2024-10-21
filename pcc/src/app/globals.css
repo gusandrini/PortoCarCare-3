@@ -636,7 +636,7 @@
 
   /* Estilos para os cards */
   .cards-i {
-    @apply flex flex-row justify-evenly p-[115px];
+    @apply flex flex-row justify-evenly p-[20px];
 
     img {
       @apply w-[400px] h-[480px] rounded-[40px];
