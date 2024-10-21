@@ -352,5 +352,55 @@
 }
 
 
+/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE AJUDA*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+@layer components {
 
+  /* Estilos padrão */
+  * {
+    @apply m-0 p-0 box-border font-sans;
+  }
+
+  /* Paginas */
+  .paginas {
+    @apply flex justify-start ml-[60px] text-[30px];
+  }
+
+  .paginas a {
+    @apply text-gray-500;
+  }
+
+  /* Contato */
+  .contato {
+    @apply p-0 m-0;
+  }
+
+  .stato {
+    @apply flex items-end justify-around;
+  }
+
+  .ftato div {
+    @apply flex flex-col mb-[30px];
+  }
+
+  .ftato input,
+  textarea {
+    @apply outline-none p-[10px] min-w-[300px] max-h-[60px] border border-[#00a1fc] rounded-[20px] opacity-80 bg-[#c3e3fd];
+  }
+
+  .ftato input:focus,
+  .ftato textarea:focus {
+    @apply bg-[#00a1fc];
+  }
+
+  .ftato input[type="submit"] {
+    @apply bg-[#00a1fc] text-gray-500 cursor-pointer;
+  }
+
+  .ftato .titulo {
+    @apply m-[10px] text-[#00a1fc] text-[30px] rounded-[20px];
+  }
+}
