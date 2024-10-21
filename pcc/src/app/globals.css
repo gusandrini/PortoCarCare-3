@@ -781,3 +781,62 @@
     }
   }
 }
+
+/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE SOBRE NÓS*/
+
+@layer components {
+  /* Estilos para páginas */
+  * {
+    @apply m-0 p-0 box-border ;
+  }
+
+  .paginas {
+    @apply flex justify-start m-[30px] ml-[60px] text-[30px];
+  }
+
+  .paginas a {
+    @apply text-gray-500;
+  }
+
+  /* Estilos para conteúdo */
+  .conteudo {
+    @apply p-[10px] text-[25px] text-black m-[10px] ml-[60px];
+  }
+}
+
+/* Responsivo */
+
+/* Smartphones */
+@media (max-width: 900px) {
+  .conteudo {
+    @apply m-[10px];
+
+    h1 {
+      @apply text-[30px];
+    }
+
+    p {
+      @apply m-[5px] text-[15px];
+    }
+  }
+}
+
+/* Tablets */
+@media (min-width: 650px) and (max-width: 1024px) {
+  .conteudo {
+    @apply m-[10px];
+
+    h1 {
+      @apply text-[50px];
+    }
+
+    p {
+      @apply m-[5px] text-[25px];
+    }
+  }
+}
+
+/* Desktops e outros */
+@media (min-width: 1025px) {
+  /* Estilos específicos para desktops podem ser adicionados aqui, se necessário */
+}
