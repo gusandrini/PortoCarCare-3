@@ -353,9 +353,6 @@
 
 
 /* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE AJUDA*/
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer components {
 
@@ -404,3 +401,123 @@
     @apply m-[10px] text-[#00a1fc] text-[30px] rounded-[20px];
   }
 }
+
+/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE CADASTRO*/
+@layer components {
+
+  /* Estilos padrão */
+  * {
+    @apply p-0 m-0 box-border;
+  }
+
+  body {
+    @apply font-sans;
+  }
+
+  .principal {
+    @apply flex justify-center items-center bg-[#00a1fc];
+  }
+
+  .container-l {
+    @apply flex flex-col justify-center items-center bg-white m-[150px] p-8 rounded-[150px] h-[200px] text-center w-[300px];
+
+    form {
+      @apply flex flex-col gap-[20px];
+
+      input {
+        @apply border-none outline-none border-b border-gray-500;
+      }
+
+      button {
+        @apply p-[10px] bg-[rgb(180,178,178)] border-none rounded-[10px] text-[rgb(3,10,62)];
+      }
+    }
+
+    .title,
+    a {
+      @apply text-[rgb(3,10,62)];
+    }
+
+    p {
+      @apply mt-[10px] text-sm text-[rgb(3,10,62)];
+    }
+  }
+}
+
+/* Responsivo */
+
+/* Smartphones */
+@media (max-width: 900px) {
+  /* Adicione estilos responsivos aqui, se necessário */
+}
+
+/* Tablets */
+@media (min-width: 650px) and (max-width: 1024px) {
+  /* Adicione estilos responsivos aqui, se necessário */
+}
+
+/* Desktops e outros */
+@media (min-width: 1025px) {
+  /* Adicione estilos responsivos aqui, se necessário */
+}
+
+/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE LOGIN*/
+
+@layer components {
+
+  /* Estilos padrão */
+  * {
+    @apply p-0 m-0 box-border;
+  }
+
+  body {
+    @apply font-sans;
+  }
+
+  .principal {
+    @apply flex justify-center items-center bg-[#00a1fc];
+  }
+
+  .container-l {
+    @apply flex flex-col justify-center items-center bg-white m-[150px] p-8 rounded-[2rem] h-[200px] text-center w-[300px];
+
+    form {
+      @apply flex flex-col gap-[20px];
+
+      input {
+        @apply border-none outline-none border-b border-gray-500;
+      }
+
+      button {
+        @apply p-[10px] bg-[rgb(180,178,178)] border-none rounded-[10px] text-[rgb(3,10,62)];
+      }
+    }
+
+    .title,
+    a {
+      @apply text-[rgb(3,10,62)];
+    }
+
+    p {
+      @apply mt-[10px] text-sm text-[rgb(3,10,62)];
+    }
+  }
+}
+
+/* Responsivo */
+
+/* Smartphones */
+@media (max-width: 900px) {
+  /* Adicione estilos responsivos aqui, se necessário */
+}
+
+/* Tablets */
+@media (min-width: 650px) and (max-width: 1024px) {
+  /* Adicione estilos responsivos aqui, se necessário */
+}
+
+/* Desktops e outros */
+@media (min-width: 1025px) {
+  /* Adicione estilos responsivos aqui, se necessário */
+}
+
