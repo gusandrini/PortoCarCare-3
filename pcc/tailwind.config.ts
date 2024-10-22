@@ -9,13 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily:{
-        sans: ['var(--font-family-main)']
-
+        sans: ['var(--font-inter)']
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-      },
+      }, 
+      // fontFamily:{
+      //   sans: ['var(--font-family-main)']
+
+      // },
     },
   },
   plugins: [],

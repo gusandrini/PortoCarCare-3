@@ -3,12 +3,11 @@ import Rodape from "@/components/Rodape/Rodape";
 import type { Metadata } from "next";
 import "./globals.css";
 import {Inter} from 'next/font/google'
-// import Head from "next/head";
 
 const mainFontFamily = Inter({
   weight: ['300', '400', '700'],
   subsets: ['latin'],
-  variable: '--font-family-main'
+  variable: '--font-inter'
 });
 
 export const metadata: Metadata = {
