@@ -1,6 +1,6 @@
 # Global Solution Front-End Desing Emgineering
 
-## Aluno: Gustavo de Oliveira Turcci Sandrini
+## Aluno: Gustavo de Oliveira Turci Sandrini
 - RM: 557505
 ## Aluno: Eduarda Tiemi Akamini Machado
 - RM: 554756
