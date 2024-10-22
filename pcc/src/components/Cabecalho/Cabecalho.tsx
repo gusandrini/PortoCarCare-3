@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import Porto from "../../Images/porto-topo.png";
+import PortoCarCAre from "../../Images/portocare.png";
 
 
 function Cabecalho() {
@@ -9,7 +9,7 @@ function Cabecalho() {
         <header>
             <div className="menu">
                 <nav>
-                    <a href="/"><Image src={Porto} width={500} height={300} alt="logo da Porto Seguro" className='logo-porto' /></a>
+                    <a href="/"><Image src={PortoCarCAre} width={600} height={400} alt="logo da Porto CarCare" className='logo-porto-CarCare' /></a>
                     <ul>
                         <li><Link href="/sobre-nos">SOBRE NÓS</Link></li>
                         <li><Link href="/ajuda">AJUDA</Link></li>

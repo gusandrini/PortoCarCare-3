@@ -91,7 +91,7 @@
       }
   
       h1 {
-        @apply text-[#00a1fc] text-[70px];
+        @apply text-[#00a1fc] text-center text-[70px];
       }
     }
   
@@ -133,7 +133,7 @@
     }
   
     .participantes {
-      @apply flex justify-end m-[20px];
+      @apply flex items-center justify-center;
     }
   
     /* Responsivo para Smartphones */
