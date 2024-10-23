@@ -37,6 +37,9 @@
     @apply bg-white w-[310px] flex flex-col items-center rounded-[10px] shadow-md;
   }
   
+  .link_menu{
+    @apply text-[#00a1fc] 
+  }
 
   nav ul li a {
     @apply px-5 py-2 text-[19px] text-gray-500;
@@ -122,9 +125,14 @@
       }
   
       a {
-        @apply p-[3px_10px] m-[0_0_20px_20px] border border-[#00a1fc] border-solid rounded-[10px] w-fit text-[#00a1fc];
+        @apply  p-[3px_10px] m-[0_0_20px_20px] border border-[#00a1fc] border-solid rounded-[10px] w-fit text-[#00a1fc];
+      }
+
+      p, a {
+        @apply flex flex-col justify-center
       }
     }
+
   
     .assistente-virtual {
       @apply shadow-[0_2px_9px_2px_#7f7f7e] rounded-[60px] flex flex-col;
@@ -139,7 +147,7 @@
     }
   
     .participantes {
-      @apply flex items-center justify-center p-[20px];
+      @apply flex items-center justify-center text-[30px] p-[20px];
     }
   
     /* Responsivo para Smartphones */
@@ -206,6 +214,9 @@
   }
   .redes img {
     @apply w-[80px] p-[15px];
+  }
+  .titulo-parceiro{
+    @apply p-[30px]
   }
   .titulo-redes, .titulo-parceiro, .titulo-app h2 {
     @apply text-center text-[30px] text-white;
