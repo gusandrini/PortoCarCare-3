@@ -11,9 +11,6 @@ export default function NotFound() {
         width={3000} 
         height={1000} 
       />
-      <Link href="/">
-        Voltar para a página inicial
-      </Link>
     </div>
   );
 }

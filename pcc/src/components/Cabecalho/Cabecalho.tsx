@@ -8,7 +8,7 @@ function Cabecalho() {
     return (
         <header>
             <div className="foto_menu">
-                <a href="/"><Image src={PortoCarCAre} width={400} height={400} alt="logo da Porto CarCare" className='logo-porto-CarCare' /></a>
+                <Link href="/"><Image src={PortoCarCAre} width={400} height={400} alt="logo da Porto CarCare" className='logo-porto-CarCare' /></Link>
             </div>
             <div className="menu">
                 <nav>

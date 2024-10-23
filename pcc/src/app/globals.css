@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --fonte-principal: "Krona One", sans-serif;
-}
-
-
 
 /* ESTILIZAÇÃO DO CABELALHO */
 @layer base {
