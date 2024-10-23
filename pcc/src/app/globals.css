@@ -38,7 +38,7 @@
   }
   
   .link_menu{
-    @apply text-[#00a1fc] 
+    @apply text-[#030a3es] 
   }
 
   nav ul li a {
@@ -47,7 +47,7 @@
   }
 
   .saiba-mais {
-    @apply px-5 py-2 min-w-[200px] min-h-[50px] text-[30px] bg-white border border-[#00a1fc] rounded-[20px] text-[#030a3e];
+    @apply px-5 py-2 min-w-[200px] min-h-[50px] text-[30px] bg-white border border-[#030a3e] rounded-[20px] text-[#030a3e];
   }
 }
 
@@ -100,12 +100,12 @@
       }
   
       h1 {
-        @apply text-[#00a1fc] text-center text-[70px];
+        @apply text-[#030a3e] text-center text-[70px];
       }
     }
   
     .cabecalho {
-      @apply flex items-center text-white bg-[#00a1fc] p-[20px] text-[35px] flex-col ;
+      @apply flex items-center text-white bg-[#030a3e] p-[20px] text-[35px] flex-col ;
   
       h1 {
         @apply p-[10px];
@@ -127,10 +127,6 @@
       a {
         @apply  p-[3px_10px] m-[0_0_20px_20px] border border-[#00a1fc] border-solid rounded-[10px] w-fit text-[#00a1fc];
       }
-
-      p, a {
-        @apply flex flex-col justify-center
-      }
     }
 
   
@@ -147,7 +143,7 @@
     }
   
     .participantes {
-      @apply flex items-center justify-center text-[30px] p-[20px];
+      @apply flex items-center justify-center text-[30px] p-[20px] text-[#030a3e];
     }
   
     /* Responsivo para Smartphones */
