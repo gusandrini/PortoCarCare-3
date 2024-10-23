@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --fonte-principal: "Krona One", sans-serif;
+}
+
+
 
 /* ESTILIZAÇÃO DO CABELALHO */
 @layer base {
@@ -12,28 +17,34 @@
 
 @layer components {
   /* Menu */
+  .foto_menu {
+    @apply m-auto w-[300px] flex items-center flex-col ;
+  }
   .menu {
-    @apply m-auto bg-white flex flex-col;
+    @apply m-auto flex flex-col ;
+  }
+  .menu {
+    @apply py-[10px] text-black transition-transform duration-300 ease-in-out;
+  }
+  .menu:hover{
+    @apply scale-110;
   }
 
-  nav {
-    @apply flex items-center justify-evenly;
+  .menu nav{
+    @apply mt-[42px]
   }
-
-  nav .menu {
-    @apply text-[70px] font-bold italic text-[#00a1fc];
+  
+  .menu nav ul {
+    @apply flex items-center justify-center gap-[60px];
   }
-
-  nav ul {
-    @apply list-none;
+  
+  .menu nav ul li {
+    @apply bg-white w-[310px] flex flex-col items-center rounded-[10px] shadow-md;
   }
-
-  nav ul li {
-    @apply inline-block;
-  }
+  
 
   nav ul li a {
-    @apply px-5 py-2 text-[19px] text-gray-500 rounded-full transition duration-500;
+    @apply px-5 py-2 text-[19px] text-gray-500;
 
   }
 
@@ -96,7 +107,7 @@
     }
   
     .cabecalho {
-      @apply flex items-baseline justify-start text-white bg-[#00a1fc] p-[20px] text-[35px] flex-col ;
+      @apply flex items-center text-white bg-[#00a1fc] p-[20px] text-[35px] flex-col ;
   
       h1 {
         @apply p-[10px];
