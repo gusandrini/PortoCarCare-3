@@ -10,7 +10,8 @@ const Ajuda = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
+       
         const success = true;
 
         if (success) {
@@ -19,9 +20,12 @@ const Ajuda = () => {
             setMensagemFeedback('Ocorreu um erro ao enviar a mensagem.');
         }
 
+        
         setNome('');
         setEmail('');
         setMensagem('');
+
+        
         setTimeout(() => {
             setMensagemFeedback('');
         }, 1000);
@@ -52,6 +56,7 @@ const Ajuda = () => {
                                     onChange={(e) => setNome(e.target.value)} 
                                     placeholder="Digite seu nome" 
                                     required 
+                                    autoComplete="name" 
                                 />
                             </div>
 
@@ -65,6 +70,7 @@ const Ajuda = () => {
                                     onChange={(e) => setEmail(e.target.value)} 
                                     placeholder="Digite seu email" 
                                     required 
+                                    autoComplete="email" 
                                 />
                             </div>
 
@@ -79,6 +85,7 @@ const Ajuda = () => {
                                     onChange={(e) => setMensagem(e.target.value)} 
                                     placeholder="Digite sua mensagem" 
                                     required 
+                                    autoComplete="off" 
                                 ></textarea>
                             </div>
 
