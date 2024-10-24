@@ -1,40 +1,94 @@
-import Cabecalho from '@/components/Cabecalho/Cabecalho';
-import Rodape from '@/components/Rodape/Rodape';
+"use client";
+import React, { useState } from 'react';
 import Link from 'next/link';
 
-
 const Ajuda = () => {
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [mensagem, setMensagem] = useState('');
+    const [mensagemFeedback, setMensagemFeedback] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        const success = true;
+
+        if (success) {
+            setMensagemFeedback('Mensagem enviada com sucesso!');
+        } else {
+            setMensagemFeedback('Ocorreu um erro ao enviar a mensagem.');
+        }
+
+        setNome('');
+        setEmail('');
+        setMensagem('');
+        setTimeout(() => {
+            setMensagemFeedback('');
+        }, 1000);
+    };
+
     return (
         <div>
-            
             <div className="paginas">
-                <Link href="/"> Home / Ajuda</Link>
+                <Link href="/">Home / Ajuda</Link>
             </div>
 
             <div className="contato">
                 <section className="stato">
-                    <form className="ftato">
+                    <form className="ftato" onSubmit={handleSubmit}>
                         <div className="center">
-                            <label className="titulo"> ÁREA DE CONTATO:</label>
+                            <label className="titulo">ÁREA DE CONTATO:</label>
                         </div>
-                        <div>
-                            <label></label>
-                            <input type="text" name="name" placeholder="Digite seu nome" required />
-                        </div>
+                        <fieldset>
+                            <legend>Informações de Contato</legend>
 
-                        <div>
-                            <label></label>
-                            <input type="email" name="email" placeholder="Digite seu email" required />
-                        </div>
+                            <div>
+                                <label htmlFor="name">Nome:</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    value={nome} 
+                                    onChange={(e) => setNome(e.target.value)} 
+                                    placeholder="Digite seu nome" 
+                                    required 
+                                />
+                            </div>
 
-                        <div>
-                            <label></label>
-                            <textarea name="message" rows={30} placeholder="Digite sua mensagem" required></textarea>
-                        </div>
+                            <div>
+                                <label htmlFor="email">Email:</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    value={email} 
+                                    onChange={(e) => setEmail(e.target.value)} 
+                                    placeholder="Digite seu email" 
+                                    required 
+                                />
+                            </div>
 
-                        <div>
-                            <input className="center" type="submit" value="Enviar" />
-                        </div>
+                            <div>
+                                <label htmlFor="message">Mensagem:</label>
+                                <textarea
+                                    className='textarea' 
+                                    id="message" 
+                                    name="message" 
+                                    rows={5} 
+                                    value={mensagem} 
+                                    onChange={(e) => setMensagem(e.target.value)} 
+                                    placeholder="Digite sua mensagem" 
+                                    required 
+                                ></textarea>
+                            </div>
+
+                            <div className="center">
+                                <input className="submit-button" type="submit" value="Enviar" />
+                                <p id="mensagem" className={mensagemFeedback.includes('sucesso') ? 'sucesso' : 'erro'}>
+                                    {mensagemFeedback}
+                                </p>
+                            </div>
+                        </fieldset>
                     </form>
                 </section>
             </div>
@@ -42,4 +96,4 @@ const Ajuda = () => {
     );
 };
 
-export default Ajuda
+export default Ajuda;

@@ -233,7 +233,7 @@
 
   /* Estilos padrão */
   * {
-    @apply m-0 p-0 box-border ;
+    @apply m-0 p-0 box-border;
   }
 
   /* Paginas */
@@ -251,7 +251,11 @@
   }
 
   .stato {
-    @apply flex items-end justify-around;
+    @apply flex justify-center items-center;
+  }
+
+  .ftato {
+    @apply flex flex-col; /* Garantir que o formulário use flexbox para o layout vertical */
   }
 
   .ftato div {
@@ -259,63 +263,51 @@
   }
 
   .ftato input,
-  textarea {
-    @apply outline-none p-[10px] min-w-[300px] max-h-[60px] border border-[#00a1fc] rounded-[20px] opacity-80 bg-[#c3e3fd];
+  .ftato textarea {
+    @apply outline-none p-[10px] min-w-[300px] max-h-[60px] border border-[#030a3e] rounded-[20px] opacity-80 bg-[#030a3e];
   }
 
   .ftato input:focus,
   .ftato textarea:focus {
-    @apply bg-[#00a1fc];
+    @apply bg-[#030a3e];
   }
 
   .ftato input[type="submit"] {
-    @apply bg-[#00a1fc] text-gray-500 cursor-pointer;
+    @apply bg-[#030a3e] text-white cursor-pointer;
   }
+
+  .textarea, .ftato  input {
+    @apply bg-[#030a3e] text-white cursor-pointer;
+}
+
+.textarea, .ftato  input:hover {
+    @apply bg-[#030a3e79]; /* Alterando a cor de fundo e o texto ao passar o mouse */
+}
+
+
 
   .ftato .titulo {
-    @apply m-[10px] text-[#00a1fc] text-[30px] rounded-[20px];
+    @apply m-[10px] text-[#030a3e] text-[30px] rounded-[20px];
+  }
+
+  /* Estilização do título e legendas */
+  .ftato label {
+    @apply mb-1 text-gray-700;
+  }
+
+  .ftato legend {
+    @apply text-black text-lg mb-3; 
+  }
+
+  .center {
+    @apply text-center;
+  }
+
+  .submit-button {
+    @apply mt-5;
   }
 }
 
-/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE CADASTRO*/
-
-@layer base {
-  /* Estilos globais padrão */
-  * {
-    @apply p-0 m-0 box-border; 
-  }
-
-  .cadastro_h2, .login_h2 {
-    @apply text-2xl font-bold text-center text-[rgb(3,10,62)];
-  }
-
-  .f_login, .f_cadastro {
-    @apply text-blue-500 hover:underline; 
-  }
-
-  .sucesso {
-    @apply flex justify-center text-green-600; 
-  }
-
-  .erro {
-    @apply flex justify-center text-red-600;
-  }
-}
-
-@layer components {
-
-  .input-area {
-    @apply flex flex-col items-center m-20 gap-4; 
-  }
-
-  input {
-    @apply border-b border-gray-500 outline-none py-2;
-  }
-
-  .b_cadastro, .b_login {
-    @apply flex justify-center items-center w-32 p-2 bg-[rgb(3,10,62)] border-none rounded-lg text-white; 
-  }
-}
 
 /* Responsivo */
 
