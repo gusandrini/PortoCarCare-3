@@ -1,29 +1,74 @@
-import Link from "next/link";
+"use client";
 
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 const Login = () => {
-    return (
-        <div>
+  const [mensagem, setMensagem] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-            <div className="paginas">
-                <Link href="/"> Home / Área do cliente</Link>
-            </div>
+  useEffect(() => {
+    const user = JSON.parse(sessionStorage.getItem("usuario"));
+    if (user) {
+      window.location.href = "";
+    }
+  }, []);
 
-            <div className="principal">
-                <div className="container-l">
-                    <strong><span className="title-l">LOGIN</span></strong>
-                    <form>
-                        <input type="email" placeholder='Digite o email' />
-                        <input type="password" placeholder='Digite a senha' />
-                        <Link href="/"><button>Acessar</button></Link>
-                    </form>
-                    <Link href="/cadastro"><p>Você não tem conta? Cadastro</p></Link>
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-                </div>
-            </div>
+    const usersKey = "users";
+    const users = JSON.parse(localStorage.getItem(usersKey)) || [{ email: "portocarcare@front.com", password: "1234" }];
 
-        </div>
-    );
+    const user = users.find((user) => user.email === email && user.password === password);
+    if (user) {
+      sessionStorage.setItem("usuario", JSON.stringify(user));
+      setMensagem("Login bem-sucedido!");
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 2000);
+    } else {
+      setMensagem("Email ou senha inválidos.");
+      setTimeout(() => {
+        setMensagem('');
+      }, 5000);
+    }
+  };
+
+  return (
+    <div className="wrapper">
+      <h2 className='login_h2'>Bem-vindo!</h2>
+      <form onSubmit={handleSubmit} id="login" className="input-area">
+        <label htmlFor="email"></label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+
+        <label htmlFor="password"></label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Senha"
+          required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <Link href="/"><button type="submit" className="b_login">Entrar</button></Link>
+        <p>
+          Não tem uma conta?
+          <Link href="/cadastro" className="f_cadastro">Cadastre-se</Link>
+        </p>
+      </form>
+      <p id="mensagem" className={mensagem.includes('sucesso') ? 'sucesso' : 'erro'}>{mensagem}</p>
+    </div>
+  );
 };
 
-export default Login
+export default Login;
