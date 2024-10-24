@@ -26,13 +26,13 @@ export default function Home() {
 
             <div className="cards">
                 <div className="assistente-virtual">
-                    <Image src={Calculadora} width={500} height={300} alt="Calculadora representando serviços de seguros" />
+                    <Image src={Calculadora} width={500} height={300} alt="Calculadora representando serviços de seguros" priority/>
                     <p>Saiba mais sobre os nossos <br /> serviços</p>
                     <Link className='btn_click' href="/saiba">Clique aqui</Link>
                 </div>
 
                 <div className="medidas-preventivas">
-                    <Image src={MulherMotor} width={500} height={300} alt="Mulher mexendo no motor de um carro" />
+                    <Image src={MulherMotor} width={500} height={300} alt="Mulher mexendo no motor de um carro" priority />
                     <p>Medidas preventivas</p>
                     <Link className='btn_click' href="/medidas">Clique aqui</Link>
                 </div>

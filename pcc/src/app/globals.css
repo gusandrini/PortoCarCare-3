@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 
+@layer base{
+  img{
+    width: auto; /* or height: auto; */
+    max-width: 100%; /* Ensure responsive */
+  
+  }
+}
+
 /* ESTILIZAÇÃO DO CABELALHO */
 @layer base {
   * {
