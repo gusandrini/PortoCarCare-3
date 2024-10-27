@@ -11,11 +11,11 @@ const Sobre = () => {
                 <Link href="/"> Home / Sobre nós</Link>
             </div>
 
-            <div className="conteudo">
-                <h1>
+            <div>
+                <h1 className="titulo_sobre">
                     Sobre nós
                 </h1>
-                <p><br />O aplicativo PortoCarCare oferece uma solução inovadora para motoristas,
+                <p className="text_sobre" ><br />O aplicativo PortoCarCare oferece uma solução inovadora para motoristas,
                     com ou sem conhecimento prévio sobre a mecânica de um carro,
                     preocupados com o diagnóstico do problema e a manutenção de seus veículos.
                     O objetivo do aplicativo é usar da tecnologia para proporcionar aos motoristas

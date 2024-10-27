@@ -11,9 +11,9 @@ const Saiba = () => {
                 <Link href="/"> Home / Saiba mais</Link>
             </div>
 
-            <div className="lista-s">
-                <h1>Conheça um pouco mais dos nossos serviços!</h1>
-                <ul>
+            <div>
+                <h1 className="titulo_saiba">Conheça um pouco mais dos nossos serviços!</h1>
+                <ul className="text_saiba">
                     <p>Para utilizar nosso serviço de chatbot, não é necessário ter uma conta na IBM Cloud. Basta clicar na aba "Assistente Virtual",
                         onde a Beta, a assistente desenvolvida pela PortoCarCare, estará pronta para te ajudar. <br />
                         Ela foi projetada para guiá-lo(a) na identificação do diagnóstico mais preciso e fornecer orientações claras para que você tome a
