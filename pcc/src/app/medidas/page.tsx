@@ -13,7 +13,7 @@ const Medidas = () => {
             <div>
                 <h1 className="titulo_medidas">Medidas peventivas</h1>
                 <ul className="lista_medidas">
-                    <p>
+                    <p><br />
                         1° Evite deixar o carro parado por muito tempo.<br/>
                         2° Lembre-se da troca de fluidos e filtros nos períodos<br/>recomendados.<br/>
                         3° Verifique a calibragem e a vida útil dos pneus.<br/>
@@ -23,7 +23,7 @@ const Medidas = () => {
                         7° Verificação das luzes.<br/>
                         8° Manutenção do sistema de freios.<br/>
                         9° Limpeza do sistema de arrefecimento.<br/>
-                        10° Condução defensiva.
+                        10° Condução defensiva.<br /><br />
                     </p>
                 </ul>
             </div>
