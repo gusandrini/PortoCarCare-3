@@ -12,9 +12,6 @@ const Sobre = () => {
             </div>
 
             <div>
-                <h1 className="titulo_sobre">
-                    Sobre nós
-                </h1>
                 <p className="text_sobre" ><br />O aplicativo PortoCarCare oferece uma solução inovadora para motoristas,
                     com ou sem conhecimento prévio sobre a mecânica de um carro,
                     preocupados com o diagnóstico do problema e a manutenção de seus veículos.
@@ -30,6 +27,12 @@ const Sobre = () => {
                     buscando fornecer a eles dicas e lembretes úteis sobre a manutenção preventiva,
                     e com isso, ajudar a prolongar a vida útil dos veículos e evitar acidentes ou problemas futuros.<br /><br />
                 </p>
+            </div>
+
+            <div className="participantes">
+                <Link href="/participantes">
+                    <button><b>Participantes</b></button>
+                </Link>
             </div>
         </div>
     );

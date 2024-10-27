@@ -38,11 +38,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="participantes">
-                <Link href="/participantes">
-                    <button><b>Participantes</b></button>
-                </Link>
-            </div>
+            
         </div>
     );
 }

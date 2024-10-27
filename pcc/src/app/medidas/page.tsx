@@ -11,7 +11,6 @@ const Medidas = () => {
             </div>
 
             <div>
-                <h1 className="titulo_medidas">Medidas peventivas</h1>
                 <ul className="lista_medidas">
                     <p><br />
                         1° Evite deixar o carro parado por muito tempo.<br/>
