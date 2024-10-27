@@ -390,6 +390,13 @@
   .paginas a {
     @apply text-gray-500;
   }
+  .titulo_medidas, .titulo_medidas_2, .titulo_medidas_3{
+    @apply flex justify-start items-start ml-[60px] p-[10px] text-[40px] text-black;
+  }
+
+  .text_medidas, .text_medidas_2{
+    @apply flex text-center text-left text-right text-justify mx-20 p-[10px] text-[25px] text-black;
+  }
 
   .lista_medidas{
     @apply flex justify-center items-center p-[10px] text-[25px] text-black;
