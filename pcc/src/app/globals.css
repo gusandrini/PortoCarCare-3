@@ -120,8 +120,14 @@
       }
 
     }
-  
-    .cards {
+
+    .cards{
+      @apply flex flex-row justify-center items-center
+    }
+    .cards_1 {
+      @apply flex flex-row justify-evenly p-[100px];
+    }
+    .cards_2 {
       @apply flex flex-row justify-evenly p-[100px];
     }
   
@@ -499,7 +505,7 @@
     @apply flex flex-row justify-evenly p-[20px];
 
     img {
-      @apply w-[400px] h-[480px] rounded-[40px];
+      @apply w-[400px] h-[480px] rounded-t-[40px] rounded-b-none;
     }
   }
 
