@@ -14,19 +14,24 @@ const Participantes = () => {
             </div>
 
             <div className="cards-i">
-                <div className="duda">
-                    <Image src={Duda} alt="Integrante Eduarda" />
-                    <p>Eduarda Tiemi Akamini Machado<br />RM: 554756</p>
+                <div className="cards_1">
+                    <div className="duda">
+                        <Image src={Duda} alt="Integrante Eduarda" />
+                        <p>Eduarda Tiemi Akamini Machado<br />RM: 554756</p>
+                    </div>
                 </div>
 
-                <div className="gu">
-                    <Image src={Gu} alt="Integrante Gustavo" />
-                    <p>Gustavo de Oliveira Turci Sandrini<br />RM: 557505</p>
+                <div className="cards_2">
+                    <div className="gu">
+                        <Image src={Gu} alt="Integrante Gustavo" />
+                        <p>Gustavo de Oliveira Turci Sandrini<br />RM: 557505</p>
+                    </div>
                 </div>
-
-                <div className="vi">
-                    <Image src={Vi} alt="Integrante Vitor" />
-                    <p>Victor Agrela<br />RM: 557345</p>
+                <div className="cards_3">
+                    <div className="vi">
+                        <Image src={Vi} alt="Integrante Vitor" />
+                        <p>Victor Agrela<br />RM: 557345</p>
+                    </div>
                 </div>
             </div>
         </div>

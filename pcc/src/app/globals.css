@@ -2,322 +2,131 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@layer base{
-  img{
-    width: auto; /* or height: auto; */
-    max-width: 100%; /* Ensure responsive */
-  
-  }
-}
-
-/* ESTILIZAÇÃO DO CABELALHO */
 @layer base {
-  * {
-    @apply m-0 p-0 box-border no-underline ;}
-      
+  *{
+    @apply m-0 p-0 box-border no-underline
+  }
+  img {
+    width: auto;
+    max-width: 100%;
+  }
 }
 
-@layer components {
-  /* Menu */
+/* ESTILIZAÇÃO DO CABECALHO */
+@layer components{
   .foto_menu {
-    @apply m-auto w-[300px] flex items-center flex-col ;
+    @apply m-auto flex items-center flex-col;
   }
+
   .menu {
-    @apply m-auto flex flex-col ;
-  }
-  .menu {
-    @apply py-[10px] text-black transition-transform duration-300 ease-in-out;
-  }
-  .menu:hover{
-    @apply scale-110;
-  }
+    @apply m-auto flex flex-col py-[10px] text-black transition-transform duration-300 ease-in-out;
+    
+    &:hover {
+      @apply scale-110;
+    }
 
-  .menu nav{
-    @apply mt-[42px]
-  }
-  
-  .menu nav ul {
-    @apply flex items-center justify-center gap-[60px];
-  }
-  
-  .menu nav ul li {
-    @apply bg-white w-[310px] flex flex-col items-center rounded-[10px] shadow-md;
-  }
-  
-  .link_menu{
-    @apply text-[#030a3es] 
-  }
+    ul {
+        @apply flex items-center justify-center gap-[60px];
 
-  nav ul li a {
-    @apply px-5 py-2 text-[19px] text-gray-500;
+        li {
+          @apply bg-white w-[310px] flex flex-col items-center rounded-[10px] shadow-md;
 
+          a {
+            @apply px-5 py-2 text-[19px] text-gray-500;
+          }
+        }
+      }
+  }
+}
+
+/* ESTILIZAÇÃO DO CONTEÚDO DO HOME */
+@layer components{
+  .cabecalho {
+    @apply flex items-center text-white bg-[#030a3e] p-[20px] text-[35px] flex-col;
+
+    h1 {
+      @apply p-[10px];
+    }
   }
 
   .saiba-mais {
-    @apply px-5 py-2 min-w-[200px] min-h-[50px] text-[30px] bg-white border border-[#030a3e] rounded-[20px] text-[#030a3e];
+    @apply px-5 py-2 text-[30px] bg-white border rounded-[20px] text-[#030a3e];
+  }
+
+  .inicio {
+    @apply m-[20px]  text-[#030a3e] text-center text-[70px];
+  }
+
+  .cards {
+    @apply flex flex-row justify-center items-center;
+  }
+
+  .cards_1,
+  .cards_2,
+  .cards_3 {
+    @apply flex flex-row justify-evenly p-[100px] w-[40%];
+
+    img {
+      @apply block rounded-t-[40px];
+    }
+
+    p {
+      @apply flex justify-center items-center text-center p-5 font-semibold text-[22px];
+    }
+
+    a {
+      @apply flex justify-center items-center border border-[#00a1fc] border-solid rounded-[10px] mx-32 m-2 text-[#00a1fc];
+    }
+  }
+
+  .cadastro-carro,
+  .medidas-preventivas,
+  .assistente-virtual {
+    @apply shadow-[0_2px_9px_2px_#7f7f7e] rounded-[60px] flex flex-col;
   }
 }
 
-@layer utilities {
-  /* Responsivo */
-
-  /* Smartphones */
-  @media (max-width: 900px) {
-    .menu img {
-      @apply w-[33px];
-    }
-
-    nav ul li a {
-      @apply text-[6px];
-    }
-  }
-
-  /* Tablets */
-  @media (min-width: 650px) and (max-width: 1024px) {
-    .menu img {
-      @apply w-[90px];
-    }
-
-    nav ul li a {
-      @apply text-[15px];
-    }
-  }
-
-  /* Desktops e outros */
-  @media (min-width: 1025px) {
-    .menu img {
-      @apply w-[100px];
-    }
-
-    nav ul li a {
-      @apply text-[15px];
-    }
-  }
-}
-
-/* ESTILIZAÇÃO DO CONTEUDO DO HOME */
-
-@layer components {
-
-    .inicio {
-      @apply m-[20px];
-      
-      img {
-        @apply w-[300px];
-      }
-  
-      h1 {
-        @apply text-[#030a3e] text-center text-[70px];
-      }
-    }
-  
-    .cabecalho {
-      @apply flex items-center text-white bg-[#030a3e] p-[20px] text-[35px] flex-col ;
-  
-      h1 {
-        @apply p-[10px];
-      }
-
-    }
-
-    .cards{
-      @apply flex flex-row justify-center items-center;
-    }
-    .cards_1, .cards_2, .cards_3   {
-      @apply flex flex-row justify-evenly p-[100px] w-[40%];
-
-      & img{
-        @apply  block rounded-t-[40px];
-      }
-    }
-
-    .cadastro-carro {
-      @apply shadow-[0_2px_9px_2px_#7f7f7e] rounded-[60px] flex flex-col;
-
-  
-      p {
-        @apply p-[35px_0_40px_10px] font-semibold text-[22px];
-      }
-  
-      a {
-        @apply  p-[3px_10px] m-[0_0_20px_20px] border border-[#00a1fc] border-solid rounded-[10px] w-fit text-[#00a1fc];
-      }
-    }
-  
-    .medidas-preventivas {
-      @apply shadow-[0_2px_9px_2px_#7f7f7e] rounded-[60px] flex flex-col;
-  
-      p {
-        @apply p-[35px_0_40px_10px] font-semibold text-[22px];
-      }
-  
-      a {
-        @apply  p-[3px_10px] m-[0_0_20px_20px] border border-[#00a1fc] border-solid rounded-[10px] w-fit text-[#00a1fc];
-      }
-    }
-
-  
-    .assistente-virtual {
-      @apply shadow-[0_2px_9px_2px_#7f7f7e] rounded-[60px] flex flex-col;
-  
-      p {
-        @apply p-[5px_0_40px_10px] font-semibold text-[22px];
-      }
-  
-      a {
-        @apply p-[3px_10px] m-[0_0_20px_20px] border border-[#00a1fc] border-solid rounded-[10px] w-fit text-[#00a1fc];
-      }
-    }
-  
-    .participantes {
-      @apply flex items-center justify-center text-[30px] p-[20px] text-[#030a3e];
-    }
-  
-    /* Responsivo para Smartphones */
-    @media (max-width: 900px) {
-      .inicio h1 {
-        @apply text-[50px];
-      }
-  
-      .inicio img {
-        @apply w-[250px];
-      }
-  
-      .cards {
-        @apply flex flex-col p-[30px];
-      }
-  
-      .assistente-virtual, .medidas-preventivas {
-        @apply rounded-[80px];
-  
-        p {
-          @apply m-[10px] text-[30px];
-        }
-  
-        a {
-          @apply rounded-[30px] text-[40px];
-        }
-      }
-    }
-  
-    /* Responsivo para Tablets */
-    @media (min-width: 650px) and (max-width: 1024px) {
-      .inicio h1 {
-        @apply text-[75px];
-      }
-  
-      .inicio img {
-        @apply w-[350px];
-      }
-  
-      .cards {
-        @apply flex flex-col p-[30px];
-      }
-    }
-  
-    /* Responsivo para Desktops */
-    @media (min-width: 1025px) {
-      .cards {
-        @apply p-[50px];
-      }
-    }
-  }
-
-/* ESTILIZAÇÃO DO CONTEUDO DO RODAPÉ*/
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* ESTILIZAÇÃO DO RODAPÉ */
 @layer components{
   footer {
     @apply bg-black p-[0];
   }
-  .redes, .baixe-app,.logo-porto-preta{
+
+  .titulo-parceiro {
+    @apply p-[30px];
+  }
+
+  .titulo-redes,
+  .titulo-parceiro,
+  .titulo-app h2 {
+    @apply text-center text-[30px] text-white;
+  }
+
+  .redes,
+  .baixe-app,
+  .logo-porto-preta {
     @apply flex justify-center m-[10px] p-[10px];
   }
+
+  .appporto img,
+  .logo-porto-preta img {
+    @apply w-[200px];
+  }
+
   .redes img {
     @apply w-[80px] p-[15px];
   }
-  .titulo-parceiro{
-    @apply p-[30px]
-  }
-  .titulo-redes, .titulo-parceiro, .titulo-app h2 {
-    @apply text-center text-[30px] text-white;
-  }
-  .appporto img {
-    @apply w-[50];
-  }
-  .logo-porto-preta img{
-    @apply w-[50];
-  }
 }
 
-/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE CADASTRO E LOGIN*/
-@layer base {
-  /* Estilos globais padrão */
-  * {
-    @apply p-0 m-0 box-border; 
-  }
-  .cadastro_h2, .login_h2 {
-    @apply text-2xl font-bold text-center text-[rgb(3,10,62)];
-  }
-  .f_login, .f_cadastro {
-    @apply text-blue-500 hover:underline; 
-  }
-  .sucesso {
-    @apply flex justify-center text-green-600; 
-  }
-  .erro {
-    @apply flex justify-center text-red-600;
-  }
-}
+/* ESTILIZAÇÃO PADRÃO*/
 @layer components {
-  .input-area {
-    @apply flex flex-col items-center m-20 gap-4; 
-  }
-  input {
-    @apply outline-none p-[10px] min-w-[300px] max-h-[60px] border border-[#030a3e] rounded-[20px] opacity-80 bg-[#030a3e];;
-  }
-  .b_cadastro, .b_login {
-    @apply flex justify-center items-center w-32 p-2 bg-[rgb(3,10,62)] border-none rounded-lg text-white; 
+  .paginas {
+    @apply flex justify-start ml-[60px] text-[30px] text-gray-500;
   }
 }
-/* Responsivo */
-/* Smartphones */
-@media (max-width: 900px) {
-  /* Adicione estilos responsivos aqui, se necessário */
-}
-/* Tablets */
-@media (min-width: 650px) and (max-width: 1024px) {
-  /* Adicione estilos responsivos aqui, se necessário */
-}
-/* Desktops e outros */
-@media (min-width: 1025px) {
-  /* Adicione estilos responsivos aqui, se necessário */
-}
-
-
 
 /* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE AJUDA*/
-
-@layer components {
-
-  /* Estilos padrão */
-  * {
-    @apply m-0 p-0 box-border;
-  }
-
-  /* Paginas */
-  .paginas {
-    @apply flex justify-start ml-[60px] text-[30px];
-  }
-
-  .paginas a {
-    @apply text-gray-500;
-  }
-
-  /* Contato */
+@layer components{
   .contato {
     @apply p-0 m-0;
   }
@@ -327,190 +136,137 @@
   }
 
   .ftato {
-    @apply flex flex-col; 
+    @apply flex flex-col ;
+
+    div {
+      @apply flex flex-col mb-[30px];
+    }
+
+    input,
+    textarea {
+      @apply p-[10px] min-w-[300px] max-h-[60px] rounded-[20px] opacity-80 bg-[#030a3e];
+    }
+
+    .textarea,
+    input {
+      @apply text-white cursor-pointer;
+
+      &:hover {
+        @apply bg-[#030a3e79];
+      }
+    }
+
+    .titulo {
+      @apply text-[#030a3e] font-bold text-[30px];
+    }
+
+    label {
+      @apply mb-1 text-gray-700;
+    }
+
+    .center {
+      @apply text-center;
+    }
+
+    .submit-button {
+      @apply mt-5;
+    }
+  }
+}
+
+/* ESTILIZAÇÃO DO CONTEÚDO DA PÁGINA DE CADASTRO E LOGIN */
+@layer base {
+  .cadastro_h2,
+  .login_h2 {
+    @apply text-2xl font-bold text-center text-[rgb(3,10,62)];
   }
 
-  .ftato div {
-    @apply flex flex-col mb-[30px];
+  .f_login,
+  .f_cadastro {
+    @apply text-blue-500 hover:underline;
   }
 
-  .ftato input,
-  .ftato textarea {
+  .sucesso {
+    @apply flex justify-center text-green-600;
+  }
+
+  .erro {
+    @apply flex justify-center text-red-600;
+  }
+}
+
+@layer components {
+  .input-area {
+    @apply flex flex-col items-center m-20 gap-4;
+  }
+
+  input {
     @apply outline-none p-[10px] min-w-[300px] max-h-[60px] border border-[#030a3e] rounded-[20px] opacity-80 bg-[#030a3e];
   }
 
-  .ftato input:focus,
-  .ftato textarea:focus {
-    @apply bg-[#030a3e];
+  .b_cadastro,
+  .b_login {
+    @apply flex justify-center items-center w-32 p-2 bg-[rgb(3,10,62)] border-none rounded-lg text-white;
   }
-
-  .ftato input[type="submit"] {
-    @apply bg-[#030a3e] text-white cursor-pointer;
-  }
-
-  .textarea, .ftato  input {
-    @apply bg-[#030a3e] text-white cursor-pointer;
 }
 
-.textarea, .ftato  input:hover {
-    @apply bg-[#030a3e79]; 
-}
-
-
-
-  .ftato .titulo {
-    @apply m-[10px] text-[#030a3e] text-[30px] rounded-[20px];
+/* CARRO CADASTRO */
+@layer components{
+  .carro {
+    @apply p-0 m-0;
   }
 
-  /* Estilização do título e legendas */
-  .ftato label {
+  .scarro {
+    @apply flex justify-center items-center;
+  }
+
+  .fcarro div {
+    @apply flex flex-col mb-[30px];
+  }
+
+  .fcarro .titulo {
+    @apply m-[10px] text-[#030a3e] text-[30px] font-bold;
+  }
+
+  .fcarro label {
     @apply mb-1 text-gray-700;
   }
 
-  .center {
-    @apply text-center;
+  .fcarro input,
+  .fcarro textarea {
+    @apply p-[10px] min-w-[300px] max-h-[60px] rounded-[20px] opacity-80 bg-[#030a3e];
   }
 
-  .submit-button {
-    @apply mt-5;
-  }
-}
-
-
-/* Responsivo */
-
-/* Smartphones */
-@media (max-width: 900px) {
-  /* Adicione estilos responsivos aqui, se necessário */
-}
-
-/* Tablets */
-@media (min-width: 650px) and (max-width: 1024px) {
-  /* Adicione estilos responsivos aqui, se necessário */
-}
-
-/* Desktops e outros */
-@media (min-width: 1025px) {
-  /* Adicione estilos responsivos aqui, se necessário */
-}
-
-
-/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE MEDIDAS*/
-@layer components {
-
-  /* Estilos para páginas */
-  .paginas {
-    @apply flex justify-start ml-[60px] text-[30px];
+  .fcarro input[type="submit"] {
+    @apply bg-[#030a3e] text-white cursor-pointer;
   }
 
-  .paginas a {
-    @apply text-gray-500;
-  }
+  .textarea, .fcarro  input {
+    @apply text-white cursor-pointer;
+}
 
-  .titulo_medidas, .titulo_medidas_2, .titulo_medidas_3{
+.textarea, .fcarro  input:hover {
+    @apply bg-[#030a3e79]; 
+}
+}
+
+/* ESTILIZAÇÃO DO CONTEÚDO DA PÁGINA DE MEDIDAS */
+@layer components{
+  .titulo_medidas,
+  .titulo_medidas_2,
+  .titulo_medidas_3 {
     @apply flex justify-start items-start ml-[60px] p-[10px] text-[40px] text-black;
   }
 
-  .text_medidas, .text_medidas_2{
+  .text_medidas,
+  .text_medidas_2,
+  .lista_medidas {
     @apply flex text-center text-left text-right text-justify mx-20 p-[10px] text-[25px] text-black;
   }
-
-  .lista_medidas{
-    @apply flex justify-center items-center p-[10px] text-[25px] text-black;
-
-    @apply m-[80px] mx-[500px] border-8 border-blue-800 shadow-[0_2px_9px_2px_rgb(127,127,126)] rounded-[20px];
-
-  }
 }
 
-/* Responsivo */
-
-/* Smartphones */
-@media (max-width: 900px) {
-  .paginas {
-    @apply m-[20px];
-
-    a {
-      @apply text-[20px];
-    }
-  }
-
-  .lista {
-    @apply m-[10px];
-
-    h1 {
-      @apply text-[30px];
-    }
-
-    p {
-      @apply m-[20px];
-      @apply text-[15px];
-    }
-  }
-}
-
-/* Tablets */
-@media (min-width: 650px) and (max-width: 1024px) {
-  .paginas {
-    @apply m-[20px];
-
-    a {
-      @apply text-[30px];
-    }
-  }
-
-  .lista {
-    @apply m-[30px];
-
-    h1 {
-      @apply text-[50px];
-    }
-
-    p {
-      @apply m-[20px];
-      @apply text-[30px];
-    }
-  }
-}
-
-/* Desktops e outros */
-@media (min-width: 1025px) {
-  .paginas {
-    @apply m-[20px];
-
-    a {
-      @apply text-[30px];
-    }
-  }
-
-  .lista {
-    @apply m-[30px];
-
-    h1 {
-      @apply text-[50px];
-    }
-
-    p {
-      @apply m-[20px]; /* Adicionando 20px de margin para parágrafos em desktops */
-      @apply text-[30px];
-    }
-  }
-}
-
-/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE PARTICIPANTES*/
-
-
+/* ESTILIZAÇÃO DO CONTEÚDO DA PÁGINA DE PARTICIPANTES */
 @layer components {
-  /* Estilos para páginas */
-  .paginas {
-    @apply flex justify-start ml-[60px] text-[30px];
-  }
-
-  .paginas a {
-    @apply text-gray-500;
-  }
-
-  /* Estilos para os cards */
   .cards-i {
     @apply flex flex-row justify-evenly p-[20px];
 
@@ -521,87 +277,19 @@
 
   .duda {
     @apply shadow-[0_2px_9px_2px_rgba(127,127,126,1)] rounded-[40px] flex flex-col;
-
-    p {
-      @apply py-[12px] pl-[10px] font-semibold text-[22px];
-    }
   }
 
   .gu {
     @apply shadow-[0_2px_9px_2px_rgba(127,127,126,1)] rounded-[40px] flex flex-col;
-
-    p {
-      @apply py-[12px] pl-[10px] font-semibold text-[22px];
-    }
-
-    a {
-      @apply p-[3px] px-[10px] mb-[20px] ml-[20px] border-2 border-[#00a1fc] rounded-[10px] w-fit text-[#00a1fc];
-    }
   }
 
   .vi {
     @apply shadow-[0_2px_9px_2px_rgba(127,127,126,1)] rounded-[40px] flex flex-col;
-
-    p {
-      @apply py-[12px] pl-[10px] font-semibold text-[22px];
     }
-
-    a {
-      @apply p-[3px] px-[10px] mb-[20px] ml-[20px] border-2 border-[#00a1fc] rounded-[10px] w-fit text-[#00a1fc];
-    }
-  }
-}
-
-/* Responsivo */
-
-/* Smartphones */
-@media (max-width: 900px) {
-  .cards-i {
-    @apply flex flex-col p-[10px];
-
-    img {
-      @apply w-[370px];
-    }
-  }
-}
-
-/* Tablets */
-@media (min-width: 650px) and (max-width: 1024px) {
-  .cards-i {
-    @apply flex flex-col p-[150px];
-
-    img {
-      @apply w-[470px];
-    }
-  }
-}
-
-/* Desktops e outros */
-@media (min-width: 1025px) {
-  .cards-i {
-    @apply flex flex-row justify-between p-[50px];
-
-    img {
-      @apply w-[380px];
-    }
-  }
 }
 
 /* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE SAIBA MAIS*/
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer components {
-  /* Estilos para páginas */
-  .paginas {
-    @apply flex justify-start ml-[60px] text-[30px];
-  }
-
-  .paginas a {
-    @apply text-gray-500;
-  }
-
+@layer components{
   .text_saiba_1, .text_saiba_2, .text_saiba_3, .text_saiba_4, .text_saiba_5 {
     @apply flex text-center text-left text-right text-justify mx-20 p-[10px] text-[25px] text-black;
   }
@@ -611,164 +299,13 @@
   }
 }
 
-/* Responsivo */
-
-/* Smartphones */
-@media (max-width: 900px) {
-  .lista-s {
-    @apply m-[10px];
-
-    h1 {
-      @apply text-[25px];
-    }
-
-    p {
-      @apply m-[5px] text-[15px];
-    }
-  }
-}
-
-/* Tablets */
-@media (min-width: 650px) and (max-width: 1024px) {
-  .lista-s {
-    @apply m-[10px];
-
-    h1 {
-      @apply m-[15px] text-[40px];
-    }
-
-    p {
-      @apply m-[15px] text-[30px];
-    }
-  }
-}
-
-/* Desktops e outros */
-@media (min-width: 1025px) {
-  .lista-s {
-    @apply m-[20px];
-
-    h1 {
-      @apply m-[15px] text-[40px];
-    }
-
-    p {
-      @apply m-[15px] text-[30px];
-    }
-  }
-}
-
 /* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE SOBRE NÓS*/
-
-@layer components {
-  /* Estilos para páginas */
-  * {
-    @apply m-0 p-0 box-border ;
-  }
-
-  .paginas {
-    @apply flex justify-start m-[30px] ml-[60px] text-[30px];
-  }
-
-  .paginas a {
-    @apply text-gray-500;
-  }
-
+@layer components{
   .text_sobre{
-    @apply flex text-center text-left text-right text-justify p-[10px] text-[25px] text-black;
-    @apply mt-[80px] mx-[200px] border-8 border-blue-800 shadow-[0_2px_9px_2px_rgb(127,127,126)] rounded-[20px];
+    @apply flex text-center text-left text-right text-justify mx-[100px] p-[10px] text-[25px] text-black;
   }
 
-}
-
-/* Responsivo */
-
-/* Smartphones */
-@media (max-width: 900px) {
-  .conteudo {
-    @apply m-[10px];
-
-    h1 {
-      @apply text-[30px];
-    }
-
-    p {
-      @apply m-[5px] text-[15px];
-    }
+.participantes {
+    @apply flex items-center justify-center text-[30px] p-[20px] text-[#030a3e];
   }
 }
-
-/* Tablets */
-@media (min-width: 650px) and (max-width: 1024px) {
-  .conteudo {
-    @apply m-[10px];
-
-    h1 {
-      @apply text-[50px];
-    }
-
-    p {
-      @apply m-[5px] text-[25px];
-    }
-  }
-}
-
-/* Desktops e outros */
-@media (min-width: 1025px) {
-  /* Estilos específicos para desktops podem ser adicionados aqui, se necessário */
-}
-
-/* CARRO CADASTRO */
-  /* Contato */
-  .carro {
-    @apply p-0 m-0;
-  }
-
-  .scarro {
-    @apply flex justify-center items-center;
-  }
-
-  .fcarro {
-    @apply flex flex-col justify-center items-center; 
-  }
-
-  .fcarro div {
-    @apply flex flex-col mb-[30px];
-  }
-
-  .fcarro input,
-  .fcarro textarea {
-    @apply outline-none p-[10px] min-w-[300px] max-h-[60px] border border-[#030a3e] rounded-[20px] opacity-80 bg-[#030a3e];
-  }
-
-  .fcarro input:focus,
-  .fcarro textarea:focus {
-    @apply bg-[#030a3e];
-  }
-
-  .fcarro input[type="submit"] {
-    @apply bg-[#030a3e] text-white cursor-pointer;
-  }
-
-  .textarea, .fcarro  input {
-    @apply bg-[#030a3e] text-white cursor-pointer;
-}
-
-.textarea, .fcarro  input:hover {
-    @apply bg-[#030a3e79]; 
-}
-
-
-
-  .fcarro .titulo {
-    @apply m-[10px] text-[#030a3e] text-[30px] rounded-[20px];
-  }
-
-  /* Estilização do título e legendas */
-  .fcarro label {
-    @apply mb-1 text-gray-700;
-  }
-
-  .fcarro legend {
-    @apply text-black text-lg mb-3; 
-  }

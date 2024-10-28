@@ -82,7 +82,7 @@ const Carro = () => {
                             </div>
 
                             <div className="center">
-                                <input className="b_cadastro" type="submit" value="Enviar" />
+                                <input className="b_enviar" type="submit" value="Enviar" />
                                 <p id="mensagem" className={mensagemFeedback.includes('sucesso') ? 'sucesso' : 'erro'}>
                                     {mensagemFeedback}
                                 </p>
