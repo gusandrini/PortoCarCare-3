@@ -8,10 +8,10 @@ const Ajuda = () => {
     const [mensagem, setMensagem] = useState('');
     const [mensagemFeedback, setMensagemFeedback] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-       
+        
         const success = true;
 
         if (success) {
@@ -20,15 +20,14 @@ const Ajuda = () => {
             setMensagemFeedback('Ocorreu um erro ao enviar a mensagem.');
         }
 
-        
+
         setNome('');
         setEmail('');
         setMensagem('');
 
-        
         setTimeout(() => {
             setMensagemFeedback('');
-        }, 1000);
+        }, 1000); 
     };
 
     return (
@@ -77,7 +76,7 @@ const Ajuda = () => {
                             <div>
                                 <label htmlFor="message">Mensagem:</label>
                                 <textarea
-                                    className='textarea' 
+                                    className="textarea" 
                                     id="message" 
                                     name="message" 
                                     rows={5} 

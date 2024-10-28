@@ -1,15 +1,12 @@
-import Image from 'next/image'
-import Face from '../../Images/facebook.png'
-import Insta from '../../Images/instagram.png'
-import Linke from '../../Images/linkedin.png'
-import Baixe from '../../Images/play-apple.png'
-import PretoBranco from '../../Images/porto-preto-branco.png'
-import X from '../../Images/x.png'
-import Youtube from '../../Images/youtube.png'
-import Link from 'next/link'
-
-
-
+import Image from 'next/image';
+import Face from '../../Images/facebook.png';
+import Insta from '../../Images/instagram.png';
+import Linke from '../../Images/linkedin.png';
+import Baixe from '../../Images/play-apple.png';
+import PretoBranco from '../../Images/porto-preto-branco.png';
+import X from '../../Images/x.png';
+import Youtube from '../../Images/youtube.png';
+import Link from 'next/link';
 
 function Rodape() {
     return (
@@ -31,36 +28,46 @@ function Rodape() {
                 <div className="redes">
                     <div className="face">
                         <ul>
-                            <li><Link className='facebook-Porto' target='_blank' rel='noopener' title='site Facebook' href="https://www.facebook.com/porto"> <Image src={Face}
-                                width={500} height={240} alt="logo facebook" /></Link>
+                            <li>
+                                <Link className='facebook-Porto' target='_blank' rel='noopener' title='site Facebook' href="https://www.facebook.com/porto">
+                                    <Image src={Face} width={500} height={240} alt="logo facebook" />
+                                </Link>
                             </li>
                         </ul>
                     </div>
                     <div className="insta">
                         <ul>
-                            <li><Link className='instagram-Porto' target='_blank' rel='noopener' title='site Instagram' href="https://www.instagram.com/porto/"> <Image src={Insta}
-                                width={500} height={240} alt="logo instagram" /></Link>
+                            <li>
+                                <Link className='instagram-Porto' target='_blank' rel='noopener' title='site Instagram' href="https://www.instagram.com/porto/">
+                                    <Image src={Insta} width={500} height={240} alt="logo instagram" />
+                                </Link>
                             </li>
                         </ul>
                     </div>
                     <div className="youtube">
                         <ul>
-                            <li><Link className='youtube' target='_blank' rel='noopener' title='site youtube' href="https://www.youtube.com/@portoseguro"> <Image src={Youtube}
-                                width={500} height={240} alt="logo youtube" /></Link>
+                            <li>
+                                <Link className='youtube' target='_blank' rel='noopener' title='site youtube' href="https://www.youtube.com/@portoseguro">
+                                    <Image src={Youtube} width={500} height={240} alt="logo youtube" />
+                                </Link>
                             </li>
                         </ul>
                     </div>
                     <div className="x">
                         <ul>
-                            <li><Link className='x' target='_blank' rel='noopener' title='site X' href="https://twitter.com/portoseguro"> <Image src={X}
-                                width={500} height={240} alt="logo X" /></Link>
+                            <li>
+                                <Link className='x' target='_blank' rel='noopener' title='site X' href="https://twitter.com/portoseguro">
+                                    <Image src={X} width={500} height={240} alt="logo X" />
+                                </Link>
                             </li>
                         </ul>
                     </div>
                     <div className="linke">
                         <ul>
-                            <li><Link className='Linkedin' target='_blank' rel='noopener' title='site Linkedin' href="https://www.linkedin.com/company/porto/?originalSubdomain=br">
-                                <Image src={Linke} width={500} height={240} alt="logo Linkedin" /></Link>
+                            <li>
+                                <Link className='Linkedin' target='_blank' rel='noopener' title='site Linkedin' href="https://www.linkedin.com/company/porto/?originalSubdomain=br">
+                                    <Image src={Linke} width={500} height={240} alt="logo Linkedin" />
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -70,7 +77,8 @@ function Rodape() {
                 </div>
                 <div className="baixe-app">
                     <Link className='apporto' target='_blank' rel='noopener' title='site apple e google store' href="https://www.portoseguro.com.br/app-porto-download">
-                        <Image src={Baixe} width={100} height={100} alt="logo apple e google store" /></Link>
+                        <Image src={Baixe} width={100} height={100} alt="logo apple e google store" />
+                    </Link>
                 </div>
             </div>
         </footer>

@@ -28,31 +28,26 @@ export default function Home() {
             <div className="cards">
                 <div className="cards_1">
                     <div className="assistente-virtual">
-                        <Image src={Agenda} alt="Calculadora representando serviços de seguros" priority />
+                        <Image src={Agenda} alt="Agenda representando serviços de seguros" priority />
                         <p>Saiba mais sobre os nossos <br /> serviços</p>
                         <Link className='btn_click' href="/saiba">Clique aqui</Link>
                     </div>
                 </div>
-                <div className="cards_3">
+                <div className="cards_2">
                     <div className="cadastro-carro">
                         <Image src={Carro} alt="Carro" priority />
                         <p>Cadastre seu carro</p>
                         <Link className='btn_click' href="/carro">Clique aqui</Link>
                     </div>
                 </div>
-                <div className='cards_2'>
+                <div className="cards_3">
                     <div className="medidas-preventivas">
-                        <Image src={Motor} alt="Mulher mexendo no motor de um carro" priority />
+                        <Image src={Motor} alt="Motor de um carro" priority />
                         <p>Medidas preventivas</p>
                         <Link className='btn_click' href="/medidas">Clique aqui</Link>
                     </div>
                 </div>
-
             </div>
-
-
-
-
         </div>
     );
 }

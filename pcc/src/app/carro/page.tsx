@@ -10,7 +10,6 @@ const Carro = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         const success = true;
 
         if (success) {
@@ -23,9 +22,7 @@ const Carro = () => {
         setPlaca('');
         setMensagem('');
 
-        setTimeout(() => {
-            setMensagemFeedback('');
-        }, 1000);
+        setTimeout(() => setMensagemFeedback(''), 1000);
     };
 
     return (
@@ -41,7 +38,6 @@ const Carro = () => {
                             <label className="titulo">CADASTRE SEU CARRO:</label>
                         </div>
                         <fieldset>
-
                             <div>
                                 <label htmlFor="name">Nome:</label>
                                 <input 

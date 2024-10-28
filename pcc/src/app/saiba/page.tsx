@@ -15,11 +15,7 @@ const Saiba = () => {
 
             <div>
                 <p className="text_saiba_1">
-                    Para utilizar nosso serviço de chatbot, não é necessário ter uma conta na IBM Cloud. Basta clicar na aba "Assistente Virtual",
-                    onde a Beta, a assistente desenvolvida pela PortoCarCare, estará pronta para te ajudar. Ela foi projetada para guiá-lo(a) na identificação do diagnóstico mais preciso e fornecer orientações claras para que você tome a
-                    melhor decisão na resolução de problemas do seu veículo. Este serviço foi especialmente criado para pessoas que não possuem
-                    conhecimento técnico sobre veículos, garantindo que você se sinta seguro(a) e bem informado(a) ao enfrentar qualquer situação
-                    relacionada ao seu veículo.
+                    Para utilizar nosso serviço de chatbot, não é necessário ter uma conta na IBM Cloud. Basta clicar na aba "Assistente Virtual", onde a Beta, a assistente desenvolvida pela PortoCarCare, estará pronta para te ajudar. Ela foi projetada para guiá-lo(a) na identificação do diagnóstico mais preciso e fornecer orientações claras para que você tome a melhor decisão na resolução de problemas do seu veículo. Este serviço foi especialmente criado para pessoas que não possuem conhecimento técnico sobre veículos, garantindo que você se sinta seguro(a) e bem informado(a) ao enfrentar qualquer situação relacionada ao seu veículo.
                 </p>
             </div>
 
@@ -28,9 +24,9 @@ const Saiba = () => {
             </div>
             <div className="text_saiba_2">
                 <ul>
-                    <li>- Acesso imediato a informações sobre problemas de veículos.</li>
-                    <li>- Disponibilidade 24/7 para assistência a qualquer hora.</li>
-                    <li>- Assistência personalizada para atender às suas necessidades.</li>
+                    <li>Acesso imediato a informações sobre problemas de veículos.</li>
+                    <li>Disponibilidade 24/7 para assistência a qualquer hora.</li>
+                    <li>Assistência personalizada para atender às suas necessidades.</li>
                 </ul>
             </div>
 
@@ -58,8 +54,8 @@ const Saiba = () => {
             </div>
             <div className="text_saiba_5">
                 <ul>
-                    <li><strong>O chatbot pode resolver todos os problemas do meu veículo?</strong> <br /> Não, mas ele pode ajudar a identificar o problema e oferecer recomendações.</li>
-                    <li><strong>É seguro compartilhar informações com o chatbot?</strong> <br /> Sim, sua privacidade é nossa prioridade. Todos os dados são protegidos.</li>
+                    <li><strong>O chatbot pode resolver todos os problemas do meu veículo?</strong><br /> Não, mas ele pode ajudar a identificar o problema e oferecer recomendações.</li>
+                    <li><strong>É seguro compartilhar informações com o chatbot?</strong><br /> Sim, sua privacidade é nossa prioridade. Todos os dados são protegidos.</li>
                 </ul>
             </div>
         </div>

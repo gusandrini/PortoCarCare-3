@@ -13,22 +13,18 @@ const Cadastro = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const usersKey = "users";
-    const users = JSON.parse(localStorage.getItem(usersKey)) || [];
+    const users = JSON.parse(localStorage.getItem(usersKey) || '[]');
 
-    const userExists = users.some((user) => user.email === email);
+    const userExists = users.some((user: { email: string }) => user.email === email);
     if (userExists) {
       setMensagemCadastro("Email já cadastrado.");
-      setTimeout(() => {
-        setMensagemCadastro('');
-      }, 5000);
+      setTimeout(() => setMensagemCadastro(''), 5000);
     } else {
       const newUser = { name, email, telefone, password };
       users.push(newUser);
       localStorage.setItem(usersKey, JSON.stringify(users));
       setMensagemCadastro("Cadastro bem-sucedido!");
-      setTimeout(() => {
-        window.location.href = "/login";
-      }, 2000);
+      setTimeout(() => (window.location.href = "/login"), 2000);
     }
   };
 

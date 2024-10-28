@@ -14,7 +14,6 @@ const Login = () => {
       window.location.href = "/";
     }
 
-    // Logout ao fechar a página
     const handleUnload = () => {
       sessionStorage.removeItem("usuario");
     };
@@ -60,7 +59,6 @@ const Login = () => {
     <div className="wrapper">
       <h2 className='login_h2'>Bem-vindo!</h2>
       <form onSubmit={handleSubmit} id="login" className="input-area">
-        <label htmlFor="email"></label>
         <input
           type="email"
           id="email"
@@ -70,7 +68,6 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <label htmlFor="password"></label>
         <input
           type="password"
           id="password"
