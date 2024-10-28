@@ -721,3 +721,58 @@
 @media (min-width: 1025px) {
   /* Estilos específicos para desktops podem ser adicionados aqui, se necessário */
 }
+
+/* CARRO CADASTRO */
+  /* Contato */
+  .carro {
+    @apply p-0 m-0;
+  }
+
+  .scarro {
+    @apply flex justify-center items-center;
+  }
+
+  .fcarro {
+    @apply flex flex-col; 
+  }
+
+  .fcarro div {
+    @apply flex flex-col mb-[30px];
+  }
+
+  .fcarro input,
+  .fcarro textarea {
+    @apply outline-none p-[10px] min-w-[300px] max-h-[60px] border border-[#030a3e] rounded-[20px] opacity-80 bg-[#030a3e];
+  }
+
+  .fcarro input:focus,
+  .fcarro textarea:focus {
+    @apply bg-[#030a3e];
+  }
+
+  .fcarro input[type="submit"] {
+    @apply bg-[#030a3e] text-white cursor-pointer;
+  }
+
+  .textarea, .fcarro  input {
+    @apply bg-[#030a3e] text-white cursor-pointer;
+}
+
+.textarea, .fcarro  input:hover {
+    @apply bg-[#030a3e79]; 
+}
+
+
+
+  .fcarro .titulo {
+    @apply m-[10px] text-[#030a3e] text-[30px] rounded-[20px];
+  }
+
+  /* Estilização do título e legendas */
+  .fcarro label {
+    @apply mb-1 text-gray-700;
+  }
+
+  .fcarro legend {
+    @apply text-black text-lg mb-3; 
+  }
