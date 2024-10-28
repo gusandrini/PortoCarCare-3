@@ -43,7 +43,6 @@ const Ajuda = () => {
                             <label className="titulo">ÁREA DE CONTATO:</label>
                         </div>
                         <fieldset>
-                            <legend>Informações de Contato</legend>
 
                             <div>
                                 <label htmlFor="name">Nome:</label>
