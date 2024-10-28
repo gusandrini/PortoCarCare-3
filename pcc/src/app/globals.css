@@ -122,13 +122,27 @@
     }
 
     .cards{
-      @apply flex flex-row justify-center items-center
+      @apply flex flex-row justify-center items-center;
     }
-    .cards_1 {
-      @apply flex flex-row justify-evenly p-[100px];
+    .cards_1, .cards_2, .cards_3   {
+      @apply flex flex-row justify-evenly p-[100px] w-[40%];
+
+      & img{
+        @apply  block rounded-t-[40px];
+      }
     }
-    .cards_2 {
-      @apply flex flex-row justify-evenly p-[100px];
+
+    .cadastro-carro {
+      @apply shadow-[0_2px_9px_2px_#7f7f7e] rounded-[60px] flex flex-col;
+
+  
+      p {
+        @apply p-[35px_0_40px_10px] font-semibold text-[22px];
+      }
+  
+      a {
+        @apply  p-[3px_10px] m-[0_0_20px_20px] border border-[#00a1fc] border-solid rounded-[10px] w-fit text-[#00a1fc];
+      }
     }
   
     .medidas-preventivas {

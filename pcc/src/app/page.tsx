@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Calculadora from '../Images/calculadora.png';
+import Carro from '../Images/carro.png';
 import MulherMotor from '../Images/mulher-motor.png';
 
 export default function Home() {
@@ -27,18 +28,26 @@ export default function Home() {
             <div className="cards">
                 <div className="cards_1">
                     <div className="assistente-virtual">
-                        <Image src={Calculadora} width={500} height={300} alt="Calculadora representando serviços de seguros" priority />
+                        <Image src={Calculadora} alt="Calculadora representando serviços de seguros" priority />
                         <p>Saiba mais sobre os nossos <br /> serviços</p>
+                        <Link className='btn_click' href="/saiba">Clique aqui</Link>
+                    </div>
+                </div>
+                <div className="cards_3">
+                    <div className="cadastro-carro">
+                        <Image src={Carro} alt="Carro" priority />
+                        <p>Cadastre seu carro</p>
                         <Link className='btn_click' href="/saiba">Clique aqui</Link>
                     </div>
                 </div>
                 <div className='cards_2'>
                     <div className="medidas-preventivas">
-                        <Image src={MulherMotor} width={500} height={300} alt="Mulher mexendo no motor de um carro" priority />
+                        <Image src={MulherMotor} alt="Mulher mexendo no motor de um carro" priority />
                         <p>Medidas preventivas</p>
                         <Link className='btn_click' href="/medidas">Clique aqui</Link>
                     </div>
                 </div>
+
             </div>
 
 
