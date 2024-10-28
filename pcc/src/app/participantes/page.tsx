@@ -1,10 +1,8 @@
-import Cabecalho from '@/components/Cabecalho/Cabecalho';
-import Rodape from '@/components/Rodape/Rodape';
 import Image from 'next/image';
 import Link from 'next/link';
-import Gu from '../../Images/foto-cv.jpg';
-import Duda from '../../Images/foto-duda.jpg';
-import Vi from '../../Images/foto-vitor.jpg';
+import Gu from '@/Images/foto-cv.jpg';
+import Duda from '@/Images/foto-duda.jpg';
+import Vi from '@/Images/foto-vitor.jpg';
 
 const Participantes = () => {
     return (

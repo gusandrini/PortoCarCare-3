@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import PortoCarCAre from "../../Images/portocare.png";
+import PortoCarCAre from "@/Images/portocare.png";
 
 function Cabecalho() {
     return (

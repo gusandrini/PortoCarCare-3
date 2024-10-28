@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import Face from '../../Images/facebook.png';
-import Insta from '../../Images/instagram.png';
-import Linke from '../../Images/linkedin.png';
-import Baixe from '../../Images/play-apple.png';
-import PretoBranco from '../../Images/porto-preto-branco.png';
-import X from '../../Images/x.png';
-import Youtube from '../../Images/youtube.png';
+import Face from '@/Images/facebook.png';
+import Insta from '@/Images/instagram.png';
+import Linke from '@/Images/linkedin.png';
+import Baixe from '@/Images/play-apple.png';
+import PretoBranco from '@/Images/porto-preto-branco.png';
+import X from '@/Images/x.png';
+import Youtube from '@/Images/youtube.png';
 import Link from 'next/link';
 
 function Rodape() {
