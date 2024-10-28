@@ -11,17 +11,37 @@ const Login = () => {
   useEffect(() => {
     const user = JSON.parse(sessionStorage.getItem("usuario"));
     if (user) {
-      window.location.href = "";
+      window.location.href = "/";
     }
+
+    // Logout ao fechar a página
+    const handleUnload = () => {
+      sessionStorage.removeItem("usuario");
+    };
+
+    window.addEventListener("beforeunload", handleUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleUnload);
+    };
   }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const usersKey = "users";
-    const users = JSON.parse(localStorage.getItem(usersKey)) || [{ email: "portocarcare@front.com", password: "1234" }];
+    const users = JSON.parse(localStorage.getItem(usersKey)) || [];
+
+    if (users.length === 0) {
+      setMensagem("Nenhum usuário registrado. Por favor, cadastre-se primeiro.");
+      setTimeout(() => {
+        setMensagem('');
+      }, 5000);
+      return;
+    }
 
     const user = users.find((user) => user.email === email && user.password === password);
+
     if (user) {
       sessionStorage.setItem("usuario", JSON.stringify(user));
       setMensagem("Login bem-sucedido!");
@@ -60,7 +80,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Link href="/"><button type="submit" className="b_login">Entrar</button></Link>
+        <button type="submit" className="b_login">Entrar</button>
         <p>
           Não tem uma conta?
           <Link href="/cadastro" className="f_cadastro">Cadastre-se</Link>

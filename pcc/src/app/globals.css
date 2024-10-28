@@ -253,7 +253,7 @@
   }
 }
 
-/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE CADASTRO*/
+/* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE CADASTRO E LOGIN*/
 @layer base {
   /* Estilos globais padrão */
   * {
@@ -277,7 +277,7 @@
     @apply flex flex-col items-center m-20 gap-4; 
   }
   input {
-    @apply border-b border-gray-500 outline-none py-2;
+    @apply outline-none p-[10px] min-w-[300px] max-h-[60px] border border-[#030a3e] rounded-[20px] opacity-80 bg-[#030a3e];;
   }
   .b_cadastro, .b_login {
     @apply flex justify-center items-center w-32 p-2 bg-[rgb(3,10,62)] border-none rounded-lg text-white; 
@@ -365,10 +365,6 @@
   /* Estilização do título e legendas */
   .ftato label {
     @apply mb-1 text-gray-700;
-  }
-
-  .ftato legend {
-    @apply text-black text-lg mb-3; 
   }
 
   .center {
@@ -733,7 +729,7 @@
   }
 
   .fcarro {
-    @apply flex flex-col; 
+    @apply flex flex-col justify-center items-center; 
   }
 
   .fcarro div {

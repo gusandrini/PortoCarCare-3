@@ -4,14 +4,13 @@ import Link from 'next/link';
 
 const Carro = () => {
     const [nome, setNome] = useState('');
-    const [placa, setplaca] = useState('');
+    const [placa, setPlaca] = useState('');
     const [mensagem, setMensagem] = useState('');
     const [mensagemFeedback, setMensagemFeedback] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-       
         const success = true;
 
         if (success) {
@@ -20,12 +19,10 @@ const Carro = () => {
             setMensagemFeedback('Ocorreu um erro ao enviar a mensagem.');
         }
 
-        
         setNome('');
-        setplaca('');
+        setPlaca('');
         setMensagem('');
 
-        
         setTimeout(() => {
             setMensagemFeedback('');
         }, 1000);
@@ -34,7 +31,7 @@ const Carro = () => {
     return (
         <div>
             <div className="paginas">
-                <Link href="/">Home / Ajuda</Link>
+                <Link href="/">Home / Cadastre seu carro</Link>
             </div>
 
             <div className="carro">
@@ -62,21 +59,21 @@ const Carro = () => {
                             <div>
                                 <label htmlFor="placa">Placa:</label>
                                 <input 
-                                    type="placa" 
+                                    type="text" 
                                     id="placa" 
                                     name="placa" 
                                     value={placa} 
-                                    onChange={(e) => setplaca(e.target.value)} 
+                                    onChange={(e) => setPlaca(e.target.value)} 
                                     placeholder="Digite sua placa" 
                                     required 
-                                    autoComplete="placa" 
+                                    autoComplete="off" 
                                 />
                             </div>
 
                             <div>
                                 <label htmlFor="message">Mais dados sobre o veículo:</label>
                                 <textarea
-                                    className='textarea' 
+                                    className="textarea" 
                                     id="message" 
                                     name="message" 
                                     rows={5} 
@@ -89,7 +86,7 @@ const Carro = () => {
                             </div>
 
                             <div className="center">
-                                <input className="submit-button" type="submit" value="Enviar" />
+                                <input className="b_cadastro" type="submit" value="Enviar" />
                                 <p id="mensagem" className={mensagemFeedback.includes('sucesso') ? 'sucesso' : 'erro'}>
                                     {mensagemFeedback}
                                 </p>

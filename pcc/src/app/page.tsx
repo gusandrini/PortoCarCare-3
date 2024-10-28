@@ -37,7 +37,7 @@ export default function Home() {
                     <div className="cadastro-carro">
                         <Image src={Carro} alt="Carro" priority />
                         <p>Cadastre seu carro</p>
-                        <Link className='btn_click' href="/saiba">Clique aqui</Link>
+                        <Link className='btn_click' href="/carro">Clique aqui</Link>
                     </div>
                 </div>
                 <div className='cards_2'>
