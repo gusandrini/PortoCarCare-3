@@ -2,7 +2,7 @@
 import { TipoCarro } from '@/types/types';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Carro = () => {
     const [nome, setNome] = useState('');
@@ -31,7 +31,24 @@ const Carro = () => {
     //CLIENT COMPONENT EMPACOTA TUDO, GERA JSCRIPT E ENVIA PARA MAQUINA DO CLIENTE QUE É RENDERIZADA PELA NAVEGADOR
     const navigate = useRouter();
 
+    const [carros, setCarros] = useState<TipoCarro[]>([])
+
+    const chamdaApi = async () => {
+        try {
+            const response = await fetch("adicionar caminho java");
+            const data = await response.json();
+            setCarros(data)
+        } catch (error) {
+            console.error("Falha na listagem");
+        }
+    }
+
+    useEffect(() => {
+        chamdaApi();
+    }, [])
+
     const [carro, setCarro] = useState<TipoCarro>({
+        id_veiculo: 0,
         nome: "",
         placa: "",
         modelo: "",
@@ -60,6 +77,7 @@ const Carro = () => {
             if (response.ok) {
                 alert("Carro cadastrado com sucesso!")
                 setCarro({
+                    id_veiculo: 0,
                     nome: "",
                     placa: "",
                     modelo: "",
@@ -162,6 +180,34 @@ const Carro = () => {
                     </form>
                 </section>
             </div>
+
+            <h2>LISTAGEM DOS DADOS</h2>
+
+            <div>
+                <table>
+                    <thead>
+                        <th>NOME</th>
+                        <th>PLACA</th>
+                        <th>MODELO</th>
+                        <th>EDITAR | EXCLUIR </th>
+                    </thead>
+                    <tbody>
+                        {carros.map(c => (
+                            <tr key={c.id_veiculo}>
+                                <td>{c.nome}</td>
+                                <td>{c.placa}</td>
+                                <td>{c.modelo}</td>
+                                <td>{c.nome}</td>
+                                <td><Link href="/">Editar</Link> | <Link href="/">Excluir</Link></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                    <tfoot>
+                        <td colSpan={4}>Total de carros: - </td>
+                    </tfoot>
+                </table>
+            </div>
+
         </div>
     );
 };
