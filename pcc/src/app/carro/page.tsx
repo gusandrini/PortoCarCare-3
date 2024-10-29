@@ -1,6 +1,7 @@
 "use client";
 import { TipoCarro } from '@/types/types';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 const Carro = () => {
@@ -9,25 +10,26 @@ const Carro = () => {
     const [mensagem, setMensagem] = useState('');
     const [mensagemFeedback, setMensagemFeedback] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const success = true;
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     const success = true;
 
-        if (success) {
-            setMensagemFeedback('Mensagem enviada com sucesso!');
-        } else {
-            setMensagemFeedback('Ocorreu um erro ao enviar a mensagem.');
-        }
+    //     if (success) {
+    //         setMensagemFeedback('Mensagem enviada com sucesso!');
+    //     } else {
+    //         setMensagemFeedback('Ocorreu um erro ao enviar a mensagem.');
+    //     }
 
-        setNome('');
-        setPlaca('');
-        setMensagem('');
+    //     setNome('');
+    //     setPlaca('');
+    //     setMensagem('');
 
-        setTimeout(() => setMensagemFeedback(''), 1000);
-    };
+    //     setTimeout(() => setMensagemFeedback(''), 1000);
+    // };
 
     //SERVER COMPONENT É RENDERIZADO NO SERVIDOR E GERA O RESULTADO FINAL QUE É EM HTML
     //CLIENT COMPONENT EMPACOTA TUDO, GERA JSCRIPT E ENVIA PARA MAQUINA DO CLIENTE QUE É RENDERIZADA PELA NAVEGADOR
+    const navigate = useRouter();
 
     const [carro, setCarro] = useState<TipoCarro>({
         nome: "",
@@ -35,6 +37,50 @@ const Carro = () => {
         modelo: "",
         mensagem: "",
     });
+
+    const handleChange = (evento: React.ChangeEvent<HTMLInputElement>) => {
+        //realizando um destructuring nos campos através do target do evento
+        const { name, value } = evento.target;
+        setCarro({ ...carro, [name]: value })
+
+    }
+
+    const handleSbumit = async (evento: React.FormEvent<HTMLFormElement>) => {
+        evento.preventDefault();
+
+        try {
+            const response = await fetch("adicionar caminho java", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(carro)
+            });
+
+            if (response.ok) {
+                alert("Carro cadastrado com sucesso!")
+                setCarro({
+                    nome: "",
+                    placa: "",
+                    modelo: "",
+                    mensagem: "",
+                });
+
+                navigate.push("/");
+            }
+        } catch (error) {
+            console.error("Falha no cadastro!", error);
+        }
+    }
+
+    // const handleChange = (evento: React.ChangeEvent<HTMLTextAreaElement>) => {
+    //     //realizando um destructuring nos campos através do target do evento
+    //     const { name, value } = evento.target;
+    //     setCarro({ ...carro, [mensagem]: value })
+
+    // }
+
+
 
     return (
         <div>
@@ -44,7 +90,7 @@ const Carro = () => {
 
             <div className="carro">
                 <section className="scarro">
-                    <form className="fcarro" onSubmit={handleSubmit}>
+                    <form className="fcarro" onSubmit={handleSbumit}>
                         <div className="center">
                             <h1 className="titulo">CADASTRE SEU CARRO:</h1>
                         </div>
@@ -56,7 +102,7 @@ const Carro = () => {
                                     id="idNm"
                                     name="nome"
                                     value={carro.nome}
-                                    onChange={(e) => setNome(e.target.value)}
+                                    onChange={(evento) => handleChange(evento)}
                                     placeholder="Digite seu nome"
                                     required
                                     autoComplete="name"
@@ -70,7 +116,7 @@ const Carro = () => {
                                     id="idPlaca"
                                     name="placa"
                                     value={carro.placa}
-                                    onChange={(e) => setPlaca(e.target.value)}
+                                    onChange={(evento) => handleChange(evento)}
                                     placeholder="Digite sua placa"
                                     required
                                     autoComplete="off"
@@ -84,14 +130,14 @@ const Carro = () => {
                                     id="idModelo"
                                     name="modelo"
                                     value={carro.modelo}
-                                    onChange={(e) => setPlaca(e.target.value)}
+                                    onChange={(evento) => handleChange(evento)}
                                     placeholder="Digite modelo do carro"
                                     required
                                     autoComplete="off"
                                 />
                             </div>
 
-                            <div>
+                            {/* <div>
                                 <label htmlFor="idMes">Mais dados sobre o veículo:</label>
                                 <textarea
                                     className="textarea"
@@ -99,12 +145,12 @@ const Carro = () => {
                                     name="mensagem"
                                     rows={5}
                                     value={carro.mensagem}
-                                    onChange={(e) => setMensagem(e.target.value)}
+                                    onChange={(evento) => handleChange(evento)}
                                     placeholder="Digite sua mensagem"
                                     required
                                     autoComplete="off"
                                 ></textarea>
-                            </div>
+                            </div> */}
 
                             <div className="center">
                                 <input className="b_enviar" type="submit" value="Enviar" />
