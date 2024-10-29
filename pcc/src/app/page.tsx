@@ -29,7 +29,7 @@ export default function Home() {
                 <div className="cards_1">
                     <div className="assistente-virtual">
                         <Image src={Agenda} alt="Agenda representando serviços de seguros" priority />
-                        <p>Saiba mais sobre os nossos <br /> serviços</p>
+                        <p>Conheça nossos serviços</p>
                         <Link className='btn_click' href="/saiba">Clique aqui</Link>
                     </div>
                 </div>
