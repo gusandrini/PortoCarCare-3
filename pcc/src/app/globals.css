@@ -75,7 +75,7 @@
     }
 
     a {
-      @apply flex justify-center items-center border border-[#00a1fc] border-solid rounded-[10px] mx-32 m-2 text-[#00a1fc];
+      @apply flex justify-center items-center p-[5px] border border-[#00a1fc] border-solid rounded-[15px] mx-32 m-2 text-[#00a1fc];
     }
   }
 
