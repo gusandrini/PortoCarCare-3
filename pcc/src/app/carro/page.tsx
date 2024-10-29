@@ -204,15 +204,17 @@ const Carro = () => {
                 </section>
             </div>
 
-            <h2>LISTAGEM DOS DADOS</h2>
+            <h2 className='titulo_listagem'>LISTAGEM DOS DADOS</h2>
 
-            <div>
+            <div className='tabela-carros'>
                 <table>
                     <thead>
-                        <th>NOME</th>
-                        <th>PLACA</th>
-                        <th>MODELO</th>
-                        <th>EDITAR | EXCLUIR </th>
+                        <tr>
+                            <th>NOME</th>
+                            <th>PLACA</th>
+                            <th>MODELO</th>
+                            {/* <th>EDITAR | EXCLUIR</th> */}
+                        </tr>
                     </thead>
                     <tbody>
                         {carros.map(c => (
@@ -220,16 +222,20 @@ const Carro = () => {
                                 <td>{c.nome}</td>
                                 <td>{c.placa}</td>
                                 <td>{c.modelo}</td>
-                                <td>{c.nome}</td>
-                                <td><Link href="/">Editar</Link> | <Link href="/">Excluir</Link></td>
+                                {/* <td>
+                                    <Link href="/">Editar</Link> | <Link href="/">Excluir</Link>
+                                </td> */}
                             </tr>
                         ))}
                     </tbody>
                     <tfoot>
-                        <td colSpan={4}>Total de carros: - {carros.length}</td>
+                        <tr>
+                            <td colSpan={4}>Total de carros: {carros.length}</td>
+                        </tr>
                     </tfoot>
                 </table>
             </div>
+
 
         </div>
     );

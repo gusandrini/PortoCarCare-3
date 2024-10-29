@@ -261,7 +261,38 @@
 .textarea, .fcarro  input:hover {
     @apply bg-[#030a3e79]; 
 }
+
+.titulo_listagem{
+  @apply flex justify-start items-start ml-[60px] p-[10px] text-[40px] text-black;
 }
+
+.tabela-carros {
+  @apply m-20 flex justify-center items-center px-40;
+}
+
+.tabela-carros thead {
+  @apply border border-gray-600 bg-gray-100;
+}
+
+.tabela-carros th {
+  @apply px-10 py-2 text-left text-gray-700;
+}
+
+.tabela-carros td {
+  @apply px-4 py-2 border border-gray-600;
+}
+
+.tabela-carros tfoot {
+  @apply font-bold;
+}
+
+.tabela-carros tfoot td {
+  @apply pt-20 text-center;
+}
+
+
+}
+
 
 /* ESTILIZAÇÃO DO CONTEÚDO DA PÁGINA DE MEDIDAS */
 @layer components{
