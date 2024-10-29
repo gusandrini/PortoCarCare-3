@@ -53,6 +53,7 @@ const Cadastro = () => {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$"
         />
 
         <label htmlFor="idCpf"></label>
@@ -64,6 +65,7 @@ const Cadastro = () => {
           value={cpf}
           onChange={(e) => setCpf(e.target.value)}
           required
+          pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$|^\d{9}-\d{2}$|^\d{11}$"
         />
 
         <label htmlFor="idSenha"></label>

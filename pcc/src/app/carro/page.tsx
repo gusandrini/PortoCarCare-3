@@ -10,23 +10,6 @@ const Carro = () => {
     const [mensagem, setMensagem] = useState('');
     const [mensagemFeedback, setMensagemFeedback] = useState('');
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     const success = true;
-
-    //     if (success) {
-    //         setMensagemFeedback('Mensagem enviada com sucesso!');
-    //     } else {
-    //         setMensagemFeedback('Ocorreu um erro ao enviar a mensagem.');
-    //     }
-
-    //     setNome('');
-    //     setPlaca('');
-    //     setMensagem('');
-
-    //     setTimeout(() => setMensagemFeedback(''), 1000);
-    // };
-
     //SERVER COMPONENT É RENDERIZADO NO SERVIDOR E GERA O RESULTADO FINAL QUE É EM HTML
     //CLIENT COMPONENT EMPACOTA TUDO, GERA JSCRIPT E ENVIA PARA MAQUINA DO CLIENTE QUE É RENDERIZADA PELA NAVEGADOR
     const navigate = useRouter();
@@ -35,7 +18,7 @@ const Carro = () => {
 
     const chamdaApi = async () => {
         try {
-            const response = await fetch("adicionar caminho java");
+            const response = await fetch("caminho java");
             const data = await response.json();
             setCarros(data)
         } catch (error) {
@@ -66,7 +49,7 @@ const Carro = () => {
         evento.preventDefault();
 
         try {
-            const response = await fetch("adicionar caminho java", {
+            const response = await fetch("caminho java", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -84,20 +67,12 @@ const Carro = () => {
                     mensagem: "",
                 });
 
-                navigate.push("/");
+                navigate.push("/carro");
             }
         } catch (error) {
             console.error("Falha no cadastro!", error);
         }
     }
-
-    // const handleChange = (evento: React.ChangeEvent<HTMLTextAreaElement>) => {
-    //     //realizando um destructuring nos campos através do target do evento
-    //     const { name, value } = evento.target;
-    //     setCarro({ ...carro, [mensagem]: value })
-
-    // }
-
 
 
     return (
@@ -125,7 +100,7 @@ const Carro = () => {
                 <div className="instrucao">
                     <ul>
                         <li>Preencha o nome completo do proprietário no campo "Nome".</li>
-                        <li>Informe a placa do carro no formato AAA-1234.</li>
+                        <li>Informe a placa do carro no formato AAA-1234 e no novo Mercosul ABC1D23.</li>
                         <li>Especifique o modelo do carro para ajudar na identificação.</li>
                     </ul>
                 </div>
@@ -161,6 +136,7 @@ const Carro = () => {
                                     placeholder="Digite sua placa"
                                     required
                                     autoComplete="off"
+                                    pattern="^[A-Z]{3}-\d{4}$|^[A-Z]{3}\d[A-Z]\d{2}$"
                                 />
                             </div>
 
@@ -177,21 +153,6 @@ const Carro = () => {
                                     autoComplete="off"
                                 />
                             </div>
-
-                            {/* <div>
-                                <label htmlFor="idMes">Mais dados sobre o veículo:</label>
-                                <textarea
-                                    className="textarea"
-                                    id="idMes"
-                                    name="mensagem"
-                                    rows={5}
-                                    value={carro.mensagem}
-                                    onChange={(evento) => handleChange(evento)}
-                                    placeholder="Digite sua mensagem"
-                                    required
-                                    autoComplete="off"
-                                ></textarea>
-                            </div> */}
 
                             <div className="center">
                                 <input className="b_enviar" type="submit" value="Enviar" />
