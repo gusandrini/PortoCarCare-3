@@ -8,6 +8,7 @@ const Cadastro = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [telefone, setTelefone] = useState('');
+  const [cpf, setCpf] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -20,7 +21,7 @@ const Cadastro = () => {
       setMensagemCadastro("Email já cadastrado.");
       setTimeout(() => setMensagemCadastro(''), 5000);
     } else {
-      const newUser = { name, email, telefone, password };
+      const newUser = { name, email, telefone, cpf, password };
       users.push(newUser);
       localStorage.setItem(usersKey, JSON.stringify(users));
       setMensagemCadastro("Cadastro bem-sucedido!");
@@ -32,38 +33,55 @@ const Cadastro = () => {
     <div className="cadastro-page">
       <h2 className='cadastro_h2'>Cadastro</h2>
       <form onSubmit={handleSubmit} className="input-area">
-        <label htmlFor="name"></label>
+        <label htmlFor="idNm"></label>
         <input
           type="text"
-          id="name"
+          id="idNm"
+          name="NM_CLIENTE"
           placeholder="Nome completo"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         />
 
-        <label htmlFor="cadastroEmail"></label>
+        <label htmlFor="idEmail"></label>
         <input
           type="email"
-          id="cadastroEmail"
+          id="idEmail"
+          name="NM_EMAIL"
           placeholder="Email"
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <label htmlFor="telefone"></label>
+        <label htmlFor="idCpf"></label>
         <input
           type="tel"
-          id="telefone"
+          id="idCpf"
+          name="NR_CPF"
+          placeholder="CPF"
+          value={cpf}
+          onChange={(e) => setCpf(e.target.value)}
+          required 
+        />
+
+        <label htmlFor="idTel"></label>
+        <input
+          type="tel"
+          id="idTel"
+          name="NR_TELEFONE"
           placeholder="Telefone"
           value={telefone}
           onChange={(e) => setTelefone(e.target.value)}
+          required 
         />
 
-        <label htmlFor="cadastroSenha"></label>
+        <label htmlFor="idSenha"></label>
         <input
           type="password"
-          id="cadastroSenha"
+          id="idSenha"
+          name="ID_SENHA"
           placeholder="Senha"
           required
           value={password}
@@ -79,5 +97,4 @@ const Cadastro = () => {
     </div>
   );
 };
-
 export default Cadastro;

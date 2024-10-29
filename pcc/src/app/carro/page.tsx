@@ -39,11 +39,11 @@ const Carro = () => {
                         </div>
                         <fieldset>
                             <div>
-                                <label htmlFor="name">Nome:</label>
+                                <label htmlFor="idNm">Nome:</label>
                                 <input 
                                     type="text" 
-                                    id="name" 
-                                    name="name" 
+                                    id="idNm" 
+                                    name="NM_CLIENTE" 
                                     value={nome} 
                                     onChange={(e) => setNome(e.target.value)} 
                                     placeholder="Digite seu nome" 
@@ -53,11 +53,11 @@ const Carro = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="placa">Placa:</label>
+                                <label htmlFor="idPlaca">Placa:</label>
                                 <input 
                                     type="text" 
-                                    id="placa" 
-                                    name="placa" 
+                                    id="idPlaca" 
+                                    name="NR_PLACA" 
                                     value={placa} 
                                     onChange={(e) => setPlaca(e.target.value)} 
                                     placeholder="Digite sua placa" 
@@ -67,11 +67,25 @@ const Carro = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="message">Mais dados sobre o veículo:</label>
+                                <label htmlFor="idModelo">Modelo carro:</label>
+                                <input 
+                                    type="text" 
+                                    id="idModelo" 
+                                    name="NM_MODELO" 
+                                    value={placa} 
+                                    onChange={(e) => setPlaca(e.target.value)} 
+                                    placeholder="Digite modelo do carro" 
+                                    required 
+                                    autoComplete="off" 
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="idMes">Mais dados sobre o veículo:</label>
                                 <textarea
                                     className="textarea" 
-                                    id="message" 
-                                    name="message" 
+                                    id="idMes" 
+                                    name="DS_MENSAGEM"
                                     rows={5} 
                                     value={mensagem} 
                                     onChange={(e) => setMensagem(e.target.value)} 
@@ -94,5 +108,4 @@ const Carro = () => {
         </div>
     );
 };
-
 export default Carro;
