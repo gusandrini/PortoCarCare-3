@@ -203,7 +203,7 @@ const Carro = () => {
                         ))}
                     </tbody>
                     <tfoot>
-                        <td colSpan={4}>Total de carros: - </td>
+                        <td colSpan={4}>Total de carros: - {carros.length}</td>
                     </tfoot>
                 </table>
             </div>
