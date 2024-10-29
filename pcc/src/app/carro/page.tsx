@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const Carro = () => {
-    const [nome, setNome] = useState('');
+    // const [nome, setNome] = useState('');
     const [placa, setPlaca] = useState('');
     const [mensagem, setMensagem] = useState('');
     const [mensagemFeedback, setMensagemFeedback] = useState('');
@@ -32,7 +32,7 @@ const Carro = () => {
 
     const [carro, setCarro] = useState<TipoCarro>({
         id_veiculo: 0,
-        nome: "",
+        // nome: "",
         placa: "",
         modelo: "",
         mensagem: "",
@@ -61,7 +61,7 @@ const Carro = () => {
                 alert("Carro cadastrado com sucesso!")
                 setCarro({
                     id_veiculo: 0,
-                    nome: "",
+                    // nome: "",
                     placa: "",
                     modelo: "",
                     mensagem: "",
@@ -111,7 +111,7 @@ const Carro = () => {
                             <h1 className="titulo">CADASTRE SEU CARRO:</h1>
                         </div>
                         <fieldset>
-                            <div>
+                            {/* <div>
                                 <label htmlFor="idNm">Nome:</label>
                                 <input
                                     type="text"
@@ -123,7 +123,7 @@ const Carro = () => {
                                     required
                                     autoComplete="name"
                                 />
-                            </div>
+                            </div> */}
 
                             <div>
                                 <label htmlFor="idPlaca">Placa:</label>
@@ -171,7 +171,7 @@ const Carro = () => {
                 <table>
                     <thead>
                         <tr>
-                            <th>NOME</th>
+                            {/* <th>NOME</th> */}
                             <th>PLACA</th>
                             <th>MODELO</th>
                             {/* <th>EDITAR | EXCLUIR</th> */}
@@ -180,7 +180,7 @@ const Carro = () => {
                     <tbody>
                         {carros.map(c => (
                             <tr key={c.id_veiculo}>
-                                <td>{c.nome}</td>
+                                {/* <td>{c.nome}</td> */}
                                 <td>{c.placa}</td>
                                 <td>{c.modelo}</td>
                                 {/* <td>
