@@ -197,11 +197,11 @@
 
 @layer components {
   .input-area {
-    @apply flex flex-col items-center m-20 gap-4;
+    @apply flex flex-col items-center m-20 gap-4 ;
   }
 
   input {
-    @apply outline-none p-[10px] min-w-[300px] max-h-[60px] border border-[#030a3e] rounded-[20px] opacity-80 bg-[#030a3e];
+    @apply text-white outline-none p-[10px] min-w-[300px] max-h-[60px] border border-[#030a3e] rounded-[20px] opacity-80 bg-[#030a3e];
   }
 
   .b_cadastro,
