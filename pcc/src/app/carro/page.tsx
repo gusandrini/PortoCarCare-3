@@ -25,6 +25,9 @@ const Carro = () => {
         setTimeout(() => setMensagemFeedback(''), 1000);
     };
 
+    //SERVER COMPONENT É RENDERIZADO NO SERVIDOR E GERA O RESULTADO FINAL QUE É EM HTML
+    //CLIENT COMPONENT EMPACOTA TUDO, GERA JSCRIPT E ENVIA PARA MAQUINA DO CLIENTE QUE É RENDERIZADA PELA NAVEGADOR
+
     return (
         <div>
             <div className="paginas">
