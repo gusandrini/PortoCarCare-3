@@ -107,6 +107,29 @@ const Carro = () => {
             </div>
 
             <div className="carro">
+                <div className="titulo_introducao">
+                    <h1>Cadastre seus Veículos</h1>
+                </div>
+
+                <div className="introducao_car">
+                    <p>
+                        Nosso sistema permite que você cadastre facilmente seu veículo, consulte informações e mantenha os dados atualizados.
+                        Com apenas alguns cliques, você pode registrar informações como nome do proprietário, placa e modelo do carro.
+                    </p>
+                </div>
+
+                <div className="titulo_instrucao">
+                    <h1>Instruções</h1>
+                </div>
+
+                <div className="instrucao">
+                    <ul>
+                        <li>Preencha o nome completo do proprietário no campo "Nome".</li>
+                        <li>Informe a placa do carro no formato AAA-1234.</li>
+                        <li>Especifique o modelo do carro para ajudar na identificação.</li>
+                    </ul>
+                </div>
+
                 <section className="scarro">
                     <form className="fcarro" onSubmit={handleSbumit}>
                         <div className="center">

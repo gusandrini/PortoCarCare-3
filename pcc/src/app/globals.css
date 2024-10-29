@@ -121,18 +121,25 @@
 /* ESTILIZAÇÃO PADRÃO*/
 @layer components {
   .paginas {
-    @apply flex justify-start ml-[60px] text-[30px] text-gray-500;
+    @apply flex justify-start mt-10 ml-[60px] text-[30px] text-gray-500;
   }
 }
 
 /* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE AJUDA*/
 @layer components{
+  .titulo_perg_freq{
+    @apply flex justify-start items-start ml-[60px] p-[10px] text-[40px] text-black;
+  }
+
+  .introducao_ajuda, .perg_freq, .perg_freq_2{
+    @apply flex text-center text-left text-right text-justify mx-20 p-[10px] text-[25px] text-black;
+  }
   .contato {
     @apply p-0 m-0;
   }
 
   .stato {
-    @apply flex justify-center items-center;
+    @apply flex justify-center items-center mt-7;
   }
 
   .ftato {
@@ -212,6 +219,12 @@
 
 /* CARRO CADASTRO */
 @layer components{
+  .titulo_instrucao, .titulo_introducao{
+    @apply flex justify-start items-start ml-[60px] p-[10px] text-[40px] text-black;
+  }
+  .introducao_car, .instrucao{
+    @apply flex text-center text-left text-right text-justify mx-20 p-[10px] text-[25px] text-black;
+  }
   .carro {
     @apply p-0 m-0;
   }
