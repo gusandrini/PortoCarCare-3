@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from 'react';
+import { TipoCarro } from '@/types/types';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const Carro = () => {
     const [nome, setNome] = useState('');
@@ -28,6 +29,13 @@ const Carro = () => {
     //SERVER COMPONENT É RENDERIZADO NO SERVIDOR E GERA O RESULTADO FINAL QUE É EM HTML
     //CLIENT COMPONENT EMPACOTA TUDO, GERA JSCRIPT E ENVIA PARA MAQUINA DO CLIENTE QUE É RENDERIZADA PELA NAVEGADOR
 
+    const [carro, setCarro] = useState<TipoCarro>({
+        nome: "",
+        placa: "",
+        modelo: "",
+        mensagem: "",
+    });
+
     return (
         <div>
             <div className="paginas">
@@ -43,58 +51,58 @@ const Carro = () => {
                         <fieldset>
                             <div>
                                 <label htmlFor="idNm">Nome:</label>
-                                <input 
-                                    type="text" 
-                                    id="idNm" 
-                                    name="NM_CLIENTE" 
-                                    value={nome} 
-                                    onChange={(e) => setNome(e.target.value)} 
-                                    placeholder="Digite seu nome" 
-                                    required 
-                                    autoComplete="name" 
+                                <input
+                                    type="text"
+                                    id="idNm"
+                                    name="nome"
+                                    value={carro.nome}
+                                    onChange={(e) => setNome(e.target.value)}
+                                    placeholder="Digite seu nome"
+                                    required
+                                    autoComplete="name"
                                 />
                             </div>
 
                             <div>
                                 <label htmlFor="idPlaca">Placa:</label>
-                                <input 
-                                    type="text" 
-                                    id="idPlaca" 
-                                    name="NR_PLACA" 
-                                    value={placa} 
-                                    onChange={(e) => setPlaca(e.target.value)} 
-                                    placeholder="Digite sua placa" 
-                                    required 
-                                    autoComplete="off" 
+                                <input
+                                    type="text"
+                                    id="idPlaca"
+                                    name="placa"
+                                    value={carro.placa}
+                                    onChange={(e) => setPlaca(e.target.value)}
+                                    placeholder="Digite sua placa"
+                                    required
+                                    autoComplete="off"
                                 />
                             </div>
 
                             <div>
                                 <label htmlFor="idModelo">Modelo carro:</label>
-                                <input 
-                                    type="text" 
-                                    id="idModelo" 
-                                    name="NM_MODELO" 
-                                    value={placa} 
-                                    onChange={(e) => setPlaca(e.target.value)} 
-                                    placeholder="Digite modelo do carro" 
-                                    required 
-                                    autoComplete="off" 
+                                <input
+                                    type="text"
+                                    id="idModelo"
+                                    name="modelo"
+                                    value={carro.modelo}
+                                    onChange={(e) => setPlaca(e.target.value)}
+                                    placeholder="Digite modelo do carro"
+                                    required
+                                    autoComplete="off"
                                 />
                             </div>
 
                             <div>
                                 <label htmlFor="idMes">Mais dados sobre o veículo:</label>
                                 <textarea
-                                    className="textarea" 
-                                    id="idMes" 
-                                    name="DS_MENSAGEM"
-                                    rows={5} 
-                                    value={mensagem} 
-                                    onChange={(e) => setMensagem(e.target.value)} 
-                                    placeholder="Digite sua mensagem" 
-                                    required 
-                                    autoComplete="off" 
+                                    className="textarea"
+                                    id="idMes"
+                                    name="mensagem"
+                                    rows={5}
+                                    value={carro.mensagem}
+                                    onChange={(e) => setMensagem(e.target.value)}
+                                    placeholder="Digite sua mensagem"
+                                    required
+                                    autoComplete="off"
                                 ></textarea>
                             </div>
 

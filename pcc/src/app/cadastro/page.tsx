@@ -37,7 +37,7 @@ const Cadastro = () => {
         <input
           type="text"
           id="idNm"
-          name="NM_CLIENTE"
+          name="nome"
           placeholder="Nome completo"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -48,7 +48,7 @@ const Cadastro = () => {
         <input
           type="email"
           id="idEmail"
-          name="NM_EMAIL"
+          name="email"
           placeholder="Email"
           required
           value={email}
@@ -59,29 +59,18 @@ const Cadastro = () => {
         <input
           type="tel"
           id="idCpf"
-          name="NR_CPF"
+          name="cpf"
           placeholder="CPF"
           value={cpf}
           onChange={(e) => setCpf(e.target.value)}
-          required 
-        />
-
-        <label htmlFor="idTel"></label>
-        <input
-          type="tel"
-          id="idTel"
-          name="NR_TELEFONE"
-          placeholder="Telefone"
-          value={telefone}
-          onChange={(e) => setTelefone(e.target.value)}
-          required 
+          required
         />
 
         <label htmlFor="idSenha"></label>
         <input
           type="password"
           id="idSenha"
-          name="ID_SENHA"
+          name="senha"
           placeholder="Senha"
           required
           value={password}

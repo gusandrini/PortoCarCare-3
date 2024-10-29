@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Login = () => {
   const [mensagem, setMensagem] = useState('');
@@ -61,7 +61,8 @@ const Login = () => {
       <form onSubmit={handleSubmit} id="login" className="input-area">
         <input
           type="email"
-          id="email"
+          id="idEmail"
+          name="email"
           placeholder="Email"
           required
           value={email}
@@ -70,7 +71,8 @@ const Login = () => {
 
         <input
           type="password"
-          id="password"
+          id="idSenha"
+          name="senha"
           placeholder="Senha"
           required
           value={password}
