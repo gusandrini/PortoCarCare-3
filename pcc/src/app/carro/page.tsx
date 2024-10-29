@@ -89,7 +89,7 @@ const Carro = () => {
                 <div className="introducao_car">
                     <p>
                         Nosso sistema permite que você cadastre facilmente seu veículo, consulte informações e mantenha os dados atualizados.
-                        Com apenas alguns cliques, você pode registrar informações como nome do proprietário, placa e modelo do carro.
+                        Com apenas alguns cliques, você pode registrar informações como placa e modelo do carro.
                     </p>
                 </div>
 
