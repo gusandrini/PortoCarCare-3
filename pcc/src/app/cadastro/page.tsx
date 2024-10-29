@@ -7,7 +7,6 @@ const Cadastro = () => {
   const [mensagemCadastro, setMensagemCadastro] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [telefone, setTelefone] = useState('');
   const [cpf, setCpf] = useState('');
   const [password, setPassword] = useState('');
 
@@ -21,7 +20,7 @@ const Cadastro = () => {
       setMensagemCadastro("Email já cadastrado.");
       setTimeout(() => setMensagemCadastro(''), 5000);
     } else {
-      const newUser = { name, email, telefone, cpf, password };
+      const newUser = { name, email, cpf, password };
       users.push(newUser);
       localStorage.setItem(usersKey, JSON.stringify(users));
       setMensagemCadastro("Cadastro bem-sucedido!");
