@@ -40,7 +40,7 @@ const Ajuda = () => {
                 <section className="stato">
                     <form className="ftato" onSubmit={handleSubmit}>
                         <div className="center">
-                            <label className="titulo">ÁREA DE CONTATO:</label>
+                            <h1 className="titulo">ÁREA DE CONTATO:</h1>
                         </div>
                         <fieldset>
 

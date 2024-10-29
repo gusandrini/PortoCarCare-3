@@ -35,7 +35,7 @@ const Carro = () => {
                 <section className="scarro">
                     <form className="fcarro" onSubmit={handleSubmit}>
                         <div className="center">
-                            <label className="titulo">CADASTRE SEU CARRO:</label>
+                            <h1 className="titulo">CADASTRE SEU CARRO:</h1>
                         </div>
                         <fieldset>
                             <div>
