@@ -14,8 +14,8 @@ const Carro = () => {
         modelo: "",
         ano: 0,
         quilometragem: 0,
-        tipo:"",
-        marca:"",
+        tipo: "",
+        marca: "",
     });
 
     useEffect(() => {
@@ -65,14 +65,14 @@ const Carro = () => {
                     modelo: "",
                     ano: 0,
                     quilometragem: 0,
-                    tipo:"",
-                    marca:"",
+                    tipo: "",
+                    marca: "",
                 });
 
                 await chamadaApi();
                 navigate.push("/carro");
             } else {
-                const errorText = await response.json(); // Tenta ler como JSON
+                const errorText = await response.json();
                 setMensagemFeedback(`Erro ao cadastrar carro: ${errorText.message || 'Erro desconhecido.'}`);
             }
         } catch (error) {
@@ -124,6 +124,7 @@ const Carro = () => {
                         <li>Preencha a placa do carro no formato AAA-1234 ou ABC1D23 (Mercosul).</li>
                         <li>Especifique o modelo do carro para ajudar na identificação.</li>
                         <li>Informe o ano do carro (ex: 2022).</li>
+                        <li>Informe o tipo de veículo (ex: Carro ou moto).</li>
                     </ul>
                 </div>
 
@@ -141,10 +142,11 @@ const Carro = () => {
                                     name="placa"
                                     value={carro.placa}
                                     onChange={handleChange}
-                                    placeholder="Digite sua placa"
+                                    placeholder="Digite sua placa (AAA-1234 ou ABC1D23)"
                                     required
                                     autoComplete="off"
                                     pattern="^[A-Z]{3}-\d{4}$|^[A-Z]{3}\d[A-Z]\d{2}$"
+                                    title="Formato esperado: AAA-1234 ou ABC1D23"
                                 />
                             </div>
 
@@ -165,16 +167,17 @@ const Carro = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="idModelo">Modelo carro:</label>
+                                <label htmlFor="idModelo">Modelo:</label>
                                 <input
                                     type="text"
                                     id="idModelo"
                                     name="modelo"
                                     value={carro.modelo}
                                     onChange={handleChange}
-                                    placeholder="Digite modelo do carro"
+                                    placeholder="Digite o modelo do carro"
                                     required
                                     autoComplete="off"
+                                    title="Informe o modelo do carro"
                                 />
                             </div>
 
@@ -189,11 +192,12 @@ const Carro = () => {
                                     placeholder="Digite a marca do carro"
                                     required
                                     autoComplete="off"
+                                    title="Informe a marca do carro"
                                 />
                             </div>
 
                             <div>
-                                <label htmlFor="idAno">Quilometragem:</label>
+                                <label htmlFor="idKm">Quilometragem:</label>
                                 <input
                                     type="number"
                                     id="idKm"
@@ -208,20 +212,18 @@ const Carro = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="idMarca">Tipo:</label>
+                                <label htmlFor="idTipo">Tipo:</label>
                                 <input
                                     type="text"
                                     id="idTipo"
                                     name="tipo"
                                     value={carro.tipo}
                                     onChange={handleChange}
-                                    placeholder="Digite o tipo de veículo"
+                                    placeholder="Digite o tipo de veículo (ex.: Carro, moto)"
                                     required
                                     autoComplete="off"
                                 />
                             </div>
-
-                            
 
                             <div className="center">
                                 <input className="b_enviar" type="submit" value="Enviar" />
