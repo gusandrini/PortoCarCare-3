@@ -283,11 +283,7 @@
 }
 
 .tabela-carros tfoot {
-  @apply font-bold;
-}
-
-.tabela-carros tfoot td {
-  @apply pt-20 text-center;
+  @apply font-bold text-center;
 }
 
 
