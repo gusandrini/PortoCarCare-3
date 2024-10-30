@@ -13,6 +13,9 @@ const Carro = () => {
         placa: "",
         modelo: "",
         ano: 0,
+        quilometragem: 0,
+        tipo:"",
+        marca:"",
     });
 
     useEffect(() => {
@@ -48,6 +51,9 @@ const Carro = () => {
                     placa: carro.placa,
                     modelo: carro.modelo,
                     ano: Number(carro.ano),
+                    marca: carro.marca,
+                    quilometragem: carro.quilometragem,
+                    tipo: carro.tipo,
                 })
             });
 
@@ -58,6 +64,9 @@ const Carro = () => {
                     placa: "",
                     modelo: "",
                     ano: 0,
+                    quilometragem: 0,
+                    tipo:"",
+                    marca:"",
                 });
 
                 await chamadaApi();
@@ -169,6 +178,51 @@ const Carro = () => {
                                 />
                             </div>
 
+                            <div>
+                                <label htmlFor="idMarca">Marca:</label>
+                                <input
+                                    type="text"
+                                    id="idMarca"
+                                    name="marca"
+                                    value={carro.marca}
+                                    onChange={handleChange}
+                                    placeholder="Digite a marca do carro"
+                                    required
+                                    autoComplete="off"
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="idAno">Quilometragem:</label>
+                                <input
+                                    type="number"
+                                    id="idKm"
+                                    name="quilometragem"
+                                    value={carro.quilometragem}
+                                    onChange={handleChange}
+                                    placeholder="Digite a quilometragem do carro"
+                                    required
+                                    autoComplete="off"
+                                    min="0"
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="idMarca">Tipo:</label>
+                                <input
+                                    type="text"
+                                    id="idTipo"
+                                    name="tipo"
+                                    value={carro.tipo}
+                                    onChange={handleChange}
+                                    placeholder="Digite o tipo de veículo"
+                                    required
+                                    autoComplete="off"
+                                />
+                            </div>
+
+                            
+
                             <div className="center">
                                 <input className="b_enviar" type="submit" value="Enviar" />
                                 <p id="mensagem" className={mensagemFeedback.includes('sucesso') ? 'sucesso' : 'erro'}>
@@ -189,6 +243,9 @@ const Carro = () => {
                             <th>PLACA</th>
                             <th>ANO</th>
                             <th>MODELO</th>
+                            <th>MARCA</th>
+                            <th>KM</th>
+                            <th>TIPO</th>
                             <th>EXCLUIR</th>
                         </tr>
                     </thead>
@@ -198,6 +255,9 @@ const Carro = () => {
                                 <td>{c.placa}</td>
                                 <td>{c.ano}</td>
                                 <td>{c.modelo}</td>
+                                <td>{c.marca}</td>
+                                <td>{c.quilometragem}</td>
+                                <td>{c.tipo}</td>
                                 <td>
                                     <Link href="#" onClick={() => handleDelete(c.id_veiculo)}>EXCLUIR</Link>
                                 </td>
@@ -206,7 +266,7 @@ const Carro = () => {
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colSpan={4}>Total de carros: {carros.length}</td>
+                            <td colSpan={7}>Total de carros: {carros.length}</td>
                         </tr>
                     </tfoot>
                 </table>
