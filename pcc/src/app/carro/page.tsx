@@ -5,47 +5,37 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const Carro = () => {
-    // const [nome, setNome] = useState('');
-    const [placa, setPlaca] = useState('');
-    const [mensagem, setMensagem] = useState('');
     const [mensagemFeedback, setMensagemFeedback] = useState('');
-
-    //SERVER COMPONENT É RENDERIZADO NO SERVIDOR E GERA O RESULTADO FINAL QUE É EM HTML
-    //CLIENT COMPONENT EMPACOTA TUDO, GERA JSCRIPT E ENVIA PARA MAQUINA DO CLIENTE QUE É RENDERIZADA PELA NAVEGADOR
     const navigate = useRouter();
+    const [carros, setCarros] = useState<TipoCarro[]>([]);
+    const [carro, setCarro] = useState<TipoCarro>({
+        id_veiculo: 0,
+        placa: "",
+        modelo: "",
+        ano: 0,
+    });
 
-    const [carros, setCarros] = useState<TipoCarro[]>([])
+    useEffect(() => {
+        chamadaApi();
+    }, []);
 
-    const chamdaApi = async () => {
+    const chamadaApi = async () => {
         try {
             const response = await fetch('http://localhost:8080/veiculo');
             const data = await response.json();
-            setCarros(data)
+            console.log(data);
+            setCarros(data);
         } catch (error) {
-            console.error("Falha na listagem");
+            console.error("Falha na listagem", error);
         }
-    }
-
-    useEffect(() => {
-        chamdaApi();
-    }, [])
-
-    const [carro, setCarro] = useState<TipoCarro>({
-        id_veiculo: 0,
-        // nome: "",
-        placa: "",
-        modelo: "",
-        mensagem: "",
-    });
+    };
 
     const handleChange = (evento: React.ChangeEvent<HTMLInputElement>) => {
-        //realizando um destructuring nos campos através do target do evento
         const { name, value } = evento.target;
-        setCarro({ ...carro, [name]: value })
+        setCarro({ ...carro, [name]: value });
+    };
 
-    }
-
-    const handleSbumit = async (evento: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault();
 
         try {
@@ -54,26 +44,49 @@ const Carro = () => {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(carro)
+                body: JSON.stringify({
+                    placa: carro.placa,
+                    modelo: carro.modelo,
+                    ano: Number(carro.ano),
+                })
             });
 
             if (response.ok) {
-                alert("Carro cadastrado com sucesso!")
+                alert("Carro cadastrado com sucesso!");
                 setCarro({
                     id_veiculo: 0,
-                    // nome: "",
                     placa: "",
                     modelo: "",
-                    mensagem: "",
+                    ano: 0,
                 });
 
+                await chamadaApi();
+                navigate.push("/carro");
+            } else {
+                const errorText = await response.json(); // Tenta ler como JSON
+                setMensagemFeedback(`Erro ao cadastrar carro: ${errorText.message || 'Erro desconhecido.'}`);
+            }
+        } catch (error) {
+            setMensagemFeedback(`Falha no cadastro: ${error.message}`);
+            console.error("Erro na requisição POST:", error);
+        }
+    };
+
+    const handleDelete = async (id: number) => {
+        try {
+            const response = await fetch(`http://localhost:8080/veiculo/${id}`, {
+                method: 'DELETE',
+            });
+
+            if (response.ok) {
+                alert("Carro removido com sucesso!");
+                await chamadaApi();
                 navigate.push("/carro");
             }
         } catch (error) {
-            console.error("Falha no cadastro!", error);
+            console.error("Falha ao remover carro.", error);
         }
-    }
-
+    };
 
     return (
         <div>
@@ -99,32 +112,18 @@ const Carro = () => {
 
                 <div className="instrucao">
                     <ul>
-                        <li>Preencha o nome completo do proprietário no campo "Nome".</li>
-                        <li>Informe a placa do carro no formato AAA-1234 e no novo Mercosul ABC1D23.</li>
+                        <li>Preencha a placa do carro no formato AAA-1234 ou ABC1D23 (Mercosul).</li>
                         <li>Especifique o modelo do carro para ajudar na identificação.</li>
+                        <li>Informe o ano do carro (ex: 2022).</li>
                     </ul>
                 </div>
 
                 <section className="scarro">
-                    <form className="fcarro" onSubmit={handleSbumit}>
+                    <form className="fcarro" onSubmit={handleSubmit}>
                         <div className="center">
                             <h1 className="titulo">CADASTRE SEU CARRO:</h1>
                         </div>
                         <fieldset>
-                            {/* <div>
-                                <label htmlFor="idNm">Nome:</label>
-                                <input
-                                    type="text"
-                                    id="idNm"
-                                    name="nome"
-                                    value={carro.nome}
-                                    onChange={(evento) => handleChange(evento)}
-                                    placeholder="Digite seu nome"
-                                    required
-                                    autoComplete="name"
-                                />
-                            </div> */}
-
                             <div>
                                 <label htmlFor="idPlaca">Placa:</label>
                                 <input
@@ -132,11 +131,27 @@ const Carro = () => {
                                     id="idPlaca"
                                     name="placa"
                                     value={carro.placa}
-                                    onChange={(evento) => handleChange(evento)}
+                                    onChange={handleChange}
                                     placeholder="Digite sua placa"
                                     required
                                     autoComplete="off"
                                     pattern="^[A-Z]{3}-\d{4}$|^[A-Z]{3}\d[A-Z]\d{2}$"
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="idAno">Ano:</label>
+                                <input
+                                    type="number"
+                                    id="idAno"
+                                    name="ano"
+                                    value={carro.ano}
+                                    onChange={handleChange}
+                                    placeholder="Digite o ano do carro"
+                                    required
+                                    autoComplete="off"
+                                    min="1886"
+                                    max={new Date().getFullYear()}
                                 />
                             </div>
 
@@ -147,7 +162,7 @@ const Carro = () => {
                                     id="idModelo"
                                     name="modelo"
                                     value={carro.modelo}
-                                    onChange={(evento) => handleChange(evento)}
+                                    onChange={handleChange}
                                     placeholder="Digite modelo do carro"
                                     required
                                     autoComplete="off"
@@ -171,34 +186,33 @@ const Carro = () => {
                 <table>
                     <thead>
                         <tr>
-                            {/* <th>NOME</th> */}
                             <th>PLACA</th>
+                            <th>ANO</th>
                             <th>MODELO</th>
-                            {/* <th>EDITAR | EXCLUIR</th> */}
+                            <th>EXCLUIR</th>
                         </tr>
                     </thead>
                     <tbody>
                         {carros.map(c => (
                             <tr key={c.id_veiculo}>
-                                {/* <td>{c.nome}</td> */}
                                 <td>{c.placa}</td>
+                                <td>{c.ano}</td>
                                 <td>{c.modelo}</td>
-                                {/* <td>
-                                    <Link href="/">Editar</Link> | <Link href="/">Excluir</Link>
-                                </td> */}
+                                <td>
+                                    <Link href="#" onClick={() => handleDelete(c.id_veiculo)}>EXCLUIR</Link>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colSpan={4}>Total de carros: {carros.length}</td>
+                            <td colSpan={3}>Total de carros: {carros.length}</td>
                         </tr>
                     </tfoot>
                 </table>
             </div>
-
-
         </div>
     );
 };
+
 export default Carro;
