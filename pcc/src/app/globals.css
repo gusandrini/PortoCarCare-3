@@ -64,7 +64,7 @@
   .cards_1,
   .cards_2,
   .cards_3 {
-    @apply flex flex-row justify-evenly p-[100px] w-[40%];
+    @apply flex flex-row justify-evenly p-[50px] w-[40%];
 
     img {
       @apply block rounded-t-[40px];
@@ -347,5 +347,260 @@
 
 .participantes {
     @apply flex items-center justify-center text-[30px] p-[20px] text-[#030a3e];
+  }
+}
+
+
+
+/* RESPONSIVIDADE */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply m-0 p-0 box-border no-underline;
+  }
+  img {
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+/* CABECALHO */
+@layer components {
+  .foto_menu {
+    @apply m-auto flex items-center flex-col;
+  }
+
+  .menu {
+    @apply m-auto flex flex-col py-[10px] text-black transition-transform duration-300 ease-in-out;
+
+    &:hover {
+      @apply scale-110;
+    }
+
+    ul {
+      @apply flex flex-col items-center justify-center gap-[30px];
+
+      li {
+        @apply bg-white w-full flex flex-col items-center rounded-[10px] shadow-md;
+
+        a {
+          @apply px-5 py-2 text-[19px] text-gray-500;
+        }
+      }
+    }
+  }
+}
+
+/* SMARTPHONES */
+@media (max-width: 900px) {
+  .menu ul {
+    @apply flex flex-col gap-[20px];
+  }
+
+  .inicio {
+    @apply m-[10px] text-[#030a3e] text-center text-[40px];
+  }
+
+  .cards, .cards-i {
+    @apply flex flex-col items-start;
+  }
+
+  .cards_1,
+  .cards_2,
+  .cards_3 {
+    @apply flex flex-row justify-evenly p-0 m-5 w-[90%];
+  }
+
+  .cabecalho {
+    @apply p-[15px] text-[25px];
+  }
+
+
+  .titulo_perg_freq,
+  .titulo_instrucao,
+  .titulo_introducao,
+  .titulo_medidas,
+  .titulo_medidas_2,
+  .titulo_medidas_3 {
+    @apply text-[30px] ml-[10px];
+  }
+
+  .text_sobre,
+  .text_saiba_1,
+  .text_saiba_2,
+  .text_saiba_3,
+  .text_saiba_4,
+  .text_saiba_5 {
+    @apply text-[15px] mx-[5px] p-[5px];
+  }
+
+  .appporto img,
+  .logo-porto-preta img {
+    @apply w-[150px];
+  }
+
+  .redes img {
+    @apply w-[50px];
+  }
+
+  .introducao_car, .instrucao, .introducao_ajuda, .perg_freq, .perg_freq_2{
+    @apply text-[15px]
+  }
+
+    .tabela-carros {
+      @apply block w-full m-0 px-2;
+    }
+  
+    .tabela-carros table {
+      @apply block w-full;
+    }
+  
+    .tabela-carros thead,
+    .tabela-carros tfoot {
+      @apply hidden;
+    }
+  
+    .tabela-carros tbody {
+      @apply block w-full;
+    }
+  
+    .tabela-carros tbody tr {
+      @apply flex flex-col mb-4 bg-white rounded-lg shadow-lg p-4 w-full;
+    }
+  
+    .tabela-carros tbody tr td {
+      @apply flex justify-between text-gray-700 py-2 w-full;
+      display: flex;
+    }
+  
+    .tabela-carros tbody tr td::before {
+      @apply font-semibold text-gray-500;
+    }
+  
+    /* Prefixos de cada coluna para dispositivos móveis */
+    .tabela-carros tbody tr td:nth-child(1)::before {
+      content: "Placa: ";
+    }
+    .tabela-carros tbody tr td:nth-child(2)::before {
+      content: "Ano: ";
+    }
+    .tabela-carros tbody tr td:nth-child(3)::before {
+      content: "Modelo: ";
+    }
+    .tabela-carros tbody tr td:nth-child(4)::before {
+      content: "Marca: ";
+    }
+    .tabela-carros tbody tr td:nth-child(5)::before {
+      content: "KM: ";
+    }
+    .tabela-carros tbody tr td:nth-child(6)::before {
+      content: "Tipo: ";
+    }
+    .tabela-carros tbody tr td:nth-child(7)::before {
+      content: "Excluir: ";
+    }
+
+    
+  
+  }
+
+
+/* TABLETS */
+@media (min-width: 650px) and (max-width: 1024px) {
+  .menu ul {
+    @apply flex flex-row gap-[40px];
+  }
+
+  .cabecalho {
+    @apply p-[20px] text-[30px];
+  }
+
+  .inicio {
+    @apply m-[15px] text-[#030a3e] text-center text-[50px];
+  }
+
+  .cards {
+    @apply flex flex-col md:flex-row justify-center items-center;
+  }
+
+  .titulo_perg_freq,
+  .titulo_instrucao,
+  .titulo_introducao,
+  .titulo_medidas,
+  .titulo_medidas_2,
+  .titulo_medidas_3 {
+    @apply text-[35px] ml-[30px];
+  }
+
+  .text_sobre,
+  .text_saiba_1,
+  .text_saiba_2,
+  .text_saiba_3,
+  .text_saiba_4,
+  .text_saiba_5 {
+    @apply text-[22px] mx-[20px] p-[10px];
+  }
+
+  .appporto img,
+  .logo-porto-preta img {
+    @apply w-[180px];
+  }
+
+  .redes img {
+    @apply w-[70px];
+  }
+
+  
+
+  
+}
+
+/* DESKTOPS */
+@media (min-width: 1025px) {
+  .menu ul {
+    @apply flex flex-row gap-[60px];
+  }
+
+  .cabecalho {
+    @apply p-[20px] text-[35px];
+  }
+
+  .inicio {
+    @apply m-[20px] text-[#030a3e] text-center text-[70px];
+  }
+
+  .cards {
+    @apply flex flex-row justify-center items-center;
+  }
+
+  .titulo_perg_freq,
+  .titulo_instrucao,
+  .titulo_introducao,
+  .titulo_medidas,
+  .titulo_medidas_2,
+  .titulo_medidas_3 {
+    @apply text-[40px] ml-[60px];
+  }
+
+  .text_sobre,
+  .text_saiba_1,
+  .text_saiba_2,
+  .text_saiba_3,
+  .text_saiba_4,
+  .text_saiba_5 {
+    @apply text-[25px] mx-[100px] p-[10px];
+  }
+
+  .appporto img,
+  .logo-porto-preta img {
+    @apply w-[200px];
+  }
+
+  .redes img {
+    @apply w-[80px];
   }
 }
