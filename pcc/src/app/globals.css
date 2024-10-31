@@ -32,7 +32,7 @@
           @apply bg-white w-[310px] flex flex-col items-center rounded-[10px] shadow-md;
 
           a {
-            @apply px-5 py-2 text-[19px] text-gray-500;
+            @apply px-5 py-2 text-[25px] text-gray-500;
           }
         }
       }
@@ -354,46 +354,6 @@
 
 /* RESPONSIVIDADE */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  * {
-    @apply m-0 p-0 box-border no-underline;
-  }
-  img {
-    width: auto;
-    max-width: 100%;
-  }
-}
-
-/* CABECALHO */
-@layer components {
-  .foto_menu {
-    @apply m-auto flex items-center flex-col;
-  }
-
-  .menu {
-    @apply m-auto flex flex-col py-[10px] text-black transition-transform duration-300 ease-in-out;
-
-    &:hover {
-      @apply scale-110;
-    }
-
-    ul {
-      @apply flex flex-col items-center justify-center gap-[30px];
-
-      li {
-        @apply bg-white w-full flex flex-col items-center rounded-[10px] shadow-md;
-
-        a {
-          @apply px-5 py-2 text-[19px] text-gray-500;
-        }
-      }
-    }
-  }
-}
 
 /* SMARTPHONES */
 @media (max-width: 900px) {
@@ -652,7 +612,7 @@
   .cards_1,
   .cards_2,
   .cards_3 {
-    @apply flex flex-row justify-evenly p-[20px] w-[100%];
+    @apply flex flex-row justify-evenly p-[10px] w-[100%];
   }
 
   .menu {
@@ -673,5 +633,9 @@
           }
         }
       }
+  }
+
+  footer{
+    @apply mt-20
   }
 }
