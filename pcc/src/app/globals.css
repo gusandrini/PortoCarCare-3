@@ -554,7 +554,48 @@
     @apply w-[70px];
   }
 
-  
+  .menu {
+    @apply m-auto flex flex-col py-[10px] text-black transition-transform duration-300 ease-in-out;
+
+    &:hover {
+      @apply scale-90;
+    }
+
+    ul {
+        @apply gap-[40px];
+
+        li {
+          @apply w-[200px];
+
+          a {
+            @apply px-5 py-2 text-[15px] text-gray-500;
+          }
+        }
+      }
+  }
+
+
+    .cabecalho {
+      @apply text-[20px];
+    }
+
+    .saiba-mais {
+      @apply px-5 py-2 text-[20px];
+    }
+
+    .inicio {
+      @apply text-center text-[40px];
+    }
+
+    .cards {
+      @apply flex flex-col justify-center items-center px-14;
+    }
+
+    .cards_1,
+    .cards_2,
+    .cards_3 {
+      @apply flex flex-row justify-evenly p-[20px] w-[100%];
+    }  
 
   
 }
