@@ -644,4 +644,34 @@
   .redes img {
     @apply w-[80px];
   }
+
+  .cards {
+    @apply flex flex-row justify-center items-center;
+  }
+
+  .cards_1,
+  .cards_2,
+  .cards_3 {
+    @apply flex flex-row justify-evenly p-[20px] w-[100%];
+  }
+
+  .menu {
+    @apply m-auto flex flex-col py-[10px] text-black transition-transform duration-300 ease-in-out;
+
+    &:hover {
+      @apply scale-110;
+    }
+
+    ul {
+        @apply gap-[50px];
+
+        li {
+          @apply w-[200px];
+
+          a {
+            @apply px-5 py-2 text-[15px] text-gray-500;
+          }
+        }
+      }
+  }
 }
