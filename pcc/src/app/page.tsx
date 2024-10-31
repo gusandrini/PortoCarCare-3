@@ -4,7 +4,10 @@ import Carro from '@/Images/carro.jpg';
 import Motor from '@/Images/motor.jpg';
 import Agenda from '@/Images/agenda.jpg';
 
+
 export default function Home() {
+
+    
     return (
         <div>
             <header className="cabecalho">
