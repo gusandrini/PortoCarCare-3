@@ -17,6 +17,7 @@ const Carro = () => {
         tipo: "",
         marca: "",
     });
+    const [isEditMode, setIsEditMode] = useState(false);
 
     useEffect(() => {
         chamadaApi();
@@ -26,7 +27,6 @@ const Carro = () => {
         try {
             const response = await fetch('http://localhost:8080/veiculo');
             const data = await response.json();
-            console.log(data);
             setCarros(data);
         } catch (error) {
             console.error("Falha na listagem", error);
@@ -42,8 +42,13 @@ const Carro = () => {
         evento.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:8080/veiculo', {
-                method: "POST",
+            const method = isEditMode ? "PUT" : "POST";
+            const url = isEditMode 
+                ? `http://localhost:8080/veiculo/${carro.id_veiculo}`
+                : 'http://localhost:8080/veiculo';
+
+            const response = await fetch(url, {
+                method,
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -58,7 +63,7 @@ const Carro = () => {
             });
 
             if (response.ok) {
-                alert("Carro cadastrado com sucesso!");
+                alert(isEditMode ? "Carro editado com sucesso!" : "Carro cadastrado com sucesso!");
                 setCarro({
                     id_veiculo: 0,
                     placa: "",
@@ -68,16 +73,16 @@ const Carro = () => {
                     tipo: "",
                     marca: "",
                 });
-
+                setIsEditMode(false);
                 await chamadaApi();
                 navigate.push("/carro");
             } else {
                 const errorText = await response.json();
-                setMensagemFeedback(`Erro ao cadastrar carro: ${errorText.message || 'Erro desconhecido.'}`);
+                setMensagemFeedback(`Erro: ${errorText.message || 'Erro desconhecido.'}`);
             }
         } catch (error) {
-            setMensagemFeedback(`Falha no cadastro: ${error.message}`);
-            console.error("Erro na requisição POST:", error);
+            setMensagemFeedback(`Falha no processo: ${error.message}`);
+            console.error("Erro na requisição:", error);
         }
     };
 
@@ -97,6 +102,11 @@ const Carro = () => {
         }
     };
 
+    const handleEdit = (carroSelecionado: TipoCarro) => {
+        setCarro(carroSelecionado);
+        setIsEditMode(true);
+    };
+
     return (
         <div>
             <div className="paginas">
@@ -105,33 +115,13 @@ const Carro = () => {
 
             <div className="carro">
                 <div className="titulo_introducao">
-                    <h1>Cadastre seus Veículos</h1>
-                </div>
-
-                <div className="introducao_car">
-                    <p>
-                        Nosso sistema permite que você cadastre facilmente seu veículo, consulte informações e mantenha os dados atualizados.
-                        Com apenas alguns cliques, você pode registrar informações como placa e modelo do carro.
-                    </p>
-                </div>
-
-                <div className="titulo_instrucao">
-                    <h1>Instruções</h1>
-                </div>
-
-                <div className="instrucao">
-                    <ul>
-                        <li>Preencha a placa do carro no formato AAA-1234 ou ABC1D23 (Mercosul).</li>
-                        <li>Especifique o modelo do carro para ajudar na identificação.</li>
-                        <li>Informe o ano do carro (ex: 2022).</li>
-                        <li>Informe o tipo de veículo (ex: Carro ou moto).</li>
-                    </ul>
+                    <h1>{isEditMode ? "Edite seu Veículo" : "Cadastre seus Veículos"}</h1>
                 </div>
 
                 <section className="scarro">
                     <form className="fcarro" onSubmit={handleSubmit}>
                         <div className="center">
-                            <h1 className="titulo">CADASTRE SEU CARRO:</h1>
+                            <h1 className="titulo">{isEditMode ? "EDITAR CARRO" : "CADASTRE SEU CARRO"}</h1>
                         </div>
                         <fieldset>
                             <div>
@@ -226,7 +216,7 @@ const Carro = () => {
                             </div>
 
                             <div className="center">
-                                <input className="b_enviar" type="submit" value="Enviar" />
+                                <input className="b_enviar" type="submit" value={isEditMode ? "Atualizar" : "Enviar"} />
                                 <p id="mensagem" className={mensagemFeedback.includes('sucesso') ? 'sucesso' : 'erro'}>
                                     {mensagemFeedback}
                                 </p>
@@ -248,7 +238,7 @@ const Carro = () => {
                             <th>MARCA</th>
                             <th>KM</th>
                             <th>TIPO</th>
-                            <th>EXCLUIR</th>
+                            <th>AÇÕES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -261,6 +251,7 @@ const Carro = () => {
                                 <td>{c.quilometragem}</td>
                                 <td>{c.tipo}</td>
                                 <td>
+                                    <Link href="#" onClick={() => handleEdit(c)}>EDITAR</Link> | 
                                     <Link href="#" onClick={() => handleDelete(c.id_veiculo)}>EXCLUIR</Link>
                                 </td>
                             </tr>
