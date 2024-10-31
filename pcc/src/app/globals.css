@@ -353,8 +353,6 @@
 
 
 /* RESPONSIVIDADE */
-
-
 /* SMARTPHONES */
 @media (max-width: 900px) {
   .menu ul {
@@ -385,17 +383,31 @@
   .titulo_introducao,
   .titulo_medidas,
   .titulo_medidas_2,
-  .titulo_medidas_3 {
+  .titulo_medidas_3,
+  .titulo_saiba_1,
+  .titulo_saiba_2,
+  .titulo_saiba_3,
+  .titulo_saiba_4,
+  .titulo_saiba_5{
     @apply text-[30px] ml-[10px];
   }
 
-  .text_sobre,
   .text_saiba_1,
   .text_saiba_2,
   .text_saiba_3,
   .text_saiba_4,
-  .text_saiba_5 {
-    @apply text-[15px] mx-[5px] p-[5px];
+  .text_saiba_5,
+  .text_medidas,
+  .text_medidas_2,
+  .lista_medidas,
+  .perg_freq,
+  .perg_freq_2,
+  .introducao_ajuda,
+  .text_sobre,
+  .introducao_car,
+  .instrucao
+  {
+    @apply text-[15px] mx-[5px] p-[10px];
   }
 
   .appporto img,
@@ -492,16 +504,29 @@
   .titulo_introducao,
   .titulo_medidas,
   .titulo_medidas_2,
-  .titulo_medidas_3 {
+  .titulo_medidas_3,
+  .titulo_saiba_1,
+  .titulo_saiba_2,
+  .titulo_saiba_3,
+  .titulo_saiba_4,
+  .titulo_saiba_5{
     @apply text-[35px] ml-[30px];
   }
 
-  .text_sobre,
   .text_saiba_1,
   .text_saiba_2,
   .text_saiba_3,
   .text_saiba_4,
-  .text_saiba_5 {
+  .text_saiba_5,
+  .text_medidas,
+  .text_medidas_2,
+  .lista_medidas,
+  .perg_freq,
+  .perg_freq_2,
+  .introducao_ajuda,
+  .text_sobre,
+  .introducao_car,
+  .instrucao{
     @apply text-[22px] mx-[20px] p-[10px];
   }
 
@@ -583,16 +608,29 @@
   .titulo_introducao,
   .titulo_medidas,
   .titulo_medidas_2,
-  .titulo_medidas_3 {
+  .titulo_medidas_3,
+  .titulo_saiba_1,
+  .titulo_saiba_2,
+  .titulo_saiba_3,
+  .titulo_saiba_4,
+  .titulo_saiba_5 {
     @apply text-[40px] ml-[60px];
   }
 
-  .text_sobre,
   .text_saiba_1,
   .text_saiba_2,
   .text_saiba_3,
   .text_saiba_4,
-  .text_saiba_5 {
+  .text_saiba_5,
+  .text_medidas,
+  .text_medidas_2,
+  .lista_medidas,
+  .perg_freq,
+  .perg_freq_2,
+  .introducao_ajuda,
+  .text_sobre,
+  .introducao_car,
+  .instrucao {
     @apply text-[25px] mx-[100px] p-[10px];
   }
 
