@@ -1,90 +1,110 @@
 "use client";
-
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { TipoCadastro } from '@/types/types-u';
 import Link from 'next/link';
-import { useState } from 'react';
 
-const Cadastro = () => {
-  const [mensagemCadastro, setMensagemCadastro] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [cpf, setCpf] = useState('');
-  const [password, setPassword] = useState('');
+export default function Cadastro() {
+    const [mensagemCadastro, setMensagemCadastro] = useState('');
+    const navigate = useRouter();
+    const [cadastro, setCadastro] = useState<TipoCadastro>({
+        id_usuario: 0,
+        nome: "",
+        email: "",
+        cpf: "",
+        senha: "",
+    });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const usersKey = "users";
-    const users = JSON.parse(localStorage.getItem(usersKey) || '[]');
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
 
-    const userExists = users.some((user: { email: string }) => user.email === email);
-    if (userExists) {
-      setMensagemCadastro("Email já cadastrado.");
-      setTimeout(() => setMensagemCadastro(''), 5000);
-    } else {
-      const newUser = { name, email, cpf, password };
-      users.push(newUser);
-      localStorage.setItem(usersKey, JSON.stringify(users));
-      setMensagemCadastro("Cadastro bem-sucedido!");
-      setTimeout(() => (window.location.href = "/login"), 2000);
-    }
-  };
+        try {
+            const response = await fetch("http://localhost:8080/usuario", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(cadastro),
+            });
 
-  return (
-    <div className="cadastro-page">
-      <h2 className='cadastro_h2'>Cadastro</h2>
-      <form onSubmit={handleSubmit} className="input-area">
-        <label htmlFor="idNm"></label>
-        <input
-          type="text"
-          id="idNm"
-          name="nome"
-          placeholder="Nome completo"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
+            if (response.ok) {
+                setCadastro({
+                    id_usuario: 0,
+                    nome: "",
+                    email: "",
+                    cpf: "",
+                    senha: "",
+                });
+                setMensagemCadastro("Usuário cadastrado com sucesso!");
+                navigate.push("/login");
+            } else {
+                const errorText = await response.json();
+                setMensagemCadastro(`Erro ao cadastrar usuário: ${errorText.message || 'Erro desconhecido.'}`);
+            }
+        } catch (error) {
+            console.error("Erro ao cadastrar usuário:", error);
+            setMensagemCadastro(`Erro ao cadastrar usuário: ${error.message || 'Erro no frontend.'}`);
+        }
+    };
 
-        <label htmlFor="idEmail"></label>
-        <input
-          type="email"
-          id="idEmail"
-          name="email"
-          placeholder="Email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$"
-        />
+    return (
+        <div className="cadastro-page">
+            <h2 className="cadastro_h2">Cadastro</h2>
+            <form onSubmit={handleSubmit} className="input-area">
+                <label htmlFor="idNm"></label>
+                <input
+                    type="text"
+                    id="idNm"
+                    name="nome"
+                    placeholder="Nome completo"
+                    value={cadastro.nome}
+                    onChange={(e) => setCadastro({ ...cadastro, nome: e.target.value })}
+                    required
+                />
 
-        <label htmlFor="idCpf"></label>
-        <input
-          type="tel"
-          id="idCpf"
-          name="cpf"
-          placeholder="CPF"
-          value={cpf}
-          onChange={(e) => setCpf(e.target.value)}
-          required
-          pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$|^\d{9}-\d{2}$|^\d{11}$"
-        />
+                <label htmlFor="idEmail"></label>
+                <input
+                    type="email"
+                    id="idEmail"
+                    name="email"
+                    placeholder="Email"
+                    value={cadastro.email}
+                    onChange={(e) => setCadastro({ ...cadastro, email: e.target.value })}
+                    required
+                    pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$"
+                />
 
-        <label htmlFor="idSenha"></label>
-        <input
-          type="password"
-          id="idSenha"
-          name="senha"
-          placeholder="Senha"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+                <label htmlFor="idCpf"></label>
+                <input
+                    type="tel"
+                    id="idCpf"
+                    name="cpf"
+                    placeholder="CPF"
+                    value={cadastro.cpf}
+                    onChange={(e) => setCadastro({ ...cadastro, cpf: e.target.value })}
+                    required
+                    pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$|^\d{9}-\d{2}$|^\d{11}$"
+                />
 
-        <button type="submit" className="b_cadastro">Cadastrar</button>
-        <p className='login'>
-          Já tem uma conta? <Link href="/login" className="f_login">Faça login</Link>
-        </p>
-      </form>
-      <p id="mensagemCadastro" className={mensagemCadastro.includes('sucesso') ? 'sucesso' : 'erro'}>{mensagemCadastro}</p>
-    </div>
-  );
-};
-export default Cadastro;
+                <label htmlFor="idSenha"></label>
+                <input
+                    type="password"
+                    id="idSenha"
+                    name="senha"
+                    placeholder="Senha"
+                    value={cadastro.senha}
+                    onChange={(e) => setCadastro({ ...cadastro, senha: e.target.value })}
+                    required
+                />
+
+                <button type="submit" className="b_cadastro">Cadastrar</button>
+                <p className="login">
+                    Já tem uma conta? <Link href="/login" className="f_login">Faça login</Link>
+                </p>
+            </form>
+            <p id="mensagemCadastro" className={mensagemCadastro.includes('sucesso') ? 'sucesso' : 'erro'}>
+                {mensagemCadastro}
+            </p>
+        </div>
+    );
+}

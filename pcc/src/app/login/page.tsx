@@ -1,64 +1,60 @@
 "use client";
-
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 const Login = () => {
   const [mensagem, setMensagem] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [senha, setSenha] = useState('');
+  const [usuarios, setUsuarios] = useState([]);
+  const navigate = useRouter();
 
   useEffect(() => {
     const user = JSON.parse(sessionStorage.getItem("usuario"));
     if (user) {
-      window.location.href = "/";
+      navigate.push("");
     }
 
-    const handleUnload = () => {
-      sessionStorage.removeItem("usuario");
+    const chamadaApi = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/usuario');
+        if (!response.ok) {
+          throw new Error('Erro ao buscar usuários');
+        }
+        const data = await response.json();
+        setUsuarios(data);
+      } catch (error) {
+        console.error("Falha na listagem", error);
+      }
     };
 
-    window.addEventListener("beforeunload", handleUnload);
+    chamadaApi();
+  }, [navigate]);
 
-    return () => {
-      window.removeEventListener("beforeunload", handleUnload);
-    };
-  }, []);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const usersKey = "users";
-    const users = JSON.parse(localStorage.getItem(usersKey)) || [];
+    const usuario = usuarios.find(user => user.email === email && user.senha === senha);
 
-    if (users.length === 0) {
-      setMensagem("Nenhum usuário registrado. Por favor, cadastre-se primeiro.");
-      setTimeout(() => {
-        setMensagem('');
-      }, 5000);
-      return;
-    }
-
-    const user = users.find((user) => user.email === email && user.password === password);
-
-    if (user) {
-      sessionStorage.setItem("usuario", JSON.stringify(user));
+    if (usuario) {
+      sessionStorage.setItem("usuario", JSON.stringify(usuario));
       setMensagem("Login bem-sucedido!");
       setTimeout(() => {
-        window.location.href = "/";
+        navigate.push("/"); 
       }, 2000);
     } else {
       setMensagem("Email ou senha inválidos.");
       setTimeout(() => {
         setMensagem('');
-      }, 5000);
+      }, 3000);
     }
   };
 
   return (
     <div className="wrapper">
       <h2 className='login_h2'>Bem-vindo!</h2>
-      <form onSubmit={handleSubmit} id="login" className="input-area">
+      <form onSubmit={handleSubmit} className="input-area">
         <input
           type="email"
           id="idEmail"
@@ -76,8 +72,8 @@ const Login = () => {
           name="senha"
           placeholder="Senha"
           required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={senha}
+          onChange={(e) => setSenha(e.target.value)}
         />
 
         <button type="submit" className="b_login">Entrar</button>
