@@ -132,7 +132,7 @@
   }
 
   .introducao_ajuda, .perg_freq, .perg_freq_2{
-    @apply flex text-center text-left text-right text-justify mx-20 p-[10px] text-[25px] text-black;
+    @apply flex text-justify mx-20 p-[10px] text-[25px] text-black;
   }
   .contato {
     @apply p-0 m-0;
@@ -223,7 +223,7 @@
     @apply flex justify-start items-start ml-[60px] p-[10px] text-[40px] text-black;
   }
   .introducao_car, .instrucao{
-    @apply flex text-center text-left text-right text-justify mx-20 p-[10px] text-[25px] text-black;
+    @apply flex text-justify mx-20 p-[10px] text-[25px] text-black;
   }
   .carro {
     @apply p-0 m-0;
@@ -301,7 +301,7 @@
   .text_medidas,
   .text_medidas_2,
   .lista_medidas {
-    @apply flex text-center text-left text-right text-justify mx-20 p-[10px] text-[25px] text-black;
+    @apply flex text-justify mx-20 p-[10px] text-[25px] text-black;
   }
 }
 
@@ -331,7 +331,7 @@
 /* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE SAIBA MAIS*/
 @layer components{
   .text_saiba_1, .text_saiba_2, .text_saiba_3, .text_saiba_4, .text_saiba_5 {
-    @apply flex text-center text-left text-right text-justify mx-20 p-[10px] text-[25px] text-black;
+    @apply flex text-justify mx-20 p-[10px] text-[25px] text-black;
   }
 
   .titulo_saiba_1, .titulo_saiba_2, .titulo_saiba_3, .titulo_saiba_4, .titulo_saiba_5{
@@ -342,7 +342,7 @@
 /* ESTILIZAÇÃO DO CONTEUDO DA PÁGINA DE SOBRE NÓS*/
 @layer components{
   .text_sobre{
-    @apply flex text-center text-left text-right text-justify mx-[100px] p-[10px] text-[25px] text-black;
+    @apply flex text-justify mx-[100px] p-[10px] text-[25px] text-black;
   }
 
 .participantes {
