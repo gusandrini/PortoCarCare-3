@@ -60,6 +60,7 @@ export default function Cadastro() {
                     value={cadastro.nome}
                     onChange={(e) => setCadastro({ ...cadastro, nome: e.target.value })}
                     required
+                    title="Informe seu nome completo."
                 />
 
                 <label htmlFor="idEmail"></label>
@@ -72,6 +73,7 @@ export default function Cadastro() {
                     onChange={(e) => setCadastro({ ...cadastro, email: e.target.value })}
                     required
                     pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$"
+                    title="Informe um email válido, por exemplo: usuario@dominio.com."
                 />
 
                 <label htmlFor="idCpf"></label>
@@ -84,6 +86,7 @@ export default function Cadastro() {
                     onChange={(e) => setCadastro({ ...cadastro, cpf: e.target.value })}
                     required
                     pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$|^\d{9}-\d{2}$|^\d{11}$"
+                    title="Informe seu CPF no formato XXX.XXX.XXX-XX ou apenas números."
                 />
 
                 <label htmlFor="idSenha"></label>
