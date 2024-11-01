@@ -15,3 +15,27 @@ export type TipoCadastro = {
     senha: string;
     email: string;
 }
+
+export type TipoAr = {
+    problema: string;
+}
+
+export type TipoFreio = {
+    problema: string;
+}
+
+export type TipoMotor = {
+    problema: string;
+}
+
+export type TipoSistema = {
+    problema: string;
+}
+
+export type TipoSuspensao = {
+    problema: string;
+}
+
+export type TipoTransmissao = {
+    problema: string;
+}

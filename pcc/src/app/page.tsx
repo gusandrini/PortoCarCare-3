@@ -1,13 +1,13 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Agenda from '@/Images/agenda.jpg';
 import Carro from '@/Images/carro.jpg';
 import Motor from '@/Images/motor.jpg';
-import Agenda from '@/Images/agenda.jpg';
+import Image from 'next/image';
+import Link from 'next/link';
 
 
 export default function Home() {
 
-    
+
     return (
         <div>
             <header className="cabecalho">
@@ -39,8 +39,8 @@ export default function Home() {
                 <div className="cards_2">
                     <div className="cadastro-carro">
                         <Image src={Carro} alt="Carro" priority />
-                        <p>Cadastre seu carro</p>
-                        <Link className='btn_click' href="/carro">Clique aqui</Link>
+                        <p>Diagnóstico</p>
+                        <Link className='btn_click' href="/diagnostico">Clique aqui</Link>
                     </div>
                 </div>
                 <div className="cards_3">
