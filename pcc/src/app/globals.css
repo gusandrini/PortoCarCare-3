@@ -483,6 +483,95 @@
   .tabela-carros tbody tr td:nth-child(7)::before {
     content: "Excluir: ";
   }
+
+  /* Estilos globais para tabelas */
+.tabela-motor,
+.tabela-ar,
+.tabela-freio,
+.tabela-sistemas,
+.tabela-suspensao,
+.tabela-transmissao {
+  @apply block w-full m-0 px-2;
+}
+
+/* Estilos para thead e ocultação */
+.tabela-motor thead,
+.tabela-ar thead,
+.tabela-freio thead,
+.tabela-sistemas thead,
+.tabela-suspensao thead,
+.tabela-transmissao thead {
+  @apply border border-gray-600 bg-gray-100;
+  @apply hidden; /* Oculte o thead em dispositivos móveis */
+}
+
+.tabela-motor tbody,
+.tabela-ar tbody,
+.tabela-freio tbody,
+.tabela-sistemas tbody,
+.tabela-suspensao tbody,
+.tabela-transmissao tbody {
+  @apply block w-full; /* Torna o tbody um bloco para controle de layout */
+}
+
+.tabela-motor tbody tr,
+.tabela-ar tbody tr,
+.tabela-freio tbody tr,
+.tabela-sistemas tbody tr,
+.tabela-suspensao tbody tr,
+.tabela-transmissao tbody tr {
+  @apply flex flex-col mb-4 bg-white rounded-lg shadow-lg p-4 w-full; /* Estiliza cada linha da tabela */
+}
+
+.tabela-motor tbody tr td,
+.tabela-ar tbody tr td,
+.tabela-freio tbody tr td,
+.tabela-sistemas tbody tr td,
+.tabela-suspensao tbody tr td,
+.tabela-transmissao tbody tr td {
+  @apply flex justify-between text-gray-700 py-2 w-full; /* Estilo das células */
+  display: flex;
+}
+
+.tabela-motor tbody tr td::before,
+.tabela-ar tbody tr td::before,
+.tabela-freio tbody tr td::before,
+.tabela-sistemas tbody tr td::before,
+.tabela-suspensao tbody tr td::before,
+.tabela-transmissao tbody tr td::before {
+  @apply font-semibold text-gray-500; /* Estilo para o prefixo */
+}
+
+/* Estilos para prefixos em cada coluna para dispositivos móveis */
+.tabela-motor tbody tr td:nth-child(1)::before,
+.tabela-ar tbody tr td:nth-child(1)::before,
+.tabela-freio tbody tr td:nth-child(1)::before,
+.tabela-sistemas tbody tr td:nth-child(1)::before,
+.tabela-suspensao tbody tr td:nth-child(1)::before,
+.tabela-transmissao tbody tr td:nth-child(1)::before {
+  content: "Problemas: ";
+}
+
+.tabela-motor tbody tr td:nth-child(2)::before,
+.tabela-ar tbody tr td:nth-child(2)::before,
+.tabela-freio tbody tr td:nth-child(2)::before,
+.tabela-sistemas tbody tr td:nth-child(2)::before,
+.tabela-suspensao tbody tr td:nth-child(2)::before,
+.tabela-transmissao tbody tr td:nth-child(2)::before {
+  content: "Diagnóstico: ";
+}
+
+.tabela-motor tbody tr td:nth-child(3)::before,
+.tabela-ar tbody tr td:nth-child(3)::before,
+.tabela-freio tbody tr td:nth-child(3)::before,
+.tabela-sistemas tbody tr td:nth-child(3)::before,
+.tabela-suspensao tbody tr td:nth-child(3)::before,
+.tabela-transmissao tbody tr td:nth-child(3)::before {
+  content: "Orçamento: ";
+}
+
+
+
   }
 /* TABLETS */
 @media (min-width: 650px) and (max-width: 1024px) {
@@ -588,6 +677,34 @@
       @apply flex flex-row justify-evenly p-[20px] w-[100%];
     }  
 
+    .tabela-motor thead,
+  .tabela-ar thead,
+  .tabela-freio thead,
+  .tabela-sistemas thead,
+  .tabela-suspensao thead,
+  .tabela-transmissao thead {
+    @apply table-header-group; /* Exibe o thead */
+  }
+
+  .tabela-motor tbody tr,
+  .tabela-ar tbody tr,
+  .tabela-freio tbody tr,
+  .tabela-sistemas tbody tr,
+  .tabela-suspensao tbody tr,
+  .tabela-transmissao tbody tr {
+    @apply flex-row; /* Exibe linhas como flex-row */
+  }
+
+  .tabela-motor tbody tr td,
+  .tabela-ar tbody tr td,
+  .tabela-freio tbody tr td,
+  .tabela-sistemas tbody tr td,
+  .tabela-suspensao tbody tr td,
+  .tabela-transmissao tbody tr td {
+    @apply py-4; /* Ajusta o padding das células */
+  }
+
+
   
 }
 
@@ -680,6 +797,33 @@
           }
         }
       }
+
+      .tabela-motor thead,
+  .tabela-ar thead,
+  .tabela-freio thead,
+  .tabela-sistemas thead,
+  .tabela-suspensao thead,
+  .tabela-transmissao thead {
+    @apply table-header-group; /* Exibe o thead */
+  }
+
+  .tabela-motor tbody tr,
+  .tabela-ar tbody tr,
+  .tabela-freio tbody tr,
+  .tabela-sistemas tbody tr,
+  .tabela-suspensao tbody tr,
+  .tabela-transmissao tbody tr {
+    @apply flex-row; /* Exibe linhas como flex-row */
+  }
+
+  .tabela-motor tbody tr td,
+  .tabela-ar tbody tr td,
+  .tabela-freio tbody tr td,
+  .tabela-sistemas tbody tr td,
+  .tabela-suspensao tbody tr td,
+  .tabela-transmissao tbody tr td {
+    @apply border border-gray-300; /* Adiciona bordas para maior legibilidade */
+  }
   }
 
   footer{
