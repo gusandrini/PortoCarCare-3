@@ -10,6 +10,9 @@
     width: auto;
     max-width: 100%;
   }
+  .NotFound{
+    @apply bg-[#8fd5ff] flex items-center justify-center m-auto
+  }
 }
 
 /* ESTILIZAÇÃO DO CABECALHO */
