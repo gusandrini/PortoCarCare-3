@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { TipoCadastro } from '@/types/types-u';
+import { TipoCadastro } from '@/types/types';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import React, { useState } from 'react';
 
 export default function Cadastro() {
     const [mensagemCadastro, setMensagemCadastro] = useState('');
@@ -95,6 +95,8 @@ export default function Cadastro() {
                     value={cadastro.senha}
                     onChange={(e) => setCadastro({ ...cadastro, senha: e.target.value })}
                     required
+                    pattern=".{8,}"
+                    title="A senha deve ter no mínimo 8 caracteres."
                 />
 
                 <button type="submit" className="b_cadastro">Cadastrar</button>

@@ -5,5 +5,13 @@ export type TipoCarro = {
     placa: string;
     marca: string,
     modelo: string;
-    ano:number;
+    ano: number;
+}
+
+export type TipoCadastro = {
+    id_usuario: number,
+    cpf: string,
+    nome: string,
+    senha: string;
+    email: string;
 }
