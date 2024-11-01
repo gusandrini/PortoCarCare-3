@@ -40,15 +40,16 @@ const Motor = () => {
                     <thead>
                         <tr>
                             <th>PROBLEMAS</th>
+                            <th>DIAGNÓSTICO</th>
+                            <th>ORÇAMENTO</th>
                         </tr>
                     </thead>
                     <tbody>
                         {motor.map(m => (
                             <tr key={m.problema}>
-                                <td>{m.problema}</td>
-                                <td>{m.problema}</td>
-                                <td>{m.problema}</td>
-                                <td>{m.problema}</td>
+                                <td>{m.problemas}</td>
+                                <td>{m.diagnostico}</td>
+                                <td>{m.orçamento}</td>
                             </tr>
                         ))}
                     </tbody>

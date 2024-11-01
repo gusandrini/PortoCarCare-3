@@ -18,24 +18,42 @@ export type TipoCadastro = {
 
 export type TipoAr = {
     problema: string;
+    problemas: string;
+    diagnostico: string;
+    orçamento: string;
 }
 
 export type TipoFreio = {
     problema: string;
+    problemas: string;
+    diagnostico: string;
+    orçamento: string;
 }
 
 export type TipoMotor = {
     problema: string;
+    problemas: string;
+    diagnostico: string;
+    orçamento: string;
 }
 
 export type TipoSistema = {
     problema: string;
+    problemas: string;
+    diagnostico: string;
+    orçamento: string;
 }
 
 export type TipoSuspensao = {
     problema: string;
+    problemas: string;
+    diagnostico: string;
+    orçamento: string;
 }
 
 export type TipoTransmissao = {
     problema: string;
+    problemas: string;
+    diagnostico: string;
+    orçamento: string;
 }
