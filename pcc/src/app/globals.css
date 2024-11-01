@@ -60,9 +60,10 @@
     @apply m-[20px]  text-[#030a3e] text-center text-[70px];
   }
 
-  .cards {
+  .cards, .cards-1 {
     @apply flex flex-row justify-center items-center;
   }
+  
 
   .cards_1,
   .cards_2,
@@ -88,7 +89,13 @@
 
   .cadastro-carro,
   .medidas-preventivas,
-  .assistente-virtual {
+  .assistente-virtual,
+  .suspensao,
+  .transmissao,
+  .ar-condicionado,
+  .freio,
+  .sistema-eletrico,
+  .motor {
     @apply shadow-[0_2px_9px_2px_#7f7f7e] rounded-[60px] flex flex-col;
   }
 }
@@ -367,13 +374,16 @@
     @apply m-[10px] text-[#030a3e] text-center text-[40px];
   }
 
-  .cards, .cards-i {
+  .cards,.cards-1,  .cards-i {
     @apply flex flex-col items-start;
   }
 
   .cards_1,
   .cards_2,
-  .cards_3 {
+  .cards_3,
+  .cards_4,
+  .cards_5,
+  .cards_6{
     @apply flex flex-row justify-evenly p-0 m-5 w-[90%];
   }
 
@@ -426,66 +436,54 @@
   .introducao_car, .instrucao, .introducao_ajuda, .perg_freq, .perg_freq_2{
     @apply text-[15px]
   }
-
   .tabela-carros {
-    @apply block w-full m-0 px-2;
+    @apply flex justify-center items-center w-full m-0 px-2;
   }
   
   .tabela-carros thead {
     @apply w-full;
   }
-  
-  
+
     .tabela-carros thead,
     .tabela-carros tfoot {
       @apply hidden;
     }
-  
     .tabela-carros tbody {
       @apply block w-full;
     }
-  
     .tabela-carros tbody tr {
       @apply flex flex-col mb-4 bg-white rounded-lg shadow-lg p-4 w-full;
     }
-  
     .tabela-carros tbody tr td {
       @apply flex justify-between text-gray-700 py-2 w-full;
       display: flex;
     }
-  
     .tabela-carros tbody tr td::before {
       @apply font-semibold text-gray-500;
     }
-  
-    /* Prefixos de cada coluna para dispositivos móveis */
-    .tabela-carros tbody tr td:nth-child(1)::before {
-      content: "Placa: ";
-    }
-    .tabela-carros tbody tr td:nth-child(2)::before {
-      content: "Ano: ";
-    }
-    .tabela-carros tbody tr td:nth-child(3)::before {
-      content: "Modelo: ";
-    }
-    .tabela-carros tbody tr td:nth-child(4)::before {
-      content: "Marca: ";
-    }
-    .tabela-carros tbody tr td:nth-child(5)::before {
-      content: "KM: ";
-    }
-    .tabela-carros tbody tr td:nth-child(6)::before {
-      content: "Tipo: ";
-    }
-    .tabela-carros tbody tr td:nth-child(7)::before {
-      content: "Excluir: ";
-    }
-
-    
-  
+  /* Prefixos de cada coluna para dispositivos móveis */
+  .tabela-carros tbody tr td:nth-child(1)::before {
+    content: "Placa: ";
   }
-
-
+  .tabela-carros tbody tr td:nth-child(2)::before {
+    content: "Ano: ";
+  }
+  .tabela-carros tbody tr td:nth-child(3)::before {
+    content: "Modelo: ";
+  }
+  .tabela-carros tbody tr td:nth-child(4)::before {
+    content: "Marca: ";
+  }
+  .tabela-carros tbody tr td:nth-child(5)::before {
+    content: "KM: ";
+  }
+  .tabela-carros tbody tr td:nth-child(6)::before {
+    content: "Tipo: ";
+  }
+  .tabela-carros tbody tr td:nth-child(7)::before {
+    content: "Excluir: ";
+  }
+  }
 /* TABLETS */
 @media (min-width: 650px) and (max-width: 1024px) {
   .menu ul {
@@ -500,7 +498,7 @@
     @apply m-[15px] text-[#030a3e] text-center text-[50px];
   }
 
-  .cards {
+  .cards, .cards-1 {
     @apply flex flex-col md:flex-row justify-center items-center;
   }
 
@@ -577,13 +575,16 @@
       @apply text-center text-[40px];
     }
 
-    .cards {
+    .cards, .cards-1 {
       @apply flex flex-col justify-center items-center px-14;
     }
 
     .cards_1,
     .cards_2,
-    .cards_3 {
+    .cards_3,
+    .cards_4,
+    .cards_5,
+    .cards_6 {
       @apply flex flex-row justify-evenly p-[20px] w-[100%];
     }  
 
@@ -648,13 +649,16 @@
     @apply w-[80px];
   }
 
-  .cards {
+  .cards, .cards-1 {
     @apply flex flex-row justify-center items-center;
   }
 
   .cards_1,
   .cards_2,
-  .cards_3 {
+  .cards_3,
+  .cards_4,
+  .cards_5,
+  .cards_6 {
     @apply flex flex-row justify-evenly p-[10px] w-[100%];
   }
 
