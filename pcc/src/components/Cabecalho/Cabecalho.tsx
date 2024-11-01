@@ -1,26 +1,11 @@
 // "use client";
 
 // import { useEffect } from 'react';
+import PortoCarCAre from "@/Images/portocare.png";
 import Image from 'next/image';
 import Link from 'next/link';
-import PortoCarCAre from "@/Images/portocare.png";
 
 function Cabecalho() {
-    // useEffect(() => {
-    //     window.watsonAssistantChatOptions = {
-    //         integrationID: "db715d87-3df2-4189-80bf-c8844616f32b",
-    //         region: "us-south",
-    //         serviceInstanceID: "cd14777c-39ac-401b-938f-9849d2bb018f",
-    //         onLoad: (instance) => { instance.render(); }
-    //     };
-
-        
-    //     const script = document.createElement('script');
-    //     script.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/latest/WatsonAssistantChatEntry.js";
-    //     script.async = true;
-    //     document.head.appendChild(script);
-
-    // }, []);
 
     return (
         <header>
@@ -28,8 +13,6 @@ function Cabecalho() {
                 <Link href="/">
                     <Image
                         src={PortoCarCAre}
-                        width={400}
-                        height={400}
                         alt="logo da Porto CarCare"
                         className='logo-porto-CarCare'
                     />
