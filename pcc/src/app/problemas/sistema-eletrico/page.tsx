@@ -26,7 +26,7 @@ const Sistema = () => {
     return (
         <div>
             <div className="paginas">
-                <Link href="/">Home / Problemas no Sistema condicionado</Link>
+                <Link href="/">Home / Problemas no Sistema elétrico</Link>
             </div>
 
             <div className="cSistemaro">

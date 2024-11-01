@@ -26,7 +26,7 @@ const Freio = () => {
     return (
         <div>
             <div className="paginas">
-                <Link href="/">Home / Problemas no Freio condicionado</Link>
+                <Link href="/">Home / Problemas no Freio</Link>
             </div>
 
             <div className="cFreioro">

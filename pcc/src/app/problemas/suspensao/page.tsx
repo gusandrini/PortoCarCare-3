@@ -26,7 +26,7 @@ const Suspensao = () => {
     return (
         <div>
             <div className="paginas">
-                <Link href="/">Home / Problemas no Suspensao condicionado</Link>
+                <Link href="/">Home / Problemas na Suspensao</Link>
             </div>
 
             <div className="cSuspensaoro">

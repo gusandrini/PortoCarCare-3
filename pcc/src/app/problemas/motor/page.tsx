@@ -26,7 +26,7 @@ const Motor = () => {
     return (
         <div>
             <div className="paginas">
-                <Link href="/">Home / Problemas no Motor condicionado</Link>
+                <Link href="/">Home / Problemas no Motor</Link>
             </div>
 
             <div className="cMotorro">

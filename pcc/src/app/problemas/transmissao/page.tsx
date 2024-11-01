@@ -26,7 +26,7 @@ const Transmissao = () => {
     return (
         <div>
             <div className="paginas">
-                <Link href="/">Home / Problemas no Transmissao condicionado</Link>
+                <Link href="/">Home / Problemas na Transmissao</Link>
             </div>
 
             <div className="cTransmissaoro">
