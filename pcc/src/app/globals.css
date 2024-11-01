@@ -273,25 +273,22 @@
   @apply flex justify-start items-start ml-[60px] p-[10px] text-[40px] text-black;
 }
 
-.tabela-carros {
+.tabela-carros, .tabela-motor, .tabela-ar, .tabela-freio, .tabela-sistemas, .tabela-suspensao, .tabela-transmissao {
   @apply m-20 flex justify-center items-center px-40;
 }
 
-.tabela-carros thead {
+.tabela-carros thead, .tabela-motor thead, .tabela-ar thead, .tabela-freio thead, .tabela-sistemas thead, .tabela-suspensao thead, .tabela-transmissao thead {
   @apply border border-gray-600 bg-gray-100;
 }
 
-.tabela-carros th {
+.tabela-carros th, .tabela-motor th, .tabela-ar th, .tabela-freio th, .tabela-sistemas th, .tabela-suspensao th, .tabela-transmissao th {
   @apply px-10 py-2 text-left text-gray-700;
 }
 
-.tabela-carros td {
+.tabela-carros td, .tabela-motor td, .tabela-ar td, .tabela-freio td, .tabela-sistemas td, .tabela-suspensao td, .tabela-transmissao td {
   @apply px-4 py-2 border border-gray-600;
 }
 
-.tabela-carros tfoot {
-  @apply font-bold text-center;
-}
 
 
 }
@@ -430,13 +427,14 @@
     @apply text-[15px]
   }
 
-    .tabela-carros {
-      @apply block w-full m-0 px-2;
-    }
+  .tabela-carros {
+    @apply block w-full m-0 px-2;
+  }
   
-    .tabela-carros table {
-      @apply block w-full;
-    }
+  .tabela-carros thead {
+    @apply w-full;
+  }
+  
   
     .tabela-carros thead,
     .tabela-carros tfoot {

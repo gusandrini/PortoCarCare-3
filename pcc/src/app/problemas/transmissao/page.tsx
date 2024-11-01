@@ -26,29 +26,30 @@ const Transmissao = () => {
     return (
         <div>
             <div className="paginas">
-                <Link href="/">Home / Problemas na Transmissao</Link>
+                <Link href="/diagnostico"> Diagnóstico / Problemas na Transmissão</Link>
             </div>
 
-            <div className="cTransmissaoro">
+            <div className="carro">
                 <div className="titulo_introducao">
                     <h1>Listagem dos problemas</h1>
                 </div>
             </div>
 
-            <div className='tabela-cTransmissaoros'>
+            <div className='tabela-transmissao'>
                 <table>
                     <thead>
                         <tr>
                             <th>PROBLEMAS</th>
+                            <th>DIAGNÓSTICO</th>
+                            <th>ORÇAMENTO</th>
                         </tr>
                     </thead>
                     <tbody>
                         {transmissao.map(t => (
                             <tr key={t.problema}>
-                                <td>{t.problema}</td>
-                                <td>{t.problema}</td>
-                                <td>{t.problema}</td>
-                                <td>{t.problema}</td>
+                                <td>{t.problemas}</td>
+                                <td>{t.diagnostico}</td>
+                                <td>{t.orçamento}</td>
                             </tr>
                         ))}
                     </tbody>

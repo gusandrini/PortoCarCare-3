@@ -26,7 +26,7 @@ const Ar = () => {
     return (
         <div>
             <div className="paginas">
-                <Link href="/">Home / Problemas no ar condicionado</Link>
+                <Link href="/diagnostico"> Diagnóstico / Problemas ar condicionado</Link>
             </div>
 
             <div className="carro">
@@ -35,20 +35,21 @@ const Ar = () => {
                 </div>
             </div>
 
-            <div className='tabela-carros'>
+            <div className='tabela-ar'>
                 <table>
                     <thead>
                         <tr>
                             <th>PROBLEMAS</th>
+                            <th>DIAGNÓSTICO</th>
+                            <th>ORÇAMENTO</th>
                         </tr>
                     </thead>
                     <tbody>
                         {ar.map(a => (
                             <tr key={a.problema}>
-                                <td>{a.problema}</td>
-                                <td>{a.problema}</td>
-                                <td>{a.problema}</td>
-                                <td>{a.problema}</td>
+                                <td>{a.problemas}</td>
+                                <td>{a.diagnostico}</td>
+                                <td>{a.orçamento}</td>
                             </tr>
                         ))}
                     </tbody>

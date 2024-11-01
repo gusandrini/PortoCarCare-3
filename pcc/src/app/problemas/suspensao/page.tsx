@@ -26,29 +26,30 @@ const Suspensao = () => {
     return (
         <div>
             <div className="paginas">
-                <Link href="/">Home / Problemas na Suspensao</Link>
+                <Link href="/diagnostico"> Diagnóstico / Problemas na Suspensao</Link>
             </div>
 
-            <div className="cSuspensaoro">
+            <div className="carro">
                 <div className="titulo_introducao">
                     <h1>Listagem dos problemas</h1>
                 </div>
             </div>
 
-            <div className='tabela-cSuspensaoros'>
+            <div className='tabela-suspensao'>
                 <table>
                     <thead>
                         <tr>
                             <th>PROBLEMAS</th>
+                            <th>DIAGNÓSTICO</th>
+                            <th>ORÇAMENTO</th>
                         </tr>
                     </thead>
                     <tbody>
                         {suspensao.map(s => (
                             <tr key={s.problema}>
-                                <td>{s.problema}</td>
-                                <td>{s.problema}</td>
-                                <td>{s.problema}</td>
-                                <td>{s.problema}</td>
+                                <td>{s.problemas}</td>
+                                <td>{s.diagnostico}</td>
+                                <td>{s.orçamento}</td>
                             </tr>
                         ))}
                     </tbody>

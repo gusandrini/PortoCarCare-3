@@ -26,7 +26,7 @@ const Sistema = () => {
     return (
         <div>
             <div className="paginas">
-                <Link href="/">Home / Problemas no Sistema elétrico</Link>
+                <Link href="/diagnostico"> Diagnóstico / Problemas no sistema elétrico</Link>
             </div>
 
             <div className="cSistemaro">
@@ -35,20 +35,21 @@ const Sistema = () => {
                 </div>
             </div>
 
-            <div className='tabela-cSistemaros'>
+            <div className='tabela-sistemas'>
                 <table>
                     <thead>
                         <tr>
                             <th>PROBLEMAS</th>
+                            <th>DIAGNÓSTICO</th>
+                            <th>ORÇAMENTO</th>
                         </tr>
                     </thead>
                     <tbody>
                         {sistema.map(s => (
                             <tr key={s.problema}>
-                                <td>{s.problema}</td>
-                                <td>{s.problema}</td>
-                                <td>{s.problema}</td>
-                                <td>{s.problema}</td>
+                                <td>{s.problemas}</td>
+                                <td>{s.diagnostico}</td>
+                                <td>{s.orçamento}</td>
                             </tr>
                         ))}
                     </tbody>

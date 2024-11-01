@@ -26,7 +26,7 @@ const Motor = () => {
     return (
         <div>
             <div className="paginas">
-                <Link href="/">Home / Problemas no Motor</Link>
+                <Link href="/diagnostico"> Diagnóstico / Problemas no motor</Link>
             </div>
 
             <div className="cMotorro">
@@ -35,7 +35,7 @@ const Motor = () => {
                 </div>
             </div>
 
-            <div className='tabela-cMotorros'>
+            <div className='tabela-motor'>
                 <table>
                     <thead>
                         <tr>

@@ -26,7 +26,7 @@ const Freio = () => {
     return (
         <div>
             <div className="paginas">
-                <Link href="/">Home / Problemas no Freio</Link>
+                <Link href="/diagnostico"> Diagnóstico / Problemas nos freios</Link>
             </div>
 
             <div className="cFreioro">
@@ -35,20 +35,21 @@ const Freio = () => {
                 </div>
             </div>
 
-            <div className='tabela-cFreioros'>
+            <div className='tabela-freio'>
                 <table>
                     <thead>
                         <tr>
                             <th>PROBLEMAS</th>
+                            <th>DIAGNÓSTICO</th>
+                            <th>ORÇAMENTO</th>
                         </tr>
                     </thead>
                     <tbody>
                         {freio.map(f => (
                             <tr key={f.problema}>
-                                <td>{f.problema}</td>
-                                <td>{f.problema}</td>
-                                <td>{f.problema}</td>
-                                <td>{f.problema}</td>
+                                <td>{f.problemas}</td>
+                                <td>{f.diagnostico}</td>
+                                <td>{f.orçamento}</td>
                             </tr>
                         ))}
                     </tbody>
