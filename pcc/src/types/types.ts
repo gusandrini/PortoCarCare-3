@@ -17,43 +17,37 @@ export type TipoCadastro = {
 }
 
 export type TipoAr = {
-    problema: string;
-    problemas: string;
+    problema_ar: string;
     diagnostico: string;
-    orçamento: string;
+    orcamento: string;
 }
 
 export type TipoFreio = {
-    problema: string;
-    problemas: string;
+    problema_freio: string;
     diagnostico: string;
-    orçamento: string;
+    orcamento: string;
 }
 
 export type TipoMotor = {
-    problema: string;
-    problemas: string;
+    problema_motor: string;
     diagnostico: string;
-    orçamento: string;
+    orcamento: string;
 }
 
 export type TipoSistema = {
-    problema: string;
-    problemas: string;
+    problema_se: string;
     diagnostico: string;
-    orçamento: string;
+    orcamento: string;
 }
 
 export type TipoSuspensao = {
-    problema: string;
-    problemas: string;
+    problema_suspensao: string;
     diagnostico: string;
-    orçamento: string;
+    orcamento: string;
 }
 
 export type TipoTransmissao = {
-    problema: string;
-    problemas: string;
+    problema_transmissao: string;
     diagnostico: string;
-    orçamento: string;
+    orcamento: string;
 }

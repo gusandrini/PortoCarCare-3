@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 const Motor = () => {
     const [mensagemFeedback, setMensagemFeedback] = useState('');
-    const navigate = useRouter();
+    const [loading, setLoading] = useState(true);
     const [motor, setMotor] = useState<TipoMotor[]>([]);
 
     useEffect(() => {
@@ -14,12 +14,19 @@ const Motor = () => {
     }, []);
 
     const chamadaApi = async () => {
+        setLoading(true);
         try {
-            const response = await fetch('http://localhost:8080/problema-motor');
+            const response = await fetch('http://localhost:8080/problema_motor');
+            if (!response.ok) {
+                throw new Error('Erro na resposta da API');
+            }
             const data = await response.json();
             setMotor(data);
         } catch (error) {
             console.error("Falha na listagem", error);
+            setMensagemFeedback('Erro ao carregar os dados.');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -29,32 +36,43 @@ const Motor = () => {
                 <Link href="/diagnostico"> Diagnóstico / Problemas no motor</Link>
             </div>
 
-            <div className="cMotorro">
+            <div className="carro">
                 <div className="titulo_introducao">
                     <h1>Listagem dos problemas</h1>
                 </div>
             </div>
 
-            <div className='tabela-motor'>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>PROBLEMAS</th>
-                            <th>DIAGNÓSTICO</th>
-                            <th>ORÇAMENTO</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {motor.map(m => (
-                            <tr key={m.problema}>
-                                <td>{m.problemas}</td>
-                                <td>{m.diagnostico}</td>
-                                <td>{m.orçamento}</td>
+            {mensagemFeedback && <div className="alert">{mensagemFeedback}</div>}
+            {loading ? (
+                <div>Carregando...</div>
+            ) : (
+                <div className='tabela-motor'>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>PROBLEMAS</th>
+                                <th>DIAGNÓSTICO</th>
+                                <th>ORÇAMENTO</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
+                        <tbody>
+                            {motor.length > 0 ? (
+                                motor.map((m, index) => (
+                                    <tr key={index}>
+                                        <td>{m.problema_motor}</td>
+                                        <td>{m.diagnostico}</td>
+                                        <td>{m.orcamento}</td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan={3}>Nenhum dado encontrado</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+            )}
         </div>
     );
 };

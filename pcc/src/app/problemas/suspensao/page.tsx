@@ -6,27 +6,35 @@ import { useEffect, useState } from 'react';
 
 const Suspensao = () => {
     const [mensagemFeedback, setMensagemFeedback] = useState('');
-    const navigate = useRouter();
+    const [loading, setLoading] = useState(true);
     const [suspensao, setSuspensao] = useState<TipoSuspensao[]>([]);
+    const router = useRouter();
 
     useEffect(() => {
         chamadaApi();
     }, []);
 
     const chamadaApi = async () => {
+        setLoading(true);
         try {
-            const response = await fetch('http://localhost:8080/problema-suspensao');
+            const response = await fetch('http://localhost:8080/problema_suspensao');
+            if (!response.ok) {
+                throw new Error('Erro na resposta da API');
+            }
             const data = await response.json();
             setSuspensao(data);
         } catch (error) {
             console.error("Falha na listagem", error);
+            setMensagemFeedback('Erro ao carregar os dados.');
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
         <div>
             <div className="paginas">
-                <Link href="/diagnostico"> Diagnóstico / Problemas na Suspensao</Link>
+                <Link href="/diagnostico"> Diagnóstico / Problemas na Suspensão</Link>
             </div>
 
             <div className="carro">
@@ -35,26 +43,37 @@ const Suspensao = () => {
                 </div>
             </div>
 
-            <div className='tabela-suspensao'>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>PROBLEMAS</th>
-                            <th>DIAGNÓSTICO</th>
-                            <th>ORÇAMENTO</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {suspensao.map(s => (
-                            <tr key={s.problema}>
-                                <td>{s.problemas}</td>
-                                <td>{s.diagnostico}</td>
-                                <td>{s.orçamento}</td>
+            {mensagemFeedback && <div className="alert">{mensagemFeedback}</div>}
+            {loading ? (
+                <div>Carregando...</div>
+            ) : (
+                <div className='tabela-suspensao'>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>PROBLEMAS</th>
+                                <th>DIAGNÓSTICO</th>
+                                <th>ORÇAMENTO</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
+                        <tbody>
+                            {suspensao.length > 0 ? (
+                                suspensao.map((s, index) => (
+                                    <tr key={index}>
+                                        <td>{s.problema_suspensao}</td>
+                                        <td>{s.diagnostico}</td>
+                                        <td>{s.orcamento}</td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan={3}>Nenhum dado encontrado</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+            )}
         </div>
     );
 };
