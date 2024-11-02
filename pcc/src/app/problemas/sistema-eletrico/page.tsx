@@ -15,7 +15,7 @@ const Sistema = () => {
     const chamadaApi = async () => {
         setLoading(true);
         try {
-            const response = await fetch('http://localhost:8080/problema_sistema');
+            const response = await fetch('http://localhost:8080/problema_se');
             if (!response.ok) {
                 throw new Error('Erro na resposta da API');
             }
