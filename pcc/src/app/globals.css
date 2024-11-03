@@ -455,11 +455,11 @@
       @apply flex flex-col mb-4 bg-white rounded-lg shadow-lg p-4 w-full;
     }
     .tabela-carros tbody tr td {
-      @apply flex justify-between text-gray-700 py-2 w-full;
+      @apply flex justify-between text-justify px-4 text-gray-700 py-2 w-full;
       display: flex;
     }
     .tabela-carros tbody tr td::before {
-      @apply font-semibold text-gray-500;
+      @apply font-semibold  text-gray-500;
     }
   /* Prefixos de cada coluna para dispositivos móveis */
   .tabela-carros tbody tr td:nth-child(1)::before {
@@ -484,18 +484,18 @@
     content: "Excluir: ";
   }
 
-  /* Estilos globais para tabelas */
+/* Estilos globais para tabelas */
 .tabela-motor,
 .tabela-ar,
 .tabela-freio,
 .tabela-sistemas,
 .tabela-suspensao,
 .tabela-transmissao,
-.tabela-oficina{
+.tabela-oficina {
   @apply block w-full m-0 px-2;
 }
 
-/* Estilos para thead e ocultação */
+/* Estilos para thead */
 .tabela-motor thead,
 .tabela-ar thead,
 .tabela-freio thead,
@@ -503,10 +503,10 @@
 .tabela-suspensao thead,
 .tabela-transmissao thead,
 .tabela-oficina thead {
-  @apply border border-gray-600 bg-gray-100;
-  @apply hidden; /* Oculte o thead em dispositivos móveis */
+  @apply border border-gray-600 bg-gray-100 hidden; /* Oculta thead em dispositivos móveis */
 }
 
+/* Estilos para tbody */
 .tabela-motor tbody,
 .tabela-ar tbody,
 .tabela-freio tbody,
@@ -514,9 +514,10 @@
 .tabela-suspensao tbody,
 .tabela-transmissao tbody,
 .tabela-oficina tbody {
-  @apply block w-full; /* Torna o tbody um bloco para controle de layout */
+  @apply block w-full; /* Define tbody como bloco para controle de layout */
 }
 
+/* Estilos para as linhas (tr) dentro de tbody */
 .tabela-motor tbody tr,
 .tabela-ar tbody tr,
 .tabela-freio tbody tr,
@@ -527,6 +528,7 @@
   @apply flex flex-col mb-4 bg-white rounded-lg shadow-lg p-4 w-full; /* Estiliza cada linha da tabela */
 }
 
+/* Estilos para células (td) dentro de tbody */
 .tabela-motor tbody tr td,
 .tabela-ar tbody tr td,
 .tabela-freio tbody tr td,
@@ -534,10 +536,10 @@
 .tabela-suspensao tbody tr td,
 .tabela-transmissao tbody tr td,
 .tabela-oficina tbody tr td {
-  @apply flex justify-between text-gray-700 py-2 w-full; /* Estilo das células */
-  display: flex;
+  @apply flex justify-between text-justify px-4 text-gray-700 py-2 w-full; /* Estiliza cada célula */
 }
 
+/* Estilos para prefixos nas células (td::before) */
 .tabela-motor tbody tr td::before,
 .tabela-ar tbody tr td::before,
 .tabela-freio tbody tr td::before,
@@ -545,8 +547,19 @@
 .tabela-suspensao tbody tr td::before,
 .tabela-transmissao tbody tr td::before,
 .tabela-oficina tbody tr td::before {
-  @apply font-semibold text-gray-500; /* Estilo para o prefixo */
+  @apply font-semibold  text-gray-500; /* Estiliza o prefixo */
 }
+
+.tabela-motor tbody tr td,
+  .tabela-ar tbody tr td,
+  .tabela-freio tbody tr td,
+  .tabela-sistemas tbody tr td,
+  .tabela-suspensao tbody tr td,
+  .tabela-transmissao tbody tr td,
+  .tabela-oficina tbody tr td {
+    @apply border border-gray-500; /* Adiciona bordas para maior legibilidade */
+  }
+
 
 /* Estilos para prefixos em cada coluna para dispositivos móveis */
 .tabela-oficina tbody tr td:nth-child(1)::before {
@@ -744,7 +757,7 @@
     @apply m-[20px] text-[#030a3e] text-center text-[70px];
   }
 
-  .cards {
+  .cards, .cards-1 {
     @apply flex flex-row justify-center items-center;
   }
 
@@ -788,10 +801,6 @@
     @apply w-[80px];
   }
 
-  .cards, .cards-1 {
-    @apply flex flex-row justify-center items-center;
-  }
-
   .cards_1,
   .cards_2,
   .cards_3,
@@ -809,18 +818,19 @@
     }
 
     ul {
-        @apply gap-[50px];
+      @apply flex gap-[50px];
 
-        li {
-          @apply w-[200px];
+      li {
+        @apply w-[200px];
 
-          a {
-            @apply px-5 py-2 text-[15px] text-gray-500;
-          }
+        a {
+          @apply px-5 py-2 text-[15px] text-gray-500;
         }
       }
+    }
+  }
 
-      .tabela-motor thead,
+  .tabela-motor thead,
   .tabela-ar thead,
   .tabela-freio thead,
   .tabela-sistemas thead,
@@ -830,16 +840,6 @@
     @apply table-header-group; /* Exibe o thead */
   }
 
-  .tabela-motor tbody tr,
-  .tabela-ar tbody tr,
-  .tabela-freio tbody tr,
-  .tabela-sistemas tbody tr,
-  .tabela-suspensao tbody tr,
-  .tabela-transmissao tbody tr,
-  .tabela-oficina tbody tr {
-    @apply flex-row; /* Exibe linhas como flex-row */
-  }
-
   .tabela-motor tbody tr td,
   .tabela-ar tbody tr td,
   .tabela-freio tbody tr td,
@@ -847,11 +847,10 @@
   .tabela-suspensao tbody tr td,
   .tabela-transmissao tbody tr td,
   .tabela-oficina tbody tr td {
-    @apply border border-gray-300; /* Adiciona bordas para maior legibilidade */
-  }
+    @apply border border-gray-500; /* Adiciona bordas para maior legibilidade */
   }
 
-  footer{
-    @apply mt-20
+  footer {
+    @apply mt-20;
   }
 }
