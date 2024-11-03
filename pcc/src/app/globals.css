@@ -389,6 +389,10 @@
 
   .cabecalho {
     @apply p-[15px] text-[25px];
+
+    h1{
+      @apply text-center
+    }
   }
 
 
@@ -536,7 +540,7 @@
 .tabela-suspensao tbody tr td,
 .tabela-transmissao tbody tr td,
 .tabela-oficina tbody tr td {
-  @apply flex justify-between text-justify px-4 text-gray-700 py-2 w-full; /* Estiliza cada célula */
+  @apply flex justify-between text-left px-4 text-gray-700 py-2 w-full; /* Estiliza cada célula */
 }
 
 /* Estilos para prefixos nas células (td::before) */
@@ -727,7 +731,7 @@
   .tabela-suspensao tbody tr,
   .tabela-transmissao tbody tr,
   .tabela-oficina tbody tr {
-    @apply flex-row; /* Exibe linhas como flex-row */
+    @apply flex-row ; /* Exibe linhas como flex-row */
   }
 
   .tabela-motor tbody tr td,
@@ -737,7 +741,7 @@
   .tabela-suspensao tbody tr td,
   .tabela-transmissao tbody tr td,
   .tabela-oficina tbody tr td {
-    @apply py-4; /* Ajusta o padding das células */
+    @apply py-4 border text-left px-4 border-gray-500; /* Ajusta o padding das células */
   }
 
 
@@ -848,7 +852,7 @@
   .tabela-suspensao tbody tr td,
   .tabela-transmissao tbody tr td,
   .tabela-oficina tbody tr td {
-    @apply border border-gray-500; /* Adiciona bordas para maior legibilidade */
+    @apply border text-left px-4 border-gray-500; /* Adiciona bordas para maior legibilidade */
   }
 
   footer {
