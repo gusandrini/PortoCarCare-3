@@ -280,19 +280,19 @@
   @apply flex justify-start items-start ml-[60px] p-[10px] text-[40px] text-black;
 }
 
-.tabela-carros, .tabela-motor, .tabela-ar, .tabela-freio, .tabela-sistemas, .tabela-suspensao, .tabela-transmissao {
+.tabela-carros, .tabela-motor, .tabela-ar, .tabela-freio, .tabela-sistemas, .tabela-suspensao, .tabela-transmissao, .tabela-oficina {
   @apply m-20 flex justify-center items-center px-40;
 }
 
-.tabela-carros thead, .tabela-motor thead, .tabela-ar thead, .tabela-freio thead, .tabela-sistemas thead, .tabela-suspensao thead, .tabela-transmissao thead {
+.tabela-carros thead, .tabela-motor thead, .tabela-ar thead, .tabela-freio thead, .tabela-sistemas thead, .tabela-suspensao thead, .tabela-transmissao thead, .tabela-oficina thead {
   @apply border border-gray-600 bg-gray-100;
 }
 
-.tabela-carros th, .tabela-motor th, .tabela-ar th, .tabela-freio th, .tabela-sistemas th, .tabela-suspensao th, .tabela-transmissao th {
+.tabela-carros th, .tabela-motor th, .tabela-ar th, .tabela-freio th, .tabela-sistemas th, .tabela-suspensao th, .tabela-transmissao th, .tabela-oficina th {
   @apply px-10 py-2 text-left text-gray-700;
 }
 
-.tabela-carros td, .tabela-motor td, .tabela-ar td, .tabela-freio td, .tabela-sistemas td, .tabela-suspensao td, .tabela-transmissao td {
+.tabela-carros td, .tabela-motor td, .tabela-ar td, .tabela-freio td, .tabela-sistemas td, .tabela-suspensao td, .tabela-transmissao th, .tabela-oficina td {
   @apply px-4 py-2 border border-gray-600;
 }
 
@@ -490,7 +490,8 @@
 .tabela-freio,
 .tabela-sistemas,
 .tabela-suspensao,
-.tabela-transmissao {
+.tabela-transmissao,
+.tabela-oficina{
   @apply block w-full m-0 px-2;
 }
 
@@ -500,7 +501,8 @@
 .tabela-freio thead,
 .tabela-sistemas thead,
 .tabela-suspensao thead,
-.tabela-transmissao thead {
+.tabela-transmissao thead,
+.tabela-oficina thead {
   @apply border border-gray-600 bg-gray-100;
   @apply hidden; /* Oculte o thead em dispositivos móveis */
 }
@@ -510,7 +512,8 @@
 .tabela-freio tbody,
 .tabela-sistemas tbody,
 .tabela-suspensao tbody,
-.tabela-transmissao tbody {
+.tabela-transmissao tbody,
+.tabela-oficina tbody {
   @apply block w-full; /* Torna o tbody um bloco para controle de layout */
 }
 
@@ -519,7 +522,8 @@
 .tabela-freio tbody tr,
 .tabela-sistemas tbody tr,
 .tabela-suspensao tbody tr,
-.tabela-transmissao tbody tr {
+.tabela-transmissao tbody tr,
+.tabela-oficina tbody tr {
   @apply flex flex-col mb-4 bg-white rounded-lg shadow-lg p-4 w-full; /* Estiliza cada linha da tabela */
 }
 
@@ -528,7 +532,8 @@
 .tabela-freio tbody tr td,
 .tabela-sistemas tbody tr td,
 .tabela-suspensao tbody tr td,
-.tabela-transmissao tbody tr td {
+.tabela-transmissao tbody tr td,
+.tabela-oficina tbody tr td {
   @apply flex justify-between text-gray-700 py-2 w-full; /* Estilo das células */
   display: flex;
 }
@@ -538,18 +543,25 @@
 .tabela-freio tbody tr td::before,
 .tabela-sistemas tbody tr td::before,
 .tabela-suspensao tbody tr td::before,
-.tabela-transmissao tbody tr td::before {
+.tabela-transmissao tbody tr td::before,
+.tabela-oficina tbody tr td::before {
   @apply font-semibold text-gray-500; /* Estilo para o prefixo */
 }
 
 /* Estilos para prefixos em cada coluna para dispositivos móveis */
+.tabela-oficina tbody tr td:nth-child(1)::before {
+  content: "NOME: ";
+}
 .tabela-motor tbody tr td:nth-child(1)::before,
 .tabela-ar tbody tr td:nth-child(1)::before,
 .tabela-freio tbody tr td:nth-child(1)::before,
 .tabela-sistemas tbody tr td:nth-child(1)::before,
 .tabela-suspensao tbody tr td:nth-child(1)::before,
-.tabela-transmissao tbody tr td:nth-child(1)::before {
+.tabela-transmissao tbody tr td:nth-child(1)::before{
   content: "Problemas: ";
+}
+.tabela-oficina tbody tr td:nth-child(2)::before {
+  content: "CNPJ: ";
 }
 
 .tabela-motor tbody tr td:nth-child(2)::before,
@@ -557,8 +569,11 @@
 .tabela-freio tbody tr td:nth-child(2)::before,
 .tabela-sistemas tbody tr td:nth-child(2)::before,
 .tabela-suspensao tbody tr td:nth-child(2)::before,
-.tabela-transmissao tbody tr td:nth-child(2)::before {
+.tabela-transmissao tbody tr td:nth-child(2)::before{
   content: "Diagnóstico: ";
+}
+.tabela-oficina tbody tr td:nth-child(3)::before {
+  content: "STATUS: ";
 }
 
 .tabela-motor tbody tr td:nth-child(3)::before,
@@ -566,8 +581,12 @@
 .tabela-freio tbody tr td:nth-child(3)::before,
 .tabela-sistemas tbody tr td:nth-child(3)::before,
 .tabela-suspensao tbody tr td:nth-child(3)::before,
-.tabela-transmissao tbody tr td:nth-child(3)::before {
+.tabela-transmissao tbody tr td:nth-child(3)::before{
   content: "Orçamento: ";
+}
+
+.tabela-oficina tbody tr td:nth-child(4)::before {
+  content: "CEP: ";
 }
 
 
@@ -682,7 +701,8 @@
   .tabela-freio thead,
   .tabela-sistemas thead,
   .tabela-suspensao thead,
-  .tabela-transmissao thead {
+  .tabela-transmissao thead,
+  .tabela-oficina thead {
     @apply table-header-group; /* Exibe o thead */
   }
 
@@ -691,7 +711,8 @@
   .tabela-freio tbody tr,
   .tabela-sistemas tbody tr,
   .tabela-suspensao tbody tr,
-  .tabela-transmissao tbody tr {
+  .tabela-transmissao tbody tr,
+  .tabela-oficina tbody tr {
     @apply flex-row; /* Exibe linhas como flex-row */
   }
 
@@ -700,7 +721,8 @@
   .tabela-freio tbody tr td,
   .tabela-sistemas tbody tr td,
   .tabela-suspensao tbody tr td,
-  .tabela-transmissao tbody tr td {
+  .tabela-transmissao tbody tr td,
+  .tabela-oficina tbody tr td {
     @apply py-4; /* Ajusta o padding das células */
   }
 
@@ -803,7 +825,8 @@
   .tabela-freio thead,
   .tabela-sistemas thead,
   .tabela-suspensao thead,
-  .tabela-transmissao thead {
+  .tabela-transmissao thead,
+  .tabela-oficina thead {
     @apply table-header-group; /* Exibe o thead */
   }
 
@@ -812,7 +835,8 @@
   .tabela-freio tbody tr,
   .tabela-sistemas tbody tr,
   .tabela-suspensao tbody tr,
-  .tabela-transmissao tbody tr {
+  .tabela-transmissao tbody tr,
+  .tabela-oficina tbody tr {
     @apply flex-row; /* Exibe linhas como flex-row */
   }
 
@@ -821,7 +845,8 @@
   .tabela-freio tbody tr td,
   .tabela-sistemas tbody tr td,
   .tabela-suspensao tbody tr td,
-  .tabela-transmissao tbody tr td {
+  .tabela-transmissao tbody tr td,
+  .tabela-oficina tbody tr td {
     @apply border border-gray-300; /* Adiciona bordas para maior legibilidade */
   }
   }

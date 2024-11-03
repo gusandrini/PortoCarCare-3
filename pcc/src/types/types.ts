@@ -51,3 +51,11 @@ export type TipoTransmissao = {
     diagnostico: string;
     orcamento: string;
 }
+
+export type TipoOficina = {
+    id_oficina: number;
+    nome_oficina:string;
+    cnpj:number;
+    status:string;
+    cep:number;
+}

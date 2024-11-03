@@ -1,46 +1,41 @@
 "use client";
+import { TipoOficina } from '@/types/types';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { TipoSuspensao } from '@/types/types';
-import Oficina from '@/app/mecanicos/page';
+import { useEffect, useState, useCallback } from 'react';
 
-const Suspensao = () => {
+const Oficina = () => {
     const [mensagemFeedback, setMensagemFeedback] = useState('');
     const [loading, setLoading] = useState(true);
-    const [suspensao, setSuspensao] = useState<TipoSuspensao[]>([]);
+    const [oficina, setOficina] = useState<TipoOficina[]>([]);
     const router = useRouter();
 
-    useEffect(() => {
-        chamadaApi();
-    }, []);
-
-    const chamadaApi = async () => {
+    const chamadaApi = useCallback(async () => {
         setLoading(true);
         try {
-            const response = await fetch('http://localhost:8080/problema_suspensao');
+            const response = await fetch('http://localhost:8080/oficina'); // URL relativa para produção
             if (!response.ok) {
                 throw new Error('Erro na resposta da API');
             }
             const data = await response.json();
-            setSuspensao(data);
+            setOficina(data);
         } catch (error) {
             console.error("Falha na listagem", error);
             setMensagemFeedback('Erro ao carregar os dados.');
         } finally {
             setLoading(false);
         }
-    };
+    }, []);
+
+    useEffect(() => {
+        chamadaApi();
+    }, [chamadaApi]);
 
     return (
         <div>
-            <div className="paginas">
-                <Link href="/diagnostico">Diagnóstico / Problemas na Suspensão</Link>
-            </div>
-
             <div className="carro">
                 <div className="titulo_introducao">
-                    <h1>Listagem dos problemas</h1>
+                    <h1>Oficinas</h1>
                 </div>
             </div>
 
@@ -48,37 +43,37 @@ const Suspensao = () => {
             {loading ? (
                 <div>Carregando...</div>
             ) : (
-                <div className='tabela-suspensao'>
+                <div className='tabela-oficina'>
                     <table>
                         <thead>
                             <tr>
-                                <th>PROBLEMAS</th>
-                                <th>DIAGNÓSTICO</th>
-                                <th>ORÇAMENTO</th>
+                                <th>NOME</th>
+                                <th>CNPJ</th>
+                                <th>STATUS</th>
+                                <th>CEP</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {suspensao.length > 0 ? (
-                                suspensao.map((s, index) => (
-                                    <tr key={index}>
-                                        <td>{s.problema_suspensao}</td>
-                                        <td>{s.diagnostico}</td>
-                                        <td>{s.orcamento}</td>
+                            {oficina.length > 0 ? (
+                                oficina.map((o) => (
+                                    <tr key={o.id_oficina}>
+                                        <td>{o.nome_oficina}</td>
+                                        <td>{o.cnpj}</td>
+                                        <td>{o.status}</td>
+                                        <td>{o.cep}</td>
                                     </tr>
                                 ))
                             ) : (
                                 <tr>
-                                    <td colSpan={3}>Nenhum dado encontrado</td>
+                                    <td colSpan={4}>Nenhum dado encontrado</td>
                                 </tr>
                             )}
                         </tbody>
                     </table>
                 </div>
             )}
-
-            <Oficina/>
         </div>
     );
 };
 
-export default Suspensao;
+export default Oficina;
