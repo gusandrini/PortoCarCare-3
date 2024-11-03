@@ -1,14 +1,11 @@
 "use client";
 import { TipoOficina } from '@/types/types';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useEffect, useState, useCallback } from 'react';
 
 const Oficina = () => {
     const [mensagemFeedback, setMensagemFeedback] = useState('');
     const [loading, setLoading] = useState(true);
     const [oficina, setOficina] = useState<TipoOficina[]>([]);
-    const router = useRouter();
 
     const chamadaApi = useCallback(async () => {
         setLoading(true);

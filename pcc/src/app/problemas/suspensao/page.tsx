@@ -1,6 +1,5 @@
 "use client";
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { TipoSuspensao } from '@/types/types';
 import Oficina from '@/app/mecanicos/page';
@@ -9,7 +8,6 @@ const Suspensao = () => {
     const [mensagemFeedback, setMensagemFeedback] = useState('');
     const [loading, setLoading] = useState(true);
     const [suspensao, setSuspensao] = useState<TipoSuspensao[]>([]);
-    const router = useRouter();
 
     useEffect(() => {
         chamadaApi();
@@ -76,7 +74,7 @@ const Suspensao = () => {
                 </div>
             )}
 
-            <Oficina/>
+            <Oficina />
         </div>
     );
 };

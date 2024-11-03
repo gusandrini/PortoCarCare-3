@@ -2,14 +2,12 @@
 import Oficina from '@/app/mecanicos/page';
 import { TipoFreio } from '@/types/types';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const Freio = () => {
     const [mensagemFeedback, setMensagemFeedback] = useState('');
     const [loading, setLoading] = useState(true);
     const [freio, setFreio] = useState<TipoFreio[]>([]);
-    const router = useRouter();
 
     useEffect(() => {
         chamadaApi();

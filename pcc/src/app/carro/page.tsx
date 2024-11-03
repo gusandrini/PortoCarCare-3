@@ -81,7 +81,11 @@ const Carro = () => {
                 setMensagemFeedback(`Erro: ${errorText.message || 'Erro desconhecido.'}`);
             }
         } catch (error) {
-            setMensagemFeedback(`Falha no processo: ${error.message}`);
+            if (error instanceof Error) {
+                setMensagemFeedback(`Falha no processo: ${error.message}`);
+            } else {
+                setMensagemFeedback(`Falha no processo: Um erro desconhecido ocorreu.`);
+            }
             console.error("Erro na requisição:", error);
         }
     };

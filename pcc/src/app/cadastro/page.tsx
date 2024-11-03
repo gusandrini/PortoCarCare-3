@@ -43,7 +43,13 @@ export default function Cadastro() {
             }
         } catch (error) {
             console.error("Erro ao cadastrar usuário:", error);
-            setMensagemCadastro(`Erro ao cadastrar usuário: ${error.message || 'Erro no frontend.'}`);
+        
+            
+            if (error instanceof Error) {
+                setMensagemCadastro(`Erro ao cadastrar usuário: ${error.message}`);
+            } else {
+                setMensagemCadastro('Erro ao cadastrar usuário: Erro no frontend.');
+            }
         }
     };
 

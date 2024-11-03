@@ -3,17 +3,24 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
+// Definindo uma interface para o tipo de usuário
+interface Usuario {
+  email: string;
+  senha: string;
+  // Adicione outras propriedades conforme necessário
+}
+
 const Login = () => {
   const [mensagem, setMensagem] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [usuarios, setUsuarios] = useState([]);
+  const [usuarios, setUsuarios] = useState<Usuario[]>([]); // Aplicando o tipo de usuário
   const navigate = useRouter();
 
   useEffect(() => {
-    const user = JSON.parse(sessionStorage.getItem("usuario"));
+    const user = sessionStorage.getItem("usuario");
     if (user) {
-      navigate.push("");
+      navigate.push("/");
     }
 
     const chamadaApi = async () => {
@@ -35,6 +42,7 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // Agora TypeScript sabe que cada usuário tem as propriedades `email` e `senha`
     const usuario = usuarios.find(user => user.email === email && user.senha === senha);
 
     if (usuario) {

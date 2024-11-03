@@ -13,7 +13,10 @@ const Saiba = () => {
 
             <div>
                 <p className="text_saiba_1">
-                    Para utilizar nosso serviço de chatbot, não é necessário ter uma conta na IBM Cloud. Basta clicar na aba "Assistente Virtual", onde a Beta, a assistente desenvolvida pela PortoCarCare, estará pronta para te ajudar. Ela foi projetada para guiá-lo(a) na identificação do diagnóstico mais preciso e fornecer orientações claras para que você tome a melhor decisão na resolução de problemas do seu veículo. Este serviço foi especialmente criado para pessoas que não possuem conhecimento técnico sobre veículos, garantindo que você se sinta seguro(a) e bem informado(a) ao enfrentar qualquer situação relacionada ao seu veículo.
+                    Para utilizar nosso serviço de chatbot, não é necessário ter uma conta na IBM Cloud. Basta clicar na aba &quot;Assistente Virtual&quot;, onde a Beta, a assistente 
+                    desenvolvida pela PortoCarCare, estará pronta para te ajudar. Ela foi projetada para guiá-lo(a) na identificação do diagnóstico mais preciso e fornecer orientações claras 
+                    para que você tome a melhor decisão na resolução de problemas do seu veículo. Este serviço foi especialmente criado para pessoas que não possuem conhecimento técnico sobre 
+                    veículos, garantindo que você se sinta seguro(a) e bem informado(a) ao enfrentar qualquer situação relacionada ao seu veículo.
                 </p>
             </div>
 
@@ -34,7 +37,7 @@ const Saiba = () => {
             <div className="text_saiba_3">
                 <p>
                     1° Interaja com nosso chatbot seguindo estes passos simples:<br />
-                    2° Clique na aba "Assistente Virtual".<br />
+                    2° Clique na aba &quot;Assistente Virtual&quot;.<br />
                     3° Faça sua pergunta sobre o seu veículo.<br />
                     Receba recomendações e orientações em tempo real.
                 </p>
@@ -44,7 +47,7 @@ const Saiba = () => {
                 <h2>Depoimentos de Usuários</h2>
             </div>
             <div className="text_saiba_4">
-                <p>"O chatbot foi incrível! Consegui entender o que estava acontecendo com meu carro sem precisar de um mecânico." - João S.</p>
+                <p>&quot;O chatbot foi incrível! Consegui entender o que estava acontecendo com meu carro sem precisar de um mecânico.&quot; - João S.</p>
             </div>
 
             <div className="titulo_saiba_5">

@@ -2,14 +2,12 @@
 import Oficina from '@/app/mecanicos/page';
 import { TipoAr } from '@/types/types';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const Ar = () => {
     const [mensagemFeedback, setMensagemFeedback] = useState('');
     const [loading, setLoading] = useState(true);
     const [ar, setAr] = useState<TipoAr[]>([]);
-    const router = useRouter();
 
     useEffect(() => {
         chamadaApi();

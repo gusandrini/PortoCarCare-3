@@ -2,7 +2,6 @@
 import Oficina from '@/app/mecanicos/page';
 import { TipoMotor } from '@/types/types';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const Motor = () => {
@@ -74,7 +73,7 @@ const Motor = () => {
                     </table>
                 </div>
             )}
-            <Oficina/>
+            <Oficina />
         </div>
     );
 };
