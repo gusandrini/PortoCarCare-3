@@ -1,4 +1,5 @@
 "use client";
+import Oficina from '@/app/mecanicos/page';
 import { TipoSistema } from '@/types/types';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -72,6 +73,7 @@ const Sistema = () => {
                     </table>
                 </div>
             )}
+            <Oficina/>
         </div>
     );
 };

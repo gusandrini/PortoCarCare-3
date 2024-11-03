@@ -1,4 +1,5 @@
 "use client";
+import Oficina from '@/app/mecanicos/page';
 import { TipoAr } from '@/types/types';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -74,6 +75,7 @@ const Ar = () => {
                     </table>
                 </div>
             )}
+            <Oficina/>
         </div>
     );
 };

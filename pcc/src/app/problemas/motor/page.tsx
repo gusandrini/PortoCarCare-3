@@ -1,4 +1,5 @@
 "use client";
+import Oficina from '@/app/mecanicos/page';
 import { TipoMotor } from '@/types/types';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -73,6 +74,7 @@ const Motor = () => {
                     </table>
                 </div>
             )}
+            <Oficina/>
         </div>
     );
 };
