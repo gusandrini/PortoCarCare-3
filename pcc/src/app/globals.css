@@ -829,13 +829,14 @@
 
     ul {
         @apply gap-[40px];
-        li{
-          @apply flex justify-center items-center
-          a {
-            @apply p-5 px-5 py-2 text-[15px] text-gray-500;
-          }
-        }
       }
+
+      ul li {
+          @apply flex justify-center items-center   
+      }
+
+      ul li a {
+            @apply p-5 px-5 py-2 text-[15px] text-gray-500;  }
   }
 
   .tabela-motor thead,
