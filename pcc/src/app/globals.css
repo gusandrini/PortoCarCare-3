@@ -35,7 +35,7 @@
           @apply bg-white w-[310px] flex flex-col items-center rounded-[10px] shadow-md;
 
           a {
-            @apply px-5 py-2 text-[25px] text-gray-500;
+            @apply px-5 py-2 text-[10px] text-gray-500;
           }
         }
       }
