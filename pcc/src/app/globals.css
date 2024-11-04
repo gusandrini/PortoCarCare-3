@@ -677,13 +677,20 @@
 
     ul {
         @apply gap-[40px];
+      }
+
+      ul li {
         li{
           @apply flex justify-center items-center
-          a {
+        }
+      }
+
+      ul li a {
+        a {
             @apply p-5 px-5 py-2 text-[15px] text-gray-500;
           }
         }
-      }
+      
   }
 
 
