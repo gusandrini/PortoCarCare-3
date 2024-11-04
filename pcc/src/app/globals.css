@@ -677,9 +677,12 @@
 
     ul {
         @apply gap-[40px];
+        li{
+          @apply flex justify-center items-center
           a {
-            @apply px-5 py-2 text-[15px] text-gray-500;
+            @apply p-5 px-5 py-2 text-[15px] text-gray-500;
           }
+        }
       }
   }
 
