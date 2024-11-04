@@ -20,7 +20,7 @@ function Cabecalho() {
             </div>
             <div className="menu">
                 <nav>
-                    <ul>
+                    <ul className="w-full">
                         <li><Link className='link_menu' href="/sobre-nos">SOBRE NÓS</Link></li>
                         <li><Link className='link_menu' href="/carro">CADASTRE SEU CARRO</Link></li>
                         <li><Link className='link_menu' href="/ajuda">AJUDA</Link></li>
