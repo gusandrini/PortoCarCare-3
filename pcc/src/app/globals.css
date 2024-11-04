@@ -677,14 +677,9 @@
 
     ul {
         @apply gap-[40px];
-
-        li {
-          @apply w-[200px];
-
           a {
             @apply px-5 py-2 text-[15px] text-gray-500;
           }
-        }
       }
   }
 
@@ -825,13 +820,9 @@
     ul {
       @apply flex gap-[50px];
 
-      li {
-        @apply w-[200px];
-
         a {
           @apply px-5 py-2 text-[15px] text-gray-500;
         }
-      }
     }
   }
 
